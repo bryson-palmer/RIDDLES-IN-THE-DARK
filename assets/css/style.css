@@ -1,0 +1,7 @@
+.top {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url("./assets/Images/hobbit-header.jpg");
+}
