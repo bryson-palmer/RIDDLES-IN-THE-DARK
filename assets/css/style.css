@@ -1,7 +1,155 @@
+/* header container */
 .top {
     width: 100vw;
+    height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-image: url("./assets/Images/hobbit-header.jpg");
+    padding: 0 25px;
+    margin-right: auto;
+
+}
+
+/* high score link */
+.top a {
+    color: green;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding-top: 1em;
+}
+
+/* riddles in the dark title */
+.top h1 {
+    text-align: center;
+    font-size: 2em;
+    color: gold;
+    text-shadow: 3px 0px 0px tan ;
+    padding-top: 1.5em;
+}
+
+/* timer */
+.top h2 {
+    color: green;
+    padding-top: 2em;
+}
+
+/* main container */
+.content  {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* banner image */
+.content img {
+    padding: 0 120px;
+    z-index: -1;
+}
+
+/* starting page */
+.styleContainer {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-family: serif;
+    line-height: 1.5em;
+    margin-top: -2em;
+    margin-bottom: 2em;
+}
+
+#play-button {
+    font-family: fantasy;
+    font-size: 1.5em;
+    color: gold;
+    padding: 0em 1em;
+    margin: 1em 0;
+    border-color: tan;
+    border-radius: 0.5em;
+    background-color: green;
+}
+
+#play-button:hover {
+    color: green;
+    background-color: lightgoldenrodyellow;
+}
+
+#riddle {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-family: serif;
+    line-height: 1.5em;
+    margin: 1em 0;
+}
+
+.buttons {
+    width: 15em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: fantasy;
+    font-size: 1.5em;
+    color: gold;
+    padding: 0em 1em;
+    margin: 0;
+    border-color: tan;
+    border-radius: 0.5em;
+    background-color: green;
+}
+
+.buttons:hover {
+    color: green;
+    background-color: lightgoldenrodyellow;
+}
+
+.hidden {
+    display: none;
+}
+
+#initials {
+    font-family: fantasy;
+    font-size: 1.4em;
+    font-weight: bold;
+    line-height: 1.5em;
+    border-color: lightgoldenrodyellow;
+}
+
+#submitBtn {
+    font-family: fantasy;
+    font-size: 1.5em;
+    color: gold;
+    padding: 0em 1em;
+    margin: 0;
+    border-color: tan;
+    border-radius: 0.5em;
+    background-color: green;
+}
+
+#submitBtn:hover {
+    color: green;
+    background-color: lightgoldenrodyellow;
+}
+
+
+@media only screen and (min-width: 480px) {
+    .top h1 {font-size: 3em;
+    }
+}   
+
+@media only screen and (min-width: 900px) {
+    .top h1 {font-size: 4em; padding-top: 1em;}
+}
+
+@media only screen and (min-width: 1200px) {
+    .top h1 {font-size: 5em;}
 }
