@@ -104,7 +104,7 @@ Then I can save my initials and score
         > Append a oject with the initial's and score
         > Store our list of highschores in local storage
 
-
+        
 
         Gollum art from https://www.jing.fm/iclip/TTwiiJ_gollum-hobbit-clipart/
         The Lonely Mountain art from https://www.jing.fm/iclip/TTwoiR_the-hobbit-smaug-kids-t-shirt-smaug-and/

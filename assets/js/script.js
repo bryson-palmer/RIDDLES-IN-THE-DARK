@@ -15,7 +15,6 @@ var initialsEl = document.querySelector( "#initials" ); // Declaring and pointin
 var submitBtnEl = document.querySelector( "#submitBtn" ); // Declaring and pointing to id submitBtn
 var timeScore; // Time remaining and final score
 var pointer; // Current position in the riddles array
-var playButton; // Play button starts the game
 
         // riddles text
         // list of riddles answers
@@ -28,30 +27,28 @@ var riddles = [
     }
 ]
 
-// set clock to 75 seconds
+// set clock to 75 seconds and display it
 var secondsLeft = 75;
-setInterval( function() {
-    timeRemainEl.innerHTML = secondsLeft;
-}, 1000 );
+timeRemainEl.innerHTML = secondsLeft;
 
 
-// look up setInterval function
-// function setTime() {
-//     var timerInterval = setInterval(function() {
-//       secondsLeft--;
-//       timeEl.textContent = secondsLeft;
+// function subtracting time from secondsLeft, clearing, and displaying countdown
+function subTime() {
+    setInterval(function() {
+      if ( secondsLeft <= 0 ) {
+        clearInterval( secondsLeft = 0 )
+      }  
+      timeRemainEl.innerHTML = secondsLeft
+      secondsLeft--
+      console.log( secondsLeft );
+    }, 1000)
+  }
   
-//       if(secondsLeft === 0) {
-//         clearInterval(timerInterval);
-//         console.log(secondsLeft);
-//       }
   
-//     }, 1000);
-//   }
-  
-// function begins the game
+
+  // function begins the game
 function beginGame() {
-
+    subTime();
 }
 
-playButton.addEventListener("click", beginGame);
+playBtnEl.addEventListener("click", beginGame);
