@@ -33,8 +33,8 @@
     padding-top: 2em;
 }
 
-/* main container */
-.content  {
+/* banner container */
+.header-image {
     width: 100vw;
     height: auto;
     display: flex;
@@ -44,9 +44,19 @@
 }
 
 /* banner image */
-.content img {
-    padding: 0 120px;
+.header-image img {
+    padding: 0 5em;
     z-index: -1;
+}
+
+/* main container */
+.content  {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* starting page */
@@ -72,6 +82,7 @@
     border-color: tan;
     border-radius: 0.5em;
     background-color: green;
+    
 }
 
 #play-button:hover {

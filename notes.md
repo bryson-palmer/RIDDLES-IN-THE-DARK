@@ -111,4 +111,5 @@ Then I can save my initials and score
         hobbit-header art from https://icon-library.com/icon/hobbit-icon-19.html
         Bilbo art from https://favpng.com/png_view/bilbo-baggins-brave-frontier-bilbo-baggins-the-hobbit-fan-art-clip-art-png/UhHWQrMz
         Gandalf art from https://clipartlook.com/img-237482.html
-        One ring from https://icons8.com/icon/33125/one-ring
+        One ring (gold) icon from https://icons8.com/icon/33125/one-ring
+        One ring (tongue of mordor) art from https://www.pngwing.com/en/free-png-pqwef

@@ -19,19 +19,24 @@
         <h2>Time: <span id="time-remaining"></span></h2>
     </header>
 
+    <!-- Banner container -->
+    <div class="header-image">
+        <img src="./assets/Images/hobbit_header.jpg" alt="Pipe sword ring mountain The Hobbit" width="700px" height="400px" >
+    </div>
+
     <!-- Content container -->
     <main class="content">
-        <!-- Banner -->
-        <img src="./assets/Images/hobbit_header.jpg" alt="Pipe sword ring mountain The Hobbit" width="700px" height="400px" >
 
-         <div id="intro" class="styleContainer">
+        <!-- Start page -->
+        <div id="intro" class="styleContainer">
             <p>"Praps ye sits here and chats with it a bitsy, my precious. It like riddles, praps it does, does it?" ~ <em>Gollum - The Hobbit</em></p>
-            
+                
             <button id="play-button">PLAY</button>
-            
+                
             <p>See if you can match wits with a creature from the dark abyss and beat the time. You don't want to become his next meal. Answer correctly and you'll be a step closer to escape. Answer incorrectly and your time gets cut short and Gollum gets a little more bolder. Afterall, it could just change the course of all fates of middle earth. Good luck!</p>
-         </div>
+        </div>
 
+        <!-- Game page -->
         <div id="startGame" class="hidden" class="styleContainer">
 
             <h2 id="riddle">Riddle</h2>
@@ -47,9 +52,9 @@
 
             <button id="answer4" class="buttons">4.
             </button>
-
         </div>
 
+        <!-- End game page -->
         <div id="endGame" class="hidden" class="styleContainer">
             <form>
                 <input type="text" id="initials" />
