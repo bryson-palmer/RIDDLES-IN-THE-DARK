@@ -41,7 +41,7 @@ var riddles = [
     {
       riddle: "Voiceless it cries, \nWingless flutters, \nToothless bites, \nMouthless mutters.",
       answer1: "Wind",
-      answer2: "Butterfly",
+      answer2: "Moth",
       answer3: "Eagle",
       answer4: "Dream",
       answer: "Wind"
@@ -58,7 +58,7 @@ var riddles = [
       riddle: "It cannot be seen, cannot be felt, \nCannot be heard, cannot be smelt. \nIt lies behind stars and under hills, \nAnd empty holes it fills. \nIt comes first and follows after, \nEnds life, kills laughter.",
       answer1: "Dark",
       answer2: "Silence",
-      answer3: "Dirt",
+      answer3: "Nothing",
       answer4: "Anger",
       answer: "Dark"
     },
@@ -89,7 +89,7 @@ var riddles = [
     {
       riddle: "This thing all things devours: \nBirds, beasts, trees, flowers; \nGnaws iron, bites steel; \nGrinds hard stones to meal; \nSlays king, ruins town, \nAnd beats high mountain down.",
       answer1: "Time",
-      answer2: "Storm",
+      answer2: "Dragon",
       answer3: "Water",
       answer4: "Lava",
       answer: "Time"
