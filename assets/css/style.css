@@ -59,6 +59,16 @@
     align-items: center;
 }
 
+/* main .bgImage {
+    background-image: ("RIDDLES-IN-THE-DARK/assets/Images/One-ring.jpg");
+    background-color: white;
+    width: auto;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
 /* starting page */
 .styleContainer {
     width: 60%;
@@ -73,6 +83,7 @@
     margin-bottom: 2em;
 }
 
+/* Play button */
 #play-button {
     font-family: fantasy;
     font-size: 1.5em;
@@ -85,11 +96,13 @@
     
 }
 
+/* Play button hover properties */
 #play-button:hover {
     color: green;
     background-color: lightgoldenrodyellow;
 }
 
+/* Riddle container */
 #riddle {
     width: 60%;
     display: flex;
@@ -102,6 +115,7 @@
     margin: 1em 0;
 }
 
+/* Answer button properties */
 .buttons {
     width: 15em;
     display: flex;
@@ -118,15 +132,18 @@
     background-color: green;
 }
 
+/* Answer button hover properties */
 .buttons:hover {
     color: green;
     background-color: lightgoldenrodyellow;
 }
 
+/* Hides any element calling this class */
 .hidden {
     display: none;
 }
 
+/* Style for initials in the form input */
 #initials {
     font-family: fantasy;
     font-size: 1.4em;
@@ -135,6 +152,7 @@
     border-color: lightgoldenrodyellow;
 }
 
+/* Submit button properties */
 #submitBtn {
     font-family: fantasy;
     font-size: 1.5em;
@@ -146,21 +164,24 @@
     background-color: green;
 }
 
+/* Submit botton hover properties */
 #submitBtn:hover {
     color: green;
     background-color: lightgoldenrodyellow;
 }
 
-
+/* Increases font size of header 1 in top > 480px */
 @media only screen and (min-width: 480px) {
     .top h1 {font-size: 3em;
     }
 }   
 
+/* Increases font size and padding top of header 1 in top > 900px */
 @media only screen and (min-width: 900px) {
     .top h1 {font-size: 4em; padding-top: 1em;}
 }
 
+/* Increases font size of header 1 in top > 1200px */
 @media only screen and (min-width: 1200px) {
     .top h1 {font-size: 5em;}
 }
