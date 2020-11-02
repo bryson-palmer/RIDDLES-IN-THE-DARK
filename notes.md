@@ -58,7 +58,8 @@ Then a timer starts and I am presendted with a riddle
 
 When I answer a riddle
 
-* When the user clicks one of mu answer buttons
+* When the user clicks one of my answer buttons
+    increase correct answer
 
 When I answer a riddle incorrectly
 

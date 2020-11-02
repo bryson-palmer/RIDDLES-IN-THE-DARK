@@ -1,25 +1,22 @@
 
-// Globals
-var timeRemainEl = document.querySelector( "#time-remaining" ); // Declaring and pointing to id time-remaining
-var introEl = document.querySelector( "#intro" ); // Declaring and pointing to id intro
-var playBtnEl = document.querySelector( "#play-button") ; // Declaring and pointing to id play-button
-var initialsEl = document.querySelector( "#initials" ); // Declaring and pointing to id initials
-var startGameEl = document.querySelector( "#startGame" ); // Declaring and pointing to id startGame
-var riddleEl = document.querySelector( "#riddle" ); // Declaring and pointing to id riddle
-var answer1El = document.querySelector( "#answer1" ); // Declaring and pointing to id answer1
-var answer2El = document.querySelector( "#answer2" ); // Declaring and pointing to id answer2
-var answer3El = document.querySelector( "#answer3" ); // Declaring and pointing to id answer3
-var answer4El = document.querySelector( "#answer4" ); // Declaring and pointing to id answer4
-var endGameEl = document.querySelector( "#endGame" ); // Declaring and pointing to id endGame
-var initialsEl = document.querySelector( "#initials" ); // Declaring and pointing to id initials
-var submitBtnEl = document.querySelector( "#submitBtn" ); // Declaring and pointing to id submitBtn
-var timeScore; // Time remaining and final score
-var pointer; // Current position in the riddles array
+// Declaring and pointing to elements
+var timeRemainEl = document.querySelector( "#time-remaining" ); 
+var introEl = document.querySelector( "#intro" ); 
+var playBtnEl = document.querySelector( "#play-button") ; 
+var startGameEl = document.querySelector( "#startGame" ); 
+var hiddenEl = document.querySelector( ".hidden");
+var riddleEl = document.querySelector( "#riddle" ); 
+var answer1El = document.querySelector( "#answer1" ); 
+var answer2El = document.querySelector( "#answer2" ); 
+var answer3El = document.querySelector( "#answer3" ); 
+var answer4El = document.querySelector( "#answer4" ); 
+var endGameEl = document.querySelector( "#endGame" ); 
+var initialsEl = document.querySelector( "#initials" ); 
+var submitBtnEl = document.querySelector( "#submitBtn" ); 
 
-        // riddles text
-        // list of riddles answers
-        // correct annswer
-        //  answer: "correct"
+//  Global variables
+var timeScore; // Time remaining and final score
+
 // an Array holding objects of riddles, answers, and correct answer
 var riddles = [
     {
@@ -102,17 +99,16 @@ var riddles = [
       answer4: "A knife",
       answer: "A ring"
     },
-]
+]; console.log(riddles[0].riddle);
 
-console.log(riddles[0].riddle);
+// Empty riddles container. Will be passing objects from the riddles array to the empty.
+var emptyRiddles = [];
 
-// set clock to 75 seconds and display it
-var secondsLeft = 75;
-timeRemainEl.innerHTML = secondsLeft;
-
-
-// function subtracting time from secondsLeft, clearing, and displaying countdown
-function subTime() {
+// Functions to be used in the game
+var functions = {
+  
+  // Subtract time and stop timer
+  subTime: function() {
     setInterval(function() {
       if ( secondsLeft <= 0 ) {
         clearInterval( secondsLeft = 0 )
@@ -121,13 +117,63 @@ function subTime() {
       secondsLeft--
       console.log( secondsLeft );
     }, 1000)
-  }
+  }, 
   
-  
+  // Hide start page (intro)
+  hide: function() {
+    introEl.textContent = " ";
+    console.log(introEl);
+  },
 
-  // function begins the game
+  // Show game page
+  showStart: function() {
+    var displaySetting = startGameEl.style.display;
+    if ( !displaySetting == "none" ) {
+      startGameEl.style.display = "none";
+    } else {
+      startGameEl.style.display = "flex"
+    }
+      console.log(startGameEl.style.display);  
+  },
+
+  // Show end game page
+  showEnd: function() {
+    var displaySetting = endGameEl.style.display;
+    if ( !displaySetting == "none" ) {
+      endGameEl.style.display = "none";
+    } else {
+      endGameEl.style.display = "flex"
+    }
+      console.log(endGameEl.style.display);  
+  },
+
+  // Display riddle and questions
+  displayRiddle: function() {
+    for ( var i = 0; i < riddles.length - 1; i++ ) {
+      riddleEl.innerHTML = riddles[i].riddle;
+      answer1El.innerHTML = riddles[i].answer1; 
+      answer2El.innerHTML = riddles[i].answer2;
+      answer3El.innerHTML = riddles[i].answer3;
+      answer4El.innerHTML = riddles[i].answer4;
+     
+    } console.log(riddles[i].riddle);
+      console.log(riddles[i].answer1);
+  },
+
+}
+
+// set clock to 75 seconds and display it
+var secondsLeft = 75;
+timeRemainEl.innerHTML = secondsLeft;
+
+
+// function begins the game
 function beginGame() {
-    subTime();
+  
+  functions.subTime();
+  functions.hide();
+  functions.showStart();
+  functions.displayRiddle();
 }
 
 playBtnEl.addEventListener("click", beginGame);

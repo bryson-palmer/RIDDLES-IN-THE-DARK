@@ -18,10 +18,15 @@
     padding-top: 1em;
 }
 
+.top a:focus {
+    outline: none;
+    background-color: gold;
+}
+
 /* riddles in the dark title */
 .top h1 {
     text-align: center;
-    font-size: 2em;
+    font-size: 50px;
     color: gold;
     text-shadow: 3px 0px 0px tan ;
     padding-top: 1.5em;
@@ -31,6 +36,8 @@
 .top h2 {
     color: green;
     padding-top: 2em;
+    padding-left: 1em;
+    color: 
 }
 
 /* banner container */
@@ -69,9 +76,19 @@
     background-size: cover;
 } */
 
+/* Setting game page initial display to none */
+#startGame {
+    display: none;
+}
+
+/* Setting end game page initial display to none */
+#endGame {
+    display: none;
+}
+
 /* starting page */
 .styleContainer {
-    width: 60%;
+    width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -86,14 +103,14 @@
 /* Play button */
 #play-button {
     font-family: fantasy;
-    font-size: 1.5em;
+    font-size: 1.3em;
     color: gold;
     padding: 0em 1em;
     margin: 1em 0;
     border-color: tan;
     border-radius: 0.5em;
     background-color: green;
-    
+    cursor: pointer;
 }
 
 /* Play button hover properties */
@@ -102,34 +119,40 @@
     background-color: lightgoldenrodyellow;
 }
 
+#play-button:focus {
+    outline: none;
+    background-color: lightgoldenrodyellow;
+}
+
 /* Riddle container */
 #riddle {
-    width: 60%;
+    width: 450px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 1.5em;
+    font-size: 1em;
     font-family: serif;
     line-height: 1.5em;
     margin: 1em 0;
+    padding: 0 1em;
 }
 
 /* Answer button properties */
 .buttons {
-    width: 15em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: fantasy;
-    font-size: 1.5em;
+    font-size: 1.4em;
     color: gold;
     padding: 0em 1em;
     margin: 0;
     border-color: tan;
     border-radius: 0.5em;
     background-color: green;
+    cursor: pointer;
 }
 
 /* Answer button hover properties */
@@ -138,9 +161,9 @@
     background-color: lightgoldenrodyellow;
 }
 
-/* Hides any element calling this class */
-.hidden {
-    display: none;
+.buttons:focus {
+    outline: none;
+    background-color: lightgoldenrodyellow;
 }
 
 /* Style for initials in the form input */
@@ -171,17 +194,28 @@
 }
 
 /* Increases font size of header 1 in top > 480px */
+/* Riddle container responsive styles */
 @media only screen and (min-width: 480px) {
-    .top h1 {font-size: 3em;
-    }
+    .top h1 {font-size: 50px;}
+    .styleContainer {width: 400px;}
+    #riddle {width: 450px; font-size: 1.1em; line-height: 1.4em; font-weight: initial;}
+    .buttons {width: 13em;}
 }   
 
 /* Increases font size and padding top of header 1 in top > 900px */
+/* Riddle container responsive styles */
 @media only screen and (min-width: 900px) {
-    .top h1 {font-size: 4em; padding-top: 1em;}
+    .top h1 {font-size: 60px; padding-top: 1em;}
+    .styleContainer {width: 450px;}
+    #riddle {width: 500px;}
+    .buttons {width: 14em;}
 }
 
 /* Increases font size of header 1 in top > 1200px */
+/* Riddle container responsive styles */
 @media only screen and (min-width: 1200px) {
-    .top h1 {font-size: 5em;}
+    .top h1 {font-size: 70px;}
+    .styleContainer {width: 500px;}
+    #riddle {width: 550px;}
+    .buttons {width: 15em;}
 }
