@@ -14,8 +14,8 @@ var endGameEl = document.querySelector( "#endGame" );
 var initialsEl = document.querySelector( "#initials" ); 
 var submitBtnEl = document.querySelector( "#submitBtn" ); 
 
-//  Global variables
-var timeScore; // Time remaining and final score
+// Global variables
+// var timeScore; // Time remaining and final score
 
 // an Array holding objects of riddles, answers, and correct answer
 var riddles = [
@@ -29,7 +29,7 @@ var riddles = [
     },
     {
       riddle: "Thirty white horses on a red hill, \nFirst they champ, \nThen they stamp, \nThen they stand still.",
-      answer1: "Sword",
+      answer1: "Swords",
       answer2: "Dwarves",
       answer3: "Wargs",
       answer4: "Teeth",
@@ -102,7 +102,7 @@ var riddles = [
 ]; console.log(riddles[0].riddle);
 
 // Empty riddles container. Will be passing objects from the riddles array to the empty.
-var emptyRiddles = [];
+// var emptyRiddles = [];
 
 // Functions to be used in the game
 var functions = {
@@ -115,14 +115,13 @@ var functions = {
       }  
       timeRemainEl.innerHTML = secondsLeft
       secondsLeft--
-      console.log( secondsLeft );
+      // console.log( secondsLeft );
     }, 1000)
   }, 
   
   // Hide start page (intro)
   hide: function() {
     introEl.textContent = " ";
-    console.log(introEl);
   },
 
   // Show game page
@@ -148,17 +147,44 @@ var functions = {
   },
 
   // Display riddle and questions
+  // Math.floor(Math.random()*riddles.length - 1)
   displayRiddle: function() {
-    for ( var i = 0; i < riddles.length - 1; i++ ) {
-      riddleEl.innerHTML = riddles[i].riddle;
-      answer1El.innerHTML = riddles[i].answer1; 
-      answer2El.innerHTML = riddles[i].answer2;
-      answer3El.innerHTML = riddles[i].answer3;
-      answer4El.innerHTML = riddles[i].answer4;
-     
-    } console.log(riddles[i].riddle);
-      console.log(riddles[i].answer1);
-  },
+    var pointer = 0;
+    var correctScore = 0;
+    var incorrectScore = 0;
+    if ( pointer < riddles.length ) {
+      // console.log(pointer);
+      // console.log(pointer.riddle);
+      pointer = riddles[pointer];
+      riddleEl.innerHTML = pointer.riddle;
+      answer1El.innerHTML = pointer.answer1; 
+      answer2El.innerHTML = pointer.answer2;
+      answer3El.innerHTML = pointer.answer3;
+      answer4El.innerHTML = pointer.answer4;
+      var correctAnswer = pointer.answer;
+      console.log(correctAnswer);
+
+      function answerCheck(event) {
+        if (event.target.matches("button")) {
+          var clickButtonContent = event.target.textContent;
+          if (correctAnswer == clickButtonContent) {
+            ++pointer;
+            ++correctScore;
+            functions.displayRiddle();
+            console.log(clickButtonContent);
+            console.log(correctScore);
+          } else {
+            ++pointer;
+            ++incorrectScore;
+            // functions.displayRiddle();
+            console.log(incorrectScore);
+          }
+        } 
+      } document.addEventListener("click", answerCheck(event));
+      
+    } 
+    // document.removeEventListener("click", answerCheck);
+  }, 
 
 }
 
