@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" href="https://img.icons8.com/office/30/000000/one-ring.png" />
     
 </head>
-<body>
+<body id="height">
 
     <!-- Header with highscore link and timer -->
     <header class="top">
@@ -54,10 +54,16 @@
             </button>
         </div>
 
+        <!-- Reveal Gandalf if your time runs out -->
+        <div id="gandalfContainer">
+            <img id="gandalf" src="./assets/Images/Gandalf.jpg" alt="Gandalf: You shall not pass!" width="570px" height="427px">
+            <button id="playAgain" class="gandalfButtons">Play Again</button>
+        </div>
+
         <!-- End game page -->
-        <div id="endGame" class="styleContainer">
-            <form>
-                <input type="text" id="initials" />
+        <div id="endGame" >
+            <form class="styleContainer">
+                <input id="initials" type="text" placeholder="Enter your name" />
                 <button id="submitBtn">Submit</button>
             </form>
         </div>

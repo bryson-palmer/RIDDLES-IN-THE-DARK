@@ -72,7 +72,7 @@ When I answer a riddle incorrectly
     <!-- comparison if statement -->
     > The riddle is correct with clickButtonValue == riddles[pointer].answer
 
-Then time is subtracted fro the clock
+Then time is subtracted from the clock
 
     > Subtract points from current score.
 
@@ -101,7 +101,7 @@ Then I can save my initials and score
         > if( stored highscores ) highscores = JSON.parse( stored high scores )
         > else highscores = [];
         > Create a new list
-        > Get the value fo the initials input
+        > Get the value of the initials input
         > Append a oject with the initial's and score
         > Store our list of highschores in local storage
 

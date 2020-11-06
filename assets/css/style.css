@@ -1,4 +1,10 @@
-/* header container */
+
+/* Setting body height to view port */
+body {
+    height: 100vh;
+}
+
+/* Header container */
 .top {
     width: 100vw;
     height: 50px;
@@ -10,20 +16,22 @@
 
 }
 
-/* high score link */
+/* High score link */
 .top a {
     color: green;
     text-decoration: none;
     text-transform: uppercase;
     padding-top: 1em;
+    padding-right: 0.5em;
 }
 
+/* High score link focus properties */
 .top a:focus {
     outline: none;
     background-color: gold;
 }
 
-/* riddles in the dark title */
+/* Riddles in the dark title */
 .top h1 {
     text-align: center;
     font-size: 50px;
@@ -32,14 +40,21 @@
     padding-top: 1.5em;
 }
 
-/* timer */
+/* Timer */
 .top h2 {
     color: green;
     padding-top: 2em;
-    padding-left: 1em;
+    padding-left: 0.5em;
+    display: flex;
+
 }
 
-/* banner container */
+/* Counter time remaining */
+.top #time-remaining {
+    display: block;
+}
+
+/* Banner container */
 .header-image {
     width: 100vw;
     height: auto;
@@ -49,13 +64,13 @@
     align-items: center;
 }
 
-/* banner image */
+/* Banner image */
 .header-image img {
     padding: 0 5em;
     z-index: -1;
 }
 
-/* main container */
+/* Main container */
 .content  {
     width: 100vw;
     height: auto;
@@ -63,6 +78,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+/* Display properity of the intro element */
+#intro {
+    display: flex;
 }
 
 /* main .bgImage {
@@ -85,7 +105,48 @@
     display: none;
 }
 
-/* starting page */
+/* Style for initials in the form input */
+#initials {
+    color: green;
+    font-family: fantasy;
+    font-size: 1.4em;
+    font-weight: bold;
+    line-height: 1.5em;
+    border-color: lightgoldenrodyellow;
+    background-color: lightgoldenrodyellow;
+}
+
+/* Initials focus properties */
+#initials:focus {
+    outline: none;
+    background-color: lightgoldenrodyellow;
+}
+
+/* Submit button properties */
+#submitBtn {
+    font-family: fantasy;
+    font-size: 1.5em;
+    color: gold;
+    padding: 0em 1em;
+    margin: 1em 0em;
+    border-color: tan;
+    border-radius: 0.5em;
+    background-color: green;
+}
+
+/* Submit button hover properties */
+#submitBtn:hover {
+    color: green;
+    background-color: lightgoldenrodyellow;
+}
+
+/* Submit button focus properties */
+#submitBtn:focus {
+    outline: none;
+    background-color: lightgoldenrodyellow;
+}
+
+/* Starting page */
 .styleContainer {
     width: 400px;
     display: flex;
@@ -118,6 +179,7 @@
     background-color: lightgoldenrodyellow;
 }
 
+/* Play button focus properties */
 #play-button:focus {
     outline: none;
     background-color: lightgoldenrodyellow;
@@ -160,42 +222,81 @@
     background-color: lightgoldenrodyellow;
 }
 
+/* Answer button focus properties */
 .buttons:focus {
     outline: none;
     background-color: lightgoldenrodyellow;
 }
 
-/* Style for initials in the form input */
-#initials {
-    font-family: fantasy;
-    font-size: 1.4em;
-    font-weight: bold;
+/* Styling for Gandalf container */
+#gandalfContainer {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-family: serif;
     line-height: 1.5em;
-    border-color: lightgoldenrodyellow;
+    margin-top: -2em;
+    margin-bottom: 2em;
 }
 
-/* Submit button properties */
-#submitBtn {
+/* Display setting for Gandalf image */
+#gandalf {
+    display: none;
+    padding: 0 1.5em;
+}
+
+#playAgain {
+    display: none;
+}
+
+/* Gandalf buttons style properties */
+.gandalfButtons{
+    width: 48%;
     font-family: fantasy;
-    font-size: 1.5em;
+    /* font-size: 1.3em; */
+    /* line-height: 1em; */
     color: gold;
-    padding: 0em 1em;
-    margin: 0;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em 0.5em;
+    margin: 1em 1em;
     border-color: tan;
     border-radius: 0.5em;
     background-color: green;
+    cursor: pointer;
 }
 
-/* Submit botton hover properties */
-#submitBtn:hover {
+/* Styling properties for link in Gandalf button */
+.gandalfButtons a {
+    color: gold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* Answer button hover properties */
+.gandalfButtons:hover {
     color: green;
+    background-color: lightgoldenrodyellow;
+}
+
+/* Answer button focus properties */
+.gandalfButtons:focus {
+    outline: none;
     background-color: lightgoldenrodyellow;
 }
 
 /* Increases font size of header 1 in top > 480px */
 /* Riddle container responsive styles */
 @media only screen and (min-width: 480px) {
+    .top a {font-size: 1em;}
     .top h1 {font-size: 50px;}
+    .top h2 {font-size: 1.2em;}
     .styleContainer {width: 400px;}
     #riddle {width: 450px; font-size: 1.1em; line-height: 1.4em; font-weight: initial;}
     .buttons {width: 13em;}
@@ -204,7 +305,9 @@
 /* Increases font size and padding top of header 1 in top > 900px */
 /* Riddle container responsive styles */
 @media only screen and (min-width: 900px) {
+    .top a {font-size: 1.5em;}
     .top h1 {font-size: 60px; padding-top: 1em;}
+    .top h2 {font-size: 1.5em;}
     .styleContainer {width: 450px;}
     #riddle {width: 500px;}
     .buttons {width: 14em;}
@@ -213,7 +316,9 @@
 /* Increases font size of header 1 in top > 1200px */
 /* Riddle container responsive styles */
 @media only screen and (min-width: 1200px) {
+    .top a {font-size: 2em;}
     .top h1 {font-size: 70px;}
+    .top h2 {font-size: 2em;}
     .styleContainer {width: 500px;}
     #riddle {width: 550px;}
     .buttons {width: 15em;}
