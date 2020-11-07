@@ -23,8 +23,10 @@ var incorrectScore = 0;
 var pointer = 0;
 var clickButtonContent = "";
 
-// Declare, set clock to 75 seconds, and display it
+// Declare time score and seconds left
+var timeScore;
 var secondsLeft = 75;
+timeRemainEl.innerHTML = secondsLeft;
 
 // an Array holding objects of riddles, answers, and correct answer
 var riddles = [
@@ -116,36 +118,39 @@ var myMethods = {
   
   // Countdown functionality
   countDown: function() {
-    setInterval(function() {
-      
-      // Remove click for start game button
-      // Reveal Gandalf if seconds countdown to 0 or less
-      // Set timeer display to 0 and stop timer
-      if ( secondsLeft <= 0 ) {
-          startGameEl.removeEventListener("click", gameFlow);
-          timeRemainEl.innerHTML = 0;
-          secondsLeft === 0;
-          clearInterval( secondsLeft );
-          myMethods.revealGandalf();
-      
-          console.log(secondsLeft);
-          return;
-
-      // Remove click for start game button
-      // Set timeer display to seconds left on clock and stop timer
-      } else if ( pointer == 10 ) {
-          startGameEl.removeEventListener("click", gameFlow);
-          timeRemainEl.innerHTML = secondsLeft;
-          clearInterval( secondsLeft );
-          return;
-
-      // Set timer display to seconds left and countdown in seconds
-      } else
-          timeRemainEl.innerHTML = secondsLeft;
-          secondsLeft--
     
-    }, 1000)
+    // Storing the value setInterval returns in timeScore
+    // Display time
+    timeScore = setInterval(function() {
+    timeRemainEl.innerHTML = secondsLeft;
+      
+      // If seconds reach 0 or less
+      // Remove click for start game button
+      // Stop timer and display 0 for time
+      // Reveal Gandalf 
+      // Log final counts
+      if ( secondsLeft <= 0 ) {
+        startGameEl.removeEventListener("click", gameFlow);
+        myMethods.stopCountdown();
+        timeRemainEl.innerHTML = 0;
+        myMethods.revealGandalf();
+        console.log( "*Reveal Gandalf*" );
+        console.log( "Time: " + secondsLeft);
+        console.log( "FINAL Correct Score: " + correctScore );
+        console.log( "FINAL Incorrect Score: " + incorrectScore );
+        return;
+      }  
+    secondsLeft--;
+    }, 1000);
   }, 
+
+  // Stop timer and display its value
+  stopCountdown: function() {
+    
+    //  Clear the stored interval to stop the function from repeating
+    clearInterval( timeScore );
+    timeRemainEl.innerHTML = secondsLeft;
+  },
   
   // Hide start page (intro)
   hideIntro: function() {
@@ -174,7 +179,7 @@ var myMethods = {
     } else {
         endGameEl.style.display = "flex";
         startGameEl.style.display = "none";
-        console.log("Show End");
+        console.log( "*Show End*" );
         console.log( "Time: " + secondsLeft);
         console.log( "FINAL Correct Score: " + correctScore );
         console.log( "FINAL Incorrect Score: " + incorrectScore );
@@ -213,17 +218,20 @@ var myMethods = {
   // Display next riddle
   // Check if all questions are done log final counts and show end page
   displayNextRiddle: function() {
+
     if ( pointer < riddles.length ) {
-        riddleEl.innerHTML = riddles[pointer].riddle;
-        answer1El.innerHTML = riddles[pointer].answer1; 
-        answer2El.innerHTML = riddles[pointer].answer2;
-        answer3El.innerHTML = riddles[pointer].answer3;
-        answer4El.innerHTML = riddles[pointer].answer4;
-        console.log( "Riddle " + ( pointer + 1 ) + " displayed.");
-    } else 
-        this.showEnd();
-        return
-    
+      riddleEl.innerHTML = riddles[pointer].riddle;
+      answer1El.innerHTML = riddles[pointer].answer1; 
+      answer2El.innerHTML = riddles[pointer].answer2;
+      answer3El.innerHTML = riddles[pointer].answer3;
+      answer4El.innerHTML = riddles[pointer].answer4;
+      console.log( "Riddle " + ( pointer + 1 ) + " displayed.");
+    } else {
+      startGameEl.removeEventListener("click", gameFlow);
+      myMethods.stopCountdown();
+      myMethods.showEnd();
+      return;
+    }
   },
 
   // Gets user choice and compares to the correct answer
@@ -231,15 +239,13 @@ var myMethods = {
   answerCheck: function(clickButtonContent) {
     console.log( "The user's choice is (" + clickButtonContent + ") inside answerCheck()." );
     
-    if ( clickButtonContent !== riddles[pointer].answer ) {
+    if ( clickButtonContent !== riddles[pointer].answer && secondsLeft >= 0 ) {
         console.log( "wrong Answer" );
         incorrectScore++;
-        if ( secondsLeft >= 0 ) {
-            secondsLeft -= 20; 
-            console.log( "incorrectScore: " + incorrectScore );
-        }     
-    } else {
-        console.log("Correct Answer");
+        secondsLeft -= 20; 
+        console.log( "incorrectScore: " + incorrectScore );
+      } else {
+        console.log( "Correct Answer" );
         correctScore++;
         console.log( "correctScore: " + correctScore );
     }
@@ -254,7 +260,7 @@ var myMethods = {
       answer4El.innerHTML = "";
   }
 
-} // End of functions object ___________________________________________
+} // End of functions object _________________________________________________________
 
 // Function begins the game
 function beginGame() {
@@ -274,10 +280,13 @@ function gameFlow(event) {
   
   // GET  user answer with event.target
   clickButtonContent = event.target.textContent;
-  myMethods.answerCheck(clickButtonContent);
-  myMethods.clearInnerHTML();
-  pointer++;
-  myMethods.displayNextRiddle();
+  
+  // if ( secondsLeft > 0 ) {
+    myMethods.answerCheck(clickButtonContent);
+    myMethods.clearInnerHTML();
+    pointer++;
+    myMethods.displayNextRiddle();
+  // }
 }
 startGameEl.addEventListener("click", gameFlow);
 
