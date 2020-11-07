@@ -291,6 +291,36 @@ body {
     background-color: lightgoldenrodyellow;
 }
 
+/*--------------------------------------------------------------------------------*/
+/* Styling for highscore elements */
+#title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: green;
+    font-family: fantasy;
+    font-weight: bold;
+    font-size: 4em;
+    margin: 2em auto;
+}
+
+#list-container{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: fantasy;
+    font-weight: bold;
+    color: green;
+    font-size: 2em;
+    border-color: gold;
+    margin: 1em;
+    padding: 1em;
+}
+/*--------------------------------------------------------------------------------*/
+
 /* Increases font size of header 1 in top > 480px */
 /* Riddle container responsive styles */
 @media only screen and (min-width: 480px) {
