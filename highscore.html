@@ -11,14 +11,16 @@
 </head>
 <body>
 
+    <!-- Container holds all sections -->
     <div class="main-container">
-        <!-- Header with highscore link and timer -->
+        
+        <!-- Header with highscore link, title, and timer -->
         <header class="top">
             <a href="index.html"><img src="https://img.icons8.com/office/30/000000/one-ring.png" alt="The one ring to rule them all" style="width:25px;height:25px;"> Play</br>Again</a>
             <h1>Riddles In The Dark</h1>
             <h2>Time: <span id="time-remaining"></span></h2>
         </header>
-        
+            
         <!-- Label container -->
         <div id="title">
             <p>High Scores</p>
@@ -28,11 +30,16 @@
         <div id="list-container">
             <ul id="initials-List"></ul>
         </div>
-
+        
+        <!-- Container to hold `playAgain` and `clearAll` -->
         <div id="high-scoreBox">
             <button id="play-Again" class="high-scoreBtn">Play Again</button>
             <button id="clear-all" class="high-scoreBtn">CLEAR ALL</button>
         </div>
+
+        <!-- background picture -->
+        <div id="lonely-mountain"></div>
+         
     </div>    
 
     <script src="./assets/js/highscore.js"></script>
