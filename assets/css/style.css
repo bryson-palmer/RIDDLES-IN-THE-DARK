@@ -18,13 +18,13 @@
     color: green;
     text-decoration: none;
     text-transform: uppercase;
-    padding-top: 1em;
+    margin-top: 1.5em;
 }
 
 /* High score link focus properties */
 .top a:focus {
-    outline: none;
-    background-color: gold;
+    outline-color: rgb(0, 255, 200);
+    /* background-color: rgb(0, 255, 200);  */
 }
 
 /* Riddles in the dark title */
@@ -78,20 +78,6 @@
     display: flex;
 }
 
-#intro p {
-    padding-bottom: 0em;
-}
-
-/* main .bgImage {
-    background-image: ("RIDDLES-IN-THE-DARK/assets/Images/One-ring.jpg");
-    background-color: white;
-    width: auto;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
-
 /* Setting game page initial display to none */
 #startGame {
     display: none;
@@ -116,7 +102,7 @@
 /* Initials focus properties */
 #initials:focus {
     outline: none;
-    background-color: lightgoldenrodyellow;
+    border-color: rgb(0, 255, 200); 
 }
 
 /* Submit button properties */
@@ -125,7 +111,7 @@
     font-size: 1.5em;
     color: gold;
     padding: 0em 1em;
-    margin: 1em 0em;
+    margin-top: 0.8em;
     border-color: tan;
     border-radius: 0.5em;
     background-color: green;
@@ -140,7 +126,16 @@
 /* Submit button focus properties */
 #submitBtn:focus {
     outline: none;
-    background-color: lightgoldenrodyellow;
+    border-color: rgb(0, 255, 200);
+}
+
+#hobbit-cover {
+    background-image: url( "/assets/Images/hobbit-cover-first-edition.jpg" );
+    height: 350px;
+    background-position: center;
+    background-size: cover; 
+    margin-top: -1.5em;
+    opacity: 0.8;
 }
 
 /* Starting page */
@@ -150,10 +145,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 1.5em;
+    font-size: 1.4em;
     font-family: serif;
     line-height: 1.5em;
-    margin-top: -2em;
+    margin-top: -3em;
     margin-bottom: 2em;
 }
 
@@ -179,21 +174,14 @@
 /* Play button focus properties */
 #play-button:focus {
     outline: none;
-    background-color: lightgoldenrodyellow;
+    border-color: rgb(0, 255, 200);
 }
 
 /* Riddle container */
 #riddle {
     width: 450px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 1em;
     font-family: serif;
-    line-height: 1.5em;
     margin: 1em 0;
-    padding: 0 1em;
 }
 
 /* Answer button properties */
@@ -203,10 +191,11 @@
     justify-content: center;
     align-items: center;
     font-family: fantasy;
-    font-size: 1.4em;
+    font-size: 1.3em;
+    line-height: 1.2em;
     color: gold;
-    padding: 0.5em 1em;
-    margin: 0;
+    padding: 0.4em 1em;
+    margin: 0.1em 0;
     border-color: tan;
     border-radius: 0.5em;
     background-color: green;
@@ -222,7 +211,7 @@
 /* Answer button focus properties */
 .buttons:focus {
     outline: none;
-    /* background-color: lightgoldenrodyellow; */
+    border-color: rgb(0, 255, 200);
 }
 
 /* Styling for Gandalf container */
@@ -285,7 +274,7 @@
 /* Answer button focus properties */
 .gandalfButtons:focus {
     outline: none;
-    background-color: lightgoldenrodyellow;
+    border-color: rgb(0, 255, 200);
 }
 
 /*--------------------------------------------------------------------------------*/
@@ -372,14 +361,14 @@ li {
 /* Answer button focus properties */
 .high-scoreBtn:focus {
     outline: none;
-    /* background-color: lightgoldenrodyellow; */
+    border-color: rgb(0, 255, 200);
 }
 
 #lonely-mountain {
     background-image: url( "/assets/images/the-lonely-mountain.png" );
     background-repeat: no-repeat;
     opacity: 0.35;
-    height: 100%;
+    height: 73%;
     background-position: center;
     position: relative;
     margin-top: -31em;
@@ -395,8 +384,8 @@ li {
     .top h1 {font-size: 50px;}
     .top h2 {font-size: 1.2em;}
     .styleContainer {width: 400px;}
-    #riddle {width: 450px; font-size: 1.1em; line-height: 1.4em; font-weight: initial;}
-    .buttons {width: 13em;}
+    #riddle {width: 450px; font-size: 1em; line-height: 1.4em; font-weight: initial; padding: 0 1.5em;}
+    .buttons {width: 15em; font-size: 1.2em; line-height: 1.3em;}
 
     #high-scoreBox {font-size: 1.3em;}
 }   
@@ -408,8 +397,8 @@ li {
     .top h1 {font-size: 60px; padding-top: 1em;}
     .top h2 {font-size: 1.5em;}
     .styleContainer {width: 450px;}
-    #riddle {width: 500px;}
-    .buttons {width: 14em;}
+    #riddle {width: 500px; padding: 0;}
+    .buttons {width: 18em; font-size: 1.3em;}
 
     #high-scoreBox {font-size: 1.4em;}
 }
@@ -422,7 +411,7 @@ li {
     .top h2 {font-size: 2em;}
     .styleContainer {width: 500px;}
     #riddle {width: 550px;}
-    .buttons {width: 15em;}
+    .buttons {width: 20em; font-size: 1.3em;}
 
     #high-scoreBox {font-size: 1.5em;}
 }
