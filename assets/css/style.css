@@ -299,6 +299,8 @@
     font-family: fantasy;
     font-weight: bold;
     font-size: 4em;
+    text-decoration: underline;
+    text-decoration-color: green;
     margin: 2em auto 0em auto;
 }
 
@@ -338,7 +340,7 @@ li {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-family: serif;
     line-height: 1.5em;
     margin: -1em auto;
@@ -372,6 +374,8 @@ li {
     .styleContainer {width: 400px;}
     #riddle {width: 450px; font-size: 1.1em; line-height: 1.4em; font-weight: initial;}
     .buttons {width: 13em;}
+
+    #high-scoreBox {font-size: 1.3em;}
 }   
 
 /* Increases font size and padding top of header 1 in top > 900px */
@@ -383,6 +387,8 @@ li {
     .styleContainer {width: 450px;}
     #riddle {width: 500px;}
     .buttons {width: 14em;}
+
+    #high-scoreBox {font-size: 1.4em;}
 }
 
 /* Increases font size of header 1 in top > 1200px */
@@ -394,4 +400,6 @@ li {
     .styleContainer {width: 500px;}
     #riddle {width: 550px;}
     .buttons {width: 15em;}
+
+    #high-scoreBox {font-size: 1.5em;}
 }
