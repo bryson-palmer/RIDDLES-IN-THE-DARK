@@ -1,19 +1,16 @@
-
-/* Setting body height to view port */
-body {
+/* A container to hole the entire page */
+.main-container {
+    width: 100vw;
     height: 100vh;
+    padding: 1em;
 }
 
 /* Header container */
 .top {
-    width: 100vw;
     height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 25px;
-    margin-right: auto;
-
 }
 
 /* High score link */
@@ -22,7 +19,6 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     padding-top: 1em;
-    padding-right: 0.5em;
 }
 
 /* High score link focus properties */
@@ -56,8 +52,6 @@ body {
 
 /* Banner container */
 .header-image {
-    width: 100vw;
-    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -72,8 +66,7 @@ body {
 
 /* Main container */
 .content  {
-    width: 100vw;
-    height: auto;
+    /* height: auto; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,6 +76,10 @@ body {
 /* Display properity of the intro element */
 #intro {
     display: flex;
+}
+
+#intro p {
+    padding-bottom: 0em;
 }
 
 /* main .bgImage {
@@ -302,23 +299,68 @@ body {
     font-family: fantasy;
     font-weight: bold;
     font-size: 4em;
-    margin: 2em auto;
+    margin: 2em auto 0em auto;
 }
 
-#list-container{
-    width: 400px;
+#list-container {
+    width: 100vw;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
     font-family: fantasy;
-    font-weight: bold;
+    font-weight: bolder;
     color: green;
     font-size: 2em;
-    border-color: gold;
-    margin: 1em;
+    margin: 1em auto;
     padding: 1em;
 }
+
+#initials-List {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+li {
+    
+    text-shadow: -3px 4px 4px grey;
+    padding: 0.3em 0;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: flex-end; */
+    /* align-items: flex-end; */
+}
+
+#high-scoreBox {
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-family: serif;
+    line-height: 1.5em;
+    margin: -1em auto;
+}
+
+.high-scoreBtn {
+    width: auto;
+    font-family: fantasy;
+    color: gold;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em 0.5em;
+    margin: 1em 1em;
+    border-color: tan;
+    border-radius: 0.5em;
+    background-color: green;
+    cursor: pointer;
+}
+
 /*--------------------------------------------------------------------------------*/
 
 /* Increases font size of header 1 in top > 480px */

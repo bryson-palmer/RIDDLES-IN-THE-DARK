@@ -10,64 +10,66 @@
     <link rel="icon" type="image/png" href="https://img.icons8.com/office/30/000000/one-ring.png" />
     
 </head>
-<body id="height">
+<body>
 
-    <!-- Header with highscore link and timer -->
-    <header class="top">
-        <a href="highscore.html"><img src="https://img.icons8.com/office/30/000000/one-ring.png" alt="The one ring to rule them all" style="width:25px;height:25px;"> High</br>Scores</a>
-        <h1>Riddles In The Dark</h1>
-        <h2>Time: <span id="time-remaining"></span></h2>
-    </header>
+    <div class="main-container">
+        <!-- Header with highscore link and timer -->
+        <header class="top">
+            <a href="highscore.html"><img src="https://img.icons8.com/office/30/000000/one-ring.png" alt="The one ring to rule them all" style="width:25px;height:25px;"> High</br>Scores</a>
+            <h1>Riddles In The Dark</h1>
+            <h2>Time: <span id="time-remaining"></span></h2>
+        </header>
 
-    <!-- Banner container -->
-    <div class="header-image">
-        <img src="./assets/Images/hobbit_header.jpg" alt="Pipe sword ring mountain The Hobbit" width="700px" height="400px" >
+        <!-- Banner container -->
+        <div class="header-image">
+            <img src="./assets/Images/hobbit_header.jpg" alt="Pipe sword ring mountain The Hobbit" width="700px" height="400px" >
+        </div>
+
+        <!-- Content container bgImage -->
+        <main class="content" >
+
+            <!-- Start page -->
+            <div id="intro" class="styleContainer">
+                <p>"Praps ye sits here and chats with it a bitsy, my precious. It like riddles, praps it does, does it?" ~ <em>Gollum - The Hobbit</em></p>
+                    
+                <button id="play-button">PLAY</button>
+                    
+                <p>See if you can match wits with a creature from the dark abyss and beat the time. You don't want to become his next meal. Answer correctly and you'll be a step closer to escape. Answer incorrectly and your time gets cut short 20 seconds and Gollum gets a little more bolder. After all, it could just change the course of all fates of middle earth. Good luck!</p>
+            </div>
+
+            <!-- Game page -->
+            <div id="startGame" class="styleContainer">
+
+                <h2 id="riddle">Riddle</h2>
+
+                <button id="answer1" class="buttons">1.
+                </button>
+
+                <button id="answer2" class="buttons">2.
+                </button>
+
+                <button id="answer3" class="buttons">3.
+                </button>
+
+                <button id="answer4" class="buttons">4.
+                </button>
+            </div>
+
+            <!-- Reveal Gandalf if your time runs out -->
+            <div id="gandalfContainer">
+                <img id="gandalf" src="./assets/Images/Gandalf.jpg" alt="Gandalf: You shall not pass!" width="570px" height="427px">
+                <button id="playAgain" class="gandalfButtons">Play Again</button>
+            </div>
+
+            <!-- End game page -->
+            <div id="endGame" >
+                <form class="styleContainer">
+                    <input id="initials" type="text" placeholder="Enter your name" />
+                    <button id="submitBtn">Submit</button>
+                </form>
+            </div>
+        </main>
     </div>
-
-    <!-- Content container bgImage -->
-    <main class="content" >
-
-        <!-- Start page -->
-        <div id="intro" class="styleContainer">
-            <p>"Praps ye sits here and chats with it a bitsy, my precious. It like riddles, praps it does, does it?" ~ <em>Gollum - The Hobbit</em></p>
-                
-            <button id="play-button">PLAY</button>
-                
-            <p>See if you can match wits with a creature from the dark abyss and beat the time. You don't want to become his next meal. Answer correctly and you'll be a step closer to escape. Answer incorrectly and your time gets cut short 20 seconds and Gollum gets a little more bolder. After all, it could just change the course of all fates of middle earth. Good luck!</p>
-        </div>
-
-        <!-- Game page -->
-        <div id="startGame" class="styleContainer">
-
-            <h2 id="riddle">Riddle</h2>
-
-            <button id="answer1" class="buttons">1.
-            </button>
-
-            <button id="answer2" class="buttons">2.
-            </button>
-
-            <button id="answer3" class="buttons">3.
-            </button>
-
-            <button id="answer4" class="buttons">4.
-            </button>
-        </div>
-
-        <!-- Reveal Gandalf if your time runs out -->
-        <div id="gandalfContainer">
-            <img id="gandalf" src="./assets/Images/Gandalf.jpg" alt="Gandalf: You shall not pass!" width="570px" height="427px">
-            <button id="playAgain" class="gandalfButtons">Play Again</button>
-        </div>
-
-        <!-- End game page -->
-        <div id="endGame" >
-            <form class="styleContainer">
-                <input id="initials" type="text" placeholder="Enter your name" />
-                <button id="submitBtn">Submit</button>
-            </form>
-        </div>
-    </main>
 
     <script src="assets/js/script.js"></script>
 

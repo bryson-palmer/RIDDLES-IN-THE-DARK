@@ -1,5 +1,5 @@
 
-// Declaring and pointing to elements
+// Declaring and pointing to elements in the index html
 var timeRemainEl = document.querySelector( "#time-remaining" ); 
 var introEl = document.querySelector( "#intro" ); 
 var playBtnEl = document.querySelector( "#play-button" ) ; 
@@ -16,18 +16,19 @@ var playAgainEl = document.querySelector( "#playAgain" );
 var endGameEl = document.querySelector( "#endGame" ); 
 var initialsEl = document.querySelector( "#initials" ); 
 var submitBtnEl = document.querySelector( "#submitBtn" ); 
-var initListEl = document.querySelector( "initials-List" );
+
 
 // Global variables
-var correctScore = 0;
-var incorrectScore = 0;
-var pointer = 0;
-var clickButtonContent = "";
+var correctScore = 0;        // Counter for correct answers
+var incorrectScore = 0;      // Counter for incorrect answers
+var pointer = 0;             // Pointer used for moving through the array of objects
+var clickButtonContent = ""; // Variable to hold the value of the user's current answer
 
-// Declare time score and seconds left
-var timeScore;
-var seconds_Left = 75;
-timeRemainEl.innerHTML = seconds_Left;
+
+var timeScore;                          // A global interval counter
+var seconds_Left = 75;                  // A global time counter set to max time
+timeRemainEl.innerHTML = seconds_Left;  // Printing time to html
+
 
 // an Array holding objects of riddles, answers, and correct answer
 var riddles = [
@@ -120,93 +121,73 @@ var myMethods = {
   // Countdown functionality
   countDown: function() {
     
-    // Storing the value setInterval returns in timeScore
-    // Display time
-    timeScore = setInterval(function() {
-    timeRemainEl.innerHTML = seconds_Left;
+    timeScore = setInterval(function() {    // Storing the value setInterval returns in timeScore
+    timeRemainEl.innerHTML = seconds_Left;  // Display time
       
-      // If seconds reach 0 or less
-      // Remove click for start game button
-      // Stop timer and display 0 for time
-      // Reveal Gandalf 
-      // Log final counts
-      if ( seconds_Left <= 0 ) {
-        startGameEl.removeEventListener("click", gameFlow);
-        myMethods.stopCountdown();
-        timeRemainEl.innerHTML = 0;
-        myMethods.revealGandalf();
-        console.log( "*Reveal Gandalf*" );
+      if ( seconds_Left <= 0 ) {                             // If seconds reach 0 or less
+        startGameEl.removeEventListener("click", gameFlow);  // Remove click for start game button
+        myMethods.stopCountdown();                           // Stop timer 
+        timeRemainEl.innerHTML = 0;                          // Assign and display 0 for time
+        myMethods.revealGandalf();                           // Reveal Gandalf method
+        console.log( "*Reveal Gandalf*" );                   // Log final counts
         console.log( "Time: " + seconds_Left);
         console.log( "FINAL Correct Score: " + correctScore );
         console.log( "FINAL Incorrect Score: " + incorrectScore );
         return;
       }  
-    seconds_Left--;
+    seconds_Left--; // Decrements the time by one second
     }, 1000);
   }, 
 
   // Stop timer and display its value
   stopCountdown: function() {
     
-    //  Clear the stored interval to stop the function from repeating
-    clearInterval( timeScore );
-    timeRemainEl.innerHTML = seconds_Left;
+    clearInterval( timeScore );              // Clear timeScore interval
+    timeRemainEl.innerHTML = seconds_Left;   // Display where the timer stopped
   },
   
   // Hide start page (intro)
   hideIntro: function() {
-    var displaySetting = introEl.style.display;
-    if ( !displaySetting == "none"); {
-      introEl.style.display = "none";
-    } 
-      // introEl.style.display = "flex";   
+    var displaySetting = introEl.style.display; // Variable holding the style property of introEl
+    if ( !displaySetting == "none"); {          // If display setting is not "none"
+      introEl.style.display = "none";           // Then set the display setting to "none"
+    }  
   },
 
   // Show game page
   showGame: function() {
-    var displaySetting = startGameEl.style.display;
-    if ( !displaySetting == "none" ) {
-        startGameEl.style.display = "none";
+    var displaySetting = startGameEl.style.display; // Variable holding the style property of startGameEl
+    if ( !displaySetting == "none" ) {              // If display setting is not "none"
+        startGameEl.style.display = "none";         // Then set the display setting to "none"
     } else 
-        startGameEl.style.display = "flex";
-        console.log("Show Game");    
+        startGameEl.style.display = "flex";         // Else set the display setting to "flex" 
+        console.log("Show Game");                   // Log check
   },
 
   // Show end game page
   showEnd: function() {
-    var displaySetting = endGameEl.style.display;
-    if ( !displaySetting == "none" ) {
-        endGameEl.style.display = "none";
+    var displaySetting = endGameEl.style.display; // Variable holding the style property of endGameEl
+    if ( !displaySetting == "none" ) {            // If display setting is not "none"
+        endGameEl.style.display = "none";         // Then set the display setting to "none"
     } else {
-        endGameEl.style.display = "flex";
-        startGameEl.style.display = "none";
-        console.log( "*Show End*" );
+        endGameEl.style.display = "flex";         // Else set the display setting to "flex"
+        startGameEl.style.display = "none";       // Hide startGameEl
+        console.log( "*Show End*" );              // Log final counts
         console.log( "Time: " + seconds_Left);
         console.log( "FINAL Correct Score: " + correctScore );
         console.log( "FINAL Incorrect Score: " + incorrectScore );
     } 
   },
-
-  // Reveal Gandalf and play again button
-  // Hide all other screens
+  
+  // Reveal Gandalf
   revealGandalf: function() {
-    startGameEl.style.display = "none";
-    endGameEl.style.display = "none";
-    gandalfEl.style.display = "flex";
-    playAgainEl.style.display = "flex";
-  },
-
-  // Hide Gandalf and play again button
-  // Show all other screens
-  hideGandalf: function() {
-    startGameEl.style.display = "flex";
-    endGameEl.style.display = "none";
-    gandalfEl.style.display = "none";
-    playAgainEl.style.display = "none";
+    startGameEl.style.display = "none"; // Hide
+    endGameEl.style.display = "none";   // Hide 
+    gandalfEl.style.display = "flex";   // Reveal Gandalf and play again button
+    playAgainEl.style.display = "flex"; // Reveal playAgain button
   },
 
   // Display first riddle and answers 
-  // Math.floor(Math.random()*riddles.length - 1)
   displayRiddle1: function() {
     riddleEl.innerHTML = riddles[pointer].riddle;
     answer1El.innerHTML = riddles[pointer].answer1; 
@@ -216,43 +197,44 @@ var myMethods = {
     console.log( "Riddle 1 displayed" );
   }, 
 
-  // Display next riddle
-  // Check if all questions are done log final counts and show end page
-  displayNextRiddle: function() {
+  // Display next riddle                                          // Save for later use
+  displayNextRiddle: function() {                                 // Math.floor(Math.random()*riddles.length - 1)
 
-    if ( pointer < riddles.length ) {
-      riddleEl.innerHTML = riddles[pointer].riddle;
-      answer1El.innerHTML = riddles[pointer].answer1; 
-      answer2El.innerHTML = riddles[pointer].answer2;
-      answer3El.innerHTML = riddles[pointer].answer3;
-      answer4El.innerHTML = riddles[pointer].answer4;
-      console.log( "Riddle " + ( pointer + 1 ) + " displayed.");
+    if ( pointer < riddles.length ) {                             // If < length, then display next riddle 
+      riddleEl.innerHTML = riddles[pointer].riddle;               // Display next riddle
+      answer1El.innerHTML = riddles[pointer].answer1;             //
+      answer2El.innerHTML = riddles[pointer].answer2;             //
+      answer3El.innerHTML = riddles[pointer].answer3;             //
+      answer4El.innerHTML = riddles[pointer].answer4;             //
+      console.log( "Riddle " + ( pointer + 1 ) + " displayed.");  // log ponter of riddle
     } else {
-      startGameEl.removeEventListener("click", gameFlow);
-      myMethods.stopCountdown();
-      myMethods.showEnd();
+      startGameEl.removeEventListener("click", gameFlow);         // Else remove the click listener
+      myMethods.stopCountdown();                                  // Call the stop countdown method
+      myMethods.showEnd();                                        // Show end screen with initials input form
       return;
     }
   },
 
-  // Gets user choice and compares to the correct answer
-  // Increment respective counters and penalty
-  answerCheck: function(clickButtonContent) {
-    console.log( "The user's choice is (" + clickButtonContent + ") inside answerCheck()." );
+  
+  // Check answer
+  answerCheck: function(clickButtonContent) {                          // Pass user's choice into function
+    console.log( "The user's choice is (" + clickButtonContent + ") inside answerCheck()." ); // Log check
     
+    // If user's choice does not equal the key answer and time is >= 0
     if ( clickButtonContent !== riddles[pointer].answer && seconds_Left >= 0 ) {
-        console.log( "wrong Answer" );
-        incorrectScore++;
-        seconds_Left -= 20; 
-        console.log( "incorrectScore: " + incorrectScore );
+        console.log( "wrong Answer" );                                            // Log check wrong answer
+        incorrectScore++;                                                         // Increment incorrect score
+        seconds_Left -= 20;                                                       // Subtract 20 sec penalty
+        console.log( "incorrectScore: " + incorrectScore );                       // Log incorrect score
       } else {
-        console.log( "Correct Answer" );
-        correctScore++;
-        console.log( "correctScore: " + correctScore );
+        console.log( "Correct Answer" );                                          // Log check correct answer
+        correctScore++;                                                           // Increment correct score
+        console.log( "correctScore: " + correctScore );                           // Log correct score
     }
   }, 
 
-  // Clear the inner HTML elements holding current riddle and answers
+  // Clear the inner HTML elements 
+  // Holding current riddle and answers
   clearInnerHTML: function() {
       riddleEl.innerHTML = "";
       answer1El.innerHTML = "";
@@ -262,6 +244,7 @@ var myMethods = {
   }
 
 } // End of functions object _________________________________________________________
+
 
 // Function begins the game
 function beginGame() {
@@ -274,48 +257,56 @@ function beginGame() {
 playBtnEl.addEventListener("click", beginGame); // When the play button is clicked run begin game
 
 
-// User answer behavior 
-// Display next riddle
-// Log counters
+// Function controls behavior of game
 function gameFlow(event) {
   
-  // GET  user answer with event.target
-  clickButtonContent = event.target.textContent;
+  clickButtonContent = event.target.textContent;  // GET user answer with event.target
   
-  // if ( secondsLeft > 0 ) {
-    myMethods.answerCheck(clickButtonContent);
-    myMethods.clearInnerHTML();
-    pointer++;
-    myMethods.displayNextRiddle();
-  // }
+    myMethods.answerCheck(clickButtonContent);    // Call check answer and pass user's choice
+    myMethods.clearInnerHTML();                   // Clear inner html elements
+    pointer++;                                    // Increment the pointer value by 1
+    myMethods.displayNextRiddle();                // Call display next riddle
 }
-startGameEl.addEventListener("click", gameFlow);
+startGameEl.addEventListener("click", gameFlow);  // When user clicks an answer run game flow
+
 
 // Starting game play again
+// Reload page
 function playAgain() {
   location.reload();
 }
-playAgainEl.addEventListener("click", playAgain);
+playAgainEl.addEventListener("click", playAgain); // When user clicks the play again button run play again
+
 
 // Submit initials form
 function submitInitials(event) {
-  event.preventDefault();
+  event.preventDefault();         // Prevent submit button default
 
-  var user_Initials = initialsEl.value.toUpperCase();
-  var user_Input = {
-    user_Initials: user_Initials, 
-    seconds_Left: seconds_Left
-  };
-  
-  console.log( "User initials or name: " + user_Initials );
+  // Getting all values stored in user_Input object from storage, 
+  // Parsing, and assigning to input_Array
+  input_Array = JSON.parse(localStorage.getItem( "user_Input" ));
 
-  localStorage.setItem( "user_Input", JSON.stringify(user_Input));
+    if ( !input_Array ) {   // If array is null/empty
+        input_Array = [];   // Define as an empty array
+    }
 
-  initialsEl.innerHTML = "";
+  var user_Initials = initialsEl.value.toUpperCase();                // Uppercasing user input value and storing in new var
+  var user_Input = {                                                 // Declare new object of user_Input
+    user_Initials: user_Initials,                                    // Holding Keys and vlaues
+    seconds_Left: seconds_Left                                       // Initials and time (secondsLeft)
+  };      
   
-  location.assign( "highscore.html" );
+  console.log( "User initials or name: " + user_Initials );          // Log check initials
+
+  input_Array.push(user_Input);                                      // Push user input into input_Array
+
+  localStorage.setItem( "user_Input", JSON.stringify(input_Array));  // Setting user_Input values to storage, stringify array
+
+  initialsEl.innerHTML = "";                                         // Clear inner html of element initialsEl
   
-  submitBtnEl.removeEventListener("click", submitInitials);
+  location.assign( "highscore.html" );                               // Assigning a new html page highscore.html
+  
+  submitBtnEl.removeEventListener("click", submitInitials);          // Remove the listener for the click
   
 }
-submitBtnEl.addEventListener("click", submitInitials);
+submitBtnEl.addEventListener("click", submitInitials);  // When user clicks the submit button for their initials run
