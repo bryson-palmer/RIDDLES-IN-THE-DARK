@@ -7,6 +7,8 @@ var startGameEl = document.querySelector( "#startGame" );
 var hiddenEl = document.querySelector( ".hidden" );
 var buttonsEl = document.querySelector( ".buttons" )
 var riddleEl = document.querySelector( "#riddle" ); 
+var bilboEl = document.querySelector( ".bilbo" );
+var gollumEl = document.querySelector( ".gollum" );
 var answer1El = document.querySelector( "#answer1" ); 
 var answer2El = document.querySelector( "#answer2" ); 
 var answer3El = document.querySelector( "#answer3" ); 
@@ -178,12 +180,40 @@ var myMethods = {
         console.log( "FINAL Incorrect Score: " + incorrectScore );
     } 
   },
-  
+
+  // Reveal Bilbo
+  revealBilbo: function() {
+    console.log( "*Reveal Bilbo*" );
+    bilboEl.style.display = "block";
+    startGameEl.style.display = "none"; // Hide
+  },
+
+  // Hide revealBilbo
+  hideBilbo: function() {
+    console.log( "*Hide Bilbo*" );
+    bilboEl.style.display = "none";
+    startGameEl.style.display = "flex";
+  },
+
+  // Reveal Gollum
+  revealGollum: function() {
+    console.log( "*Reveal Gollum*" );
+    gollumEl.style.display = "block";
+    startGame.style.display = "none";
+  },
+
+  // Hide revealBilbo
+  hideGollum: function() {
+    console.log( "*Hide Gollum*" );
+    gollumEl.style.display = "none";
+    startGameEl.style.display = "flex";
+  },
+
   // Reveal Gandalf
   revealGandalf: function() {
     startGameEl.style.display = "none"; // Hide
     endGameEl.style.display = "none";   // Hide 
-    gandalfEl.style.display = "flex";   // Reveal Gandalf and play again button
+    gandalfEl.style.display = "flex";   // Reveal Gandalf 
     playAgainEl.style.display = "flex"; // Reveal playAgain button
   },
 
@@ -229,7 +259,9 @@ var myMethods = {
       } else {
         console.log( "Correct Answer" );                                          // Log check correct answer
         correctScore++;
-        seconds_Left += 20;                                                           // Increment correct score
+        seconds_Left += 10;                                                       // Increment correct score
+        myMethods.revealBilbo();
+        myMethods.hideBilbo();
         console.log( "correctScore: " + correctScore );                           // Log correct score
     }
   }, 
@@ -264,6 +296,7 @@ function gameFlow(event) {
   clickButtonContent = event.target.textContent;  // GET user answer with event.target
   
     myMethods.answerCheck(clickButtonContent);    // Call check answer and pass user's choice
+    // Local set timeout ???
     myMethods.clearInnerHTML();                   // Clear inner html elements
     pointer++;                                    // Increment the pointer value by 1
     myMethods.displayNextRiddle();                // Call display next riddle

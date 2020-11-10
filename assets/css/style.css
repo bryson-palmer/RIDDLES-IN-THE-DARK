@@ -184,6 +184,38 @@
     margin: 1em 0;
 }
 
+#bilboContainer {
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: fantasy;
+    font-size: 2em;
+    font-weight: bolder;
+    color: green;
+}
+
+.bilbo {
+    display: none;
+}
+
+#gollumContainer {
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: fantasy;
+    font-size: 2em;
+    font-weight: bolder;
+    color: green;
+}
+
+.gollum {
+    display: none;
+}
+
 /* Answer button properties */
 .buttons {
     display: flex;
