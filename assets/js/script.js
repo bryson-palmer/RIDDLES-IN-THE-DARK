@@ -2,13 +2,15 @@
 // Declaring and pointing to elements in the index html
 var timeRemainEl = document.querySelector( "#time-remaining" ); 
 var introEl = document.querySelector( "#intro" ); 
+var headerImageEl = document.querySelector( ".header-image" );
+var characterEl = document.querySelector( ".characterContainer" );
+var bilboEl = document.querySelector( ".bilbo" );
+var gollumEl = document.querySelector( ".gollum" );
 var playBtnEl = document.querySelector( "#play-button" ) ; 
 var startGameEl = document.querySelector( "#startGame" ); 
 var hiddenEl = document.querySelector( ".hidden" );
 var buttonsEl = document.querySelector( ".buttons" )
 var riddleEl = document.querySelector( "#riddle" ); 
-var bilboEl = document.querySelector( ".bilbo" );
-var gollumEl = document.querySelector( ".gollum" );
 var answer1El = document.querySelector( "#answer1" ); 
 var answer2El = document.querySelector( "#answer2" ); 
 var answer3El = document.querySelector( "#answer3" ); 
@@ -153,6 +155,7 @@ var myMethods = {
     var displaySetting = introEl.style.display; // Variable holding the style property of introEl
     if ( !displaySetting == "none"); {          // If display setting is not "none"
       introEl.style.display = "none";           // Then set the display setting to "none"
+      headerImageEl.style.display = "none";     // Hide image header
     }  
   },
 
@@ -161,8 +164,12 @@ var myMethods = {
     var displaySetting = startGameEl.style.display; // Variable holding the style property of startGameEl
     if ( !displaySetting == "none" ) {              // If display setting is not "none"
         startGameEl.style.display = "none";         // Then set the display setting to "none"
-    } else 
+        characterEl.style.display = "none";
+      } else 
         startGameEl.style.display = "flex";         // Else set the display setting to "flex" 
+        characterEl.style.display = "flex";
+        bilboEl.style.visibility = "hidden";
+        gollumEl.style.visibility = "hidden";
         console.log("Show Game");                   // Log check
   },
 
@@ -173,7 +180,9 @@ var myMethods = {
         endGameEl.style.display = "none";         // Then set the display setting to "none"
     } else {
         endGameEl.style.display = "flex";         // Else set the display setting to "flex"
+        headerImageEl.style.display = "flex"; 
         startGameEl.style.display = "none";       // Hide startGameEl
+        characterEl.style.display = "none";     
         console.log( "*Show End*" );              // Log final counts
         console.log( "Time: " + seconds_Left);
         console.log( "FINAL Correct Score: " + correctScore );
@@ -181,40 +190,14 @@ var myMethods = {
     } 
   },
 
-  // Reveal Bilbo
-  revealBilbo: function() {
-    console.log( "*Reveal Bilbo*" );
-    bilboEl.style.display = "block";
-    startGameEl.style.display = "none"; // Hide
-  },
-
-  // Hide revealBilbo
-  hideBilbo: function() {
-    console.log( "*Hide Bilbo*" );
-    bilboEl.style.display = "none";
-    startGameEl.style.display = "flex";
-  },
-
-  // Reveal Gollum
-  revealGollum: function() {
-    console.log( "*Reveal Gollum*" );
-    gollumEl.style.display = "block";
-    startGame.style.display = "none";
-  },
-
-  // Hide revealBilbo
-  hideGollum: function() {
-    console.log( "*Hide Gollum*" );
-    gollumEl.style.display = "none";
-    startGameEl.style.display = "flex";
-  },
-
   // Reveal Gandalf
   revealGandalf: function() {
+    characterEl.style.display = "none";
     startGameEl.style.display = "none"; // Hide
     endGameEl.style.display = "none";   // Hide 
     gandalfEl.style.display = "flex";   // Reveal Gandalf 
     playAgainEl.style.display = "flex"; // Reveal playAgain button
+    headerImageEl.style.display = "flex";
   },
 
   // Display first riddle and answers 
@@ -255,13 +238,17 @@ var myMethods = {
         console.log( "wrong Answer" );                                            // Log check wrong answer
         incorrectScore++;                                                         // Increment incorrect score
         seconds_Left -= 20;                                                       // Subtract 20 sec penalty
+        gollumEl.style.visibility = "visible";
+        bilboEl.style.visibility = "hidden";
         console.log( "incorrectScore: " + incorrectScore );                       // Log incorrect score
+        console.log( gollumEl.style.display );
       } else {
         console.log( "Correct Answer" );                                          // Log check correct answer
         correctScore++;
         seconds_Left += 10;                                                       // Increment correct score
-        myMethods.revealBilbo();
-        myMethods.hideBilbo();
+        bilboEl.style.visibility = "visible";
+        gollumEl.style.visibility = "hidden";
+        console.log( bilboEl.style.display );
         console.log( "correctScore: " + correctScore );                           // Log correct score
     }
   }, 
@@ -299,6 +286,8 @@ function gameFlow(event) {
     // Local set timeout ???
     myMethods.clearInnerHTML();                   // Clear inner html elements
     pointer++;                                    // Increment the pointer value by 1
+    //gollumEl.style.display = "none";
+    //bilboEl.style.display = "none";
     myMethods.displayNextRiddle();                // Call display next riddle
 }
 startGameEl.addEventListener("click", gameFlow);  // When user clicks an answer run game flow
