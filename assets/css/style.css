@@ -233,6 +233,17 @@
     border-color: rgb(0, 255, 200);
 }
 
+#riddleNumLable {
+    color: grey;
+    font-size: 1em;
+    margin-bottom: -1em;
+}
+
+#riddle-number {
+    color: grey;
+    font-size: 1em;
+}
+
 /* Riddle container */
 #riddle {
     width: 450px;
