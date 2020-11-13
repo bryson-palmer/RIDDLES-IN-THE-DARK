@@ -346,10 +346,15 @@ function submitInitials(event) {
         input_Array = [];   // Define as an empty array
     }
 
-  var user_Initials = initialsEl.value.toUpperCase();                // Uppercasing user input value and storing in new var
-  var user_Input = {                                                 // Declare new object of user_Input
-    user_Initials: user_Initials,                                    // Holding Keys and vlaues
-    seconds_Left: seconds_Left                                       // Initials and time (secondsLeft)
+  if ( initialsEl.value == "") {
+
+    var user_Initials = "<SAURON>"
+
+  } else
+    var user_Initials = initialsEl.value.toUpperCase();              // Uppercasing user input value and storing in new var
+    var user_Input = {                                               // Declare new object of user_Input
+      user_Initials: user_Initials,                                  // Holding Keys and vlaues
+      seconds_Left: seconds_Left                                     // Initials and time (secondsLeft)
   };      
   
   console.log( "User initials or name: " + user_Initials );          // Log check initials
