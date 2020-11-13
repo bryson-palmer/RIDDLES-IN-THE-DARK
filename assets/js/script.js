@@ -311,7 +311,7 @@ function beginGame() {
   myMethods.displayRiddle1(); // Displays the first riddle and answers
 }
 playBtnEl.addEventListener("click", beginGame); // When the play button is clicked run begin game
-playBtnEl.addEventListener("ontouchstart", beginGame);
+playBtnEl.ontouchstart = beginGame;
 
 
 // Function controls behavior of game
