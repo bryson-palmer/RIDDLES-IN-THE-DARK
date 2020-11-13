@@ -6,10 +6,11 @@ var headerImageEl = document.querySelector( ".header-image" );
 var characterEl = document.querySelector( ".characterContainer" );
 var bilboEl = document.querySelector( ".bilbo" );
 var gollumEl = document.querySelector( ".gollum" );
-var playBtnEl = document.querySelector( "#play-button" ) ; 
+var playBtnEl = document.querySelector( "#play-button" ); 
 var startGameEl = document.querySelector( "#startGame" ); 
 var hiddenEl = document.querySelector( ".hidden" );
-var buttonsEl = document.querySelector( ".buttons" )
+var buttonsEl = document.querySelector( ".buttons" );
+var riddleNumEl = document.querySelector( "#riddle-number" );
 var riddleEl = document.querySelector( "#riddle" ); 
 var answer1El = document.querySelector( "#answer1" ); 
 var answer2El = document.querySelector( "#answer2" ); 
@@ -26,12 +27,15 @@ var submitBtnEl = document.querySelector( "#submitBtn" );
 var correctScore = 0;        // Counter for correct answers
 var incorrectScore = 0;      // Counter for incorrect answers
 var pointer = 0;             // Pointer used for moving through the array of objects
+var answerPointer;           // Pointer used in shuffling the answers of each riddle
+var randoAnswer = []; 
 var clickButtonContent = ""; // Variable to hold the value of the user's current answer
 
 
 var timeScore;                          // A global interval counter
 var seconds_Left = 75;                  // A global time counter set to max time
 timeRemainEl.innerHTML = seconds_Left;  // Printing time to html
+riddleNumEl.innerHTML = pointer;
 
 
 // an Array holding objects of riddles, answers, and correct answer
@@ -200,8 +204,40 @@ var myMethods = {
     headerImageEl.style.display = "flex";
   },
 
+  shuffleAnswers: function() {
+
+    if ( pointer < riddles.length ){
+      randoAnswer = [riddles[pointer].answer1, riddles[pointer].answer2, riddles[pointer].answer3, riddles[pointer].answer4];
+
+      for ( var i = randoAnswer.length-1; i > 0; i-- ) {
+        answerPointer = Math.floor(Math.random() * i );
+        var tempA = randoAnswer[i];
+        randoAnswer[i] = randoAnswer[answerPointer];
+        randoAnswer[answerPointer] = tempA;
+        riddles[pointer].answer1 = randoAnswer[0];
+        riddles[pointer].answer2 = randoAnswer[1];
+        riddles[pointer].answer3 = randoAnswer[2];
+        riddles[pointer].answer4 = randoAnswer[3];
+        console.log( randoAnswer );
+        return randoAnswer;
+      }
+    }
+  },
+
+  shuffleRiddles: function() {
+
+    for ( var i = riddles.length-1; i > 0; i-- ) {
+      pointer = Math.floor(Math.random() * i );
+      var tempR = riddles[i];
+      riddles[i] = riddles[pointer];
+      riddles[pointer] = tempR;
+    }
+  },
+
   // Display first riddle and answers 
   displayRiddle1: function() {
+    myMethods.shuffleAnswers();
+    riddleNumEl.innerHTML = pointer + 1;
     riddleEl.innerHTML = riddles[pointer].riddle;
     answer1El.innerHTML = riddles[pointer].answer1; 
     answer2El.innerHTML = riddles[pointer].answer2;
@@ -210,9 +246,10 @@ var myMethods = {
     console.log( "Riddle 1 displayed" );
   }, 
 
-  // Display next riddle                                          // Save for later use
-  displayNextRiddle: function() {                                 // Math.floor(Math.random()*riddles.length - 1)
-
+  // Display next riddle                                          
+  displayNextRiddle: function() {  
+    riddleNumEl.innerHTML = pointer + 1;
+    myMethods.shuffleAnswers();
     if ( pointer < riddles.length ) {                             // If < length, then display next riddle 
       riddleEl.innerHTML = riddles[pointer].riddle;               // Display next riddle
       answer1El.innerHTML = riddles[pointer].answer1;             //
@@ -241,14 +278,12 @@ var myMethods = {
         gollumEl.style.visibility = "visible";
         bilboEl.style.visibility = "hidden";
         console.log( "incorrectScore: " + incorrectScore );                       // Log incorrect score
-        console.log( gollumEl.style.display );
       } else {
         console.log( "Correct Answer" );                                          // Log check correct answer
         correctScore++;
         seconds_Left += 10;                                                       // Increment correct score
         bilboEl.style.visibility = "visible";
         gollumEl.style.visibility = "hidden";
-        console.log( bilboEl.style.display );
         console.log( "correctScore: " + correctScore );                           // Log correct score
     }
   }, 
@@ -256,11 +291,11 @@ var myMethods = {
   // Clear the inner HTML elements 
   // Holding current riddle and answers
   clearInnerHTML: function() {
-      riddleEl.innerHTML = "";
-      answer1El.innerHTML = "";
-      answer2El.innerHTML = "";
-      answer3El.innerHTML = "";
-      answer4El.innerHTML = "";
+    riddleEl.innerHTML = "";
+    answer1El.innerHTML = "";
+    answer2El.innerHTML = "";
+    answer3El.innerHTML = "";
+    answer4El.innerHTML = "";
   }
 
 } // End of functions object _________________________________________________________
@@ -269,6 +304,7 @@ var myMethods = {
 // Function begins the game
 function beginGame() {
   
+  myMethods.shuffleRiddles(); // Shuffle riddlese array
   myMethods.countDown();      // Starts the count down
   myMethods.hideIntro();      // Hides the start/info page
   myMethods.showGame();       // Displays the start game HTML elements
@@ -283,11 +319,8 @@ function gameFlow(event) {
   clickButtonContent = event.target.textContent;  // GET user answer with event.target
   
     myMethods.answerCheck(clickButtonContent);    // Call check answer and pass user's choice
-    // Local set timeout ???
     myMethods.clearInnerHTML();                   // Clear inner html elements
     pointer++;                                    // Increment the pointer value by 1
-    //gollumEl.style.display = "none";
-    //bilboEl.style.display = "none";
     myMethods.displayNextRiddle();                // Call display next riddle
 }
 startGameEl.addEventListener("click", gameFlow);  // When user clicks an answer run game flow
