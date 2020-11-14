@@ -57,19 +57,6 @@ function sortHighScores() {
     input_Array.sort((score1, score2) => {
         return compareObjects(score1, score2, 'seconds_Left')
     })
-    
-    
-    // for ( hsPointer = 0; hsPointer < input_Array.length; hsPointer++ ) {
-    //     tempArray.push( input_Array[hsPointer].seconds_Left );
-    // }
-    // tempArray.sort(function(a, b){return b-a });
-    
-
-    // for ( hsPointer = 0; hsPointer < input_Array.length; hsPointer++ ) {
-    //     input_Array[hsPointer].seconds_Left = tempArray[hsPointer];
-    // }
-    // console.log( tempArray );
-    // console.log( input_Array );
 }
 
 

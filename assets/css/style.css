@@ -1,7 +1,7 @@
 /* A container to hole the entire page */
 .main-container {
     width: 100vw;
-    height: 100vh;
+    text-align: center;
     padding: 1em;
 }
 
@@ -52,42 +52,86 @@
 
 /* Banner container */
 .header-image {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    margin-top: 5.5em;
+    margin-bottom: 3em
 }
 
 /* Banner image */
 .header-image img {
-    padding: 0 5em;
     z-index: -1;
+    /* padding-right: 1em; */
+}
+
+/* Starting page */
+.styleContainer {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    font-family: serif;
+    line-height: 1.5em;
+    margin-top: -3em;
+    padding-right: 1em;
+    margin-bottom: 2em;
+    padding-left: 1em;
+}
+
+/* Play button */
+#play-button {
+    width: 200px;
+    font-family: fantasy;
+    font-size: 1em;
+    color: gold;
+    text-align: center;
+    padding: 0em 1em;
+    margin: 1em 0;
+    border-color: tan;
+    border-radius: 0.5em;
+    background-color: green;
+    cursor: pointer;
+}
+
+/* Play button hover properties */
+#play-button:hover {
+    color: green;
+    background-color: lightgoldenrodyellow;
+}
+
+/* Play button focus properties */
+#play-button:focus {
+    outline: none;
+    border-color: rgb(0, 255, 200);
 }
 
 .characterContainer {
-    width: auto;
+    width: 60vw;
     display: none;
     justify-content: center;
     align-items: center;
 }
 
 .bilboContainer {
-    width: 400px;
-    margin: 5em 2em;
-    margin-left: -2em;
+    width: 20vw;
+    margin: 5em -4em;
+    margin-left: 4em;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
     font-family: fantasy;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: bolder;
     color: green;
 }
 
 .bilbo {
     visibility: visible;
-    margin-right: -3em;
+    margin-right: -1.5em;
 }
 
 .gollumContainer {
@@ -99,7 +143,7 @@
     justify-content: center;
     align-items: center;
     font-family: fantasy;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: bolder;
     color: green;
 }
@@ -107,7 +151,7 @@
 .gollum {
     width: 100px;
     visibility: visible;
-    margin: -0.1em;
+    margin: -0.5em;
 }
 
 /* Main container */
@@ -153,8 +197,9 @@
 
 /* Submit button properties */
 #submitBtn {
+    width: 200px;
     font-family: fantasy;
-    font-size: 1.2em;
+    font-size: 1em;
     color: gold;
     padding: 0em 1em;
     margin-top: 0.8em;
@@ -176,61 +221,22 @@
 }
 
 #salutations {
-    width: 400px;
+    width: 70%;
     color: black;
     font-family: fantasy;
-    font-size: 0.9em;
+    font-size: 0.8em;
     margin-top: 0.8em;
     margin-bottom: 1.5em;
 }
 
 #hobbit-cover {
     background-image: url( "/assets/Images/hobbit-cover-first-edition.jpg" );
-    height: 370px;
-    width: 450px;
+    height: 230px;
+    width: 270px;
     background-position: center;
     background-size: cover; 
     margin-top: -1.5em;
     opacity: 0.8;
-}
-
-/* Starting page */
-.styleContainer {
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.4em;
-    font-family: serif;
-    line-height: 1.5em;
-    margin-top: -3em;
-    margin-bottom: 2em;
-}
-
-/* Play button */
-#play-button {
-    font-family: fantasy;
-    font-size: 1.3em;
-    color: gold;
-    padding: 0em 1em;
-    margin: 1em 0;
-    border-color: tan;
-    border-radius: 0.5em;
-    background-color: green;
-    cursor: pointer;
-}
-
-/* Play button hover properties */
-#play-button:hover {
-    color: green;
-    background-color: lightgoldenrodyellow;
-}
-
-/* Play button focus properties */
-#play-button:focus {
-    outline: none;
-    border-color: rgb(0, 255, 200);
 }
 
 #riddleNumLable {
@@ -246,19 +252,21 @@
 
 /* Riddle container */
 #riddle {
-    width: 450px;
+    width: 100vw;
     font-family: serif;
     margin: 1em 0;
+    padding: 0 1em;
 }
 
 /* Answer button properties */
 .buttons {
+    width: 80vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: fantasy;
-    font-size: 1.3em;
+    font-size: 1.1em;
     line-height: 1.2em;
     color: gold;
     padding: 0.4em 1em;
@@ -298,7 +306,7 @@
 /* Display setting for Gandalf image */
 #gandalf {
     display: none;
-    padding: 0 1.5em;
+    padding-left: 0.5em;
 }
 
 #playAgain {
@@ -307,17 +315,15 @@
 
 /* Gandalf buttons style properties */
 .gandalfButtons{
-    width: 48%;
+    width: 200px;
+    font-size: 1em;
     font-family: fantasy;
-    /* font-size: 1.3em; */
-    /* line-height: 1em; */
     color: gold;
     text-transform: uppercase;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 0.5em 0.5em;
     margin: 1em 1em;
     border-color: tan;
     border-radius: 0.5em;
@@ -389,7 +395,7 @@ li {
 }
 
 #high-scoreBox {
-    width: 80vw;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -401,7 +407,7 @@ li {
 }
 
 .high-scoreBtn {
-    width: auto;
+    width: 200px;
     font-family: fantasy;
     color: gold;
     text-transform: uppercase;
@@ -409,8 +415,7 @@ li {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 0.5em 0.5em;
-    margin: 1em 1em;
+    margin-right: 1em;
     border-color: tan;
     border-radius: 0.5em;
     background-color: green;
@@ -432,10 +437,10 @@ li {
 }
 
 #lonely-mountain {
-    background-image: url( "/assets/images/the-lonely-mountain.png" );
+    background-image: url( "/assets/Images/the-lonely-mountain.png" );
     background-repeat: no-repeat;
     opacity: 0.35;
-    height: 73%;
+    height: 73vh;
     background-position: center;
     position: relative;
     margin-top: -31em;
@@ -450,6 +455,7 @@ li {
     .top a {font-size: 1em;}
     .top h1 {font-size: 50px;}
     .top h2 {font-size: 1.2em;}
+    /* .header-image {width: 100vw;} */
     .styleContainer {width: 400px;}
     #riddle {width: 450px; font-size: 1em; line-height: 1.4em; font-weight: initial; padding: 0 1.5em;}
     .buttons {width: 15em; font-size: 1.2em; line-height: 1.3em;}

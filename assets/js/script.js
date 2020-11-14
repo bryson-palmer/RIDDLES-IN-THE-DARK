@@ -184,7 +184,7 @@ var myMethods = {
         endGameEl.style.display = "none";         // Then set the display setting to "none"
     } else {
         endGameEl.style.display = "flex";         // Else set the display setting to "flex"
-        headerImageEl.style.display = "flex"; 
+        headerImageEl.style.display = "block"; 
         startGameEl.style.display = "none";       // Hide startGameEl
         characterEl.style.display = "none";     
         console.log( "*Show End*" );              // Log final counts
@@ -201,7 +201,7 @@ var myMethods = {
     endGameEl.style.display = "none";   // Hide 
     gandalfEl.style.display = "flex";   // Reveal Gandalf 
     playAgainEl.style.display = "flex"; // Reveal playAgain button
-    headerImageEl.style.display = "flex";
+    headerImageEl.style.display = "block";
   },
 
   shuffleAnswers: function() {
