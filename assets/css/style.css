@@ -79,11 +79,11 @@
 /* Play button */
 #play-button {
     width: 200px;
-    font-family: fantasy;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1em;
     color: gold;
     text-align: center;
-    padding: 0em 1em;
+    padding: 0 0em;
     margin: 1em 0;
     border-color: tan;
     border-radius: 0.5em;
@@ -454,7 +454,7 @@ li {
     .gollumContainer {margin-right: 0em; margin-left: 5em;}
     #gandalf {width: 100%; height: 100%; padding: 0 1em;}
 
-    .header-image img {padding-right: 0em;}
+    .header-image img {padding-right: 2.5em;}
 
     #high-scoreBox {font-size: 1.3em;}
 }   
