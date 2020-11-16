@@ -345,6 +345,7 @@
 /*--------------------------------------------------------------------------------*/
 /* Styling for highscore elements */
 #title {
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -352,7 +353,7 @@
     color: green;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
-    font-size: 4em;
+    font-size: 2em;
     text-decoration: underline;
     text-decoration-color: green;
     margin: 2em auto 0em auto;
@@ -366,7 +367,7 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bolder;
     color: green;
-    font-size: 2em;
+    font-size: 1em;
     margin: 1em auto;
     padding: 1em;
     position: relative;
@@ -377,11 +378,9 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
-    
 }
 
 li {
-    
     text-shadow: -3px 4px 4px grey;
     padding: 0.3em 0;
 }
@@ -392,9 +391,9 @@ li {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    font-size: 1.3em;
-    font-family: serif;
-    line-height: 1.5em;
+    font-size: 1em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1em;
     margin: -1em auto;
 }
 
