@@ -234,7 +234,7 @@ body > * {
 }
 
 #salutations {
-    width: 70%;
+    width: 80%;
     color: black;
     font-family: serif;
     font-size: 1em;
@@ -438,7 +438,7 @@ li {
     border-radius: 0.5em;
     background-color: green;
     position: relative;
-    bottom: -18em;
+    bottom: -17em;
     cursor: pointer;
     z-index: 3;
     
