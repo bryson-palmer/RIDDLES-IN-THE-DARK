@@ -223,7 +223,7 @@
 }
 
 #hobbit-cover {
-    background-image: url( "/assets/Images/hobbit-cover-first-edition.jpg" );
+    background-image: url( "./assets/Images/hobbit-cover-first-edition.jpg" );
     height: 310px;
     width: 360px;
     background-position: center;
