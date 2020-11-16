@@ -20,8 +20,7 @@ body > * {
 .main-container {
     width: 100%;
     height: 100vh;
-    text-align: center;
-    padding: 1em;
+    display: block;
 }
 
 /* Background color for the hearder */
@@ -108,7 +107,6 @@ body > * {
     line-height: 1.5em;
     margin-top: -3em;
     margin-bottom: 2em;
-    padding: 2em;
 }
 
 /* Play button */
@@ -216,7 +214,7 @@ body > * {
     line-height: 1.5em;
     border-color: lightgoldenrodyellow;
     background-color: lightgoldenrodyellow;
-    margin-top: 2em;
+    margin-top: 3em;
     margin-bottom: 1em;
 }
 
@@ -256,13 +254,10 @@ body > * {
     color: black;
     font-family: serif;
     font-size: 1.1em;
-    margin-top: 2em;
-    /* margin-bottom: 10em; */
+    margin: 2em 0;
 }
 
 #hobbit-cover {
-    position: relative;
-    bottom: 1em;
     margin-top: 1.5em;
     opacity: 0.8;
 }
