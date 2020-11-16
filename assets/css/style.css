@@ -24,7 +24,6 @@
 /* High score link focus properties */
 .top a:focus {
     outline-color: rgb(0, 255, 200);
-    /* background-color: rgb(0, 255, 200);  */
 }
 
 /* Riddles in the dark title */
@@ -34,6 +33,7 @@
     color: gold;
     text-shadow: 3px 0px 0px tan ;
     padding-top: 1.5em;
+    z-index: 1;
 }
 
 /* Timer */
@@ -52,17 +52,13 @@
 
 /* Banner container */
 .header-image {
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: center; */
-    margin-top: 5.5em;
-    margin-bottom: 3em
+    margin-top: 3.5em;
 }
 
 /* Banner image */
 .header-image img {
     z-index: -1;
-    /* padding-right: 1em; */
+    padding-right: 0em;
 }
 
 /* Starting page */
@@ -76,9 +72,8 @@
     font-family: serif;
     line-height: 1.5em;
     margin-top: -3em;
-    padding-right: 1em;
     margin-bottom: 2em;
-    padding-left: 1em;
+    padding: 2em;
 }
 
 /* Play button */
@@ -109,16 +104,17 @@
 }
 
 .characterContainer {
-    width: 60vw;
+    max-width: 500px;
     display: none;
     justify-content: center;
-    align-items: center;
+    align-content: center;
+    margin-top: 7em;
+    margin-bottom: 3em;
 }
 
 .bilboContainer {
-    width: 20vw;
-    margin: 5em -4em;
-    margin-left: 4em;
+    width: 100vw;
+    /* margin-right: 1em; */
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -131,27 +127,26 @@
 
 .bilbo {
     visibility: visible;
-    margin-right: -1.5em;
+    margin-right: -2em;
 }
 
 .gollumContainer {
-    width: 400px;
-    margin-top: 2em;
-    margin-left: 2em;
+    width: 100vw;
+    /* margin-left: 1em; */
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     font-family: fantasy;
-    font-size: 1.3em;
+    
     font-weight: bolder;
     color: green;
 }
 
 .gollum {
-    width: 100px;
     visibility: visible;
-    margin: -0.5em;
+    width: 60%;
+    font-size: 1.3em;
 }
 
 /* Main container */
@@ -225,17 +220,17 @@
     color: black;
     font-family: fantasy;
     font-size: 0.8em;
-    margin-top: 0.8em;
+    margin-top: 2em;
     margin-bottom: 1.5em;
 }
 
 #hobbit-cover {
     background-image: url( "/assets/Images/hobbit-cover-first-edition.jpg" );
-    height: 230px;
-    width: 270px;
+    height: 310px;
+    width: 360px;
     background-position: center;
     background-size: cover; 
-    margin-top: -1.5em;
+    margin-top: -1em;
     opacity: 0.8;
 }
 
@@ -306,7 +301,7 @@
 /* Display setting for Gandalf image */
 #gandalf {
     display: none;
-    padding-left: 0.5em;
+    padding-left: 0em;
 }
 
 #playAgain {
@@ -449,29 +444,38 @@ li {
 
 /*--------------------------------------------------------------------------------*/
 
-/* Increases font size of header 1 in top > 480px */
+/* Increases font size of header 1 in top > 375px */
 /* Riddle container responsive styles */
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 375px) {
     .top a {font-size: 1em;}
     .top h1 {font-size: 50px;}
     .top h2 {font-size: 1.2em;}
-    /* .header-image {width: 100vw;} */
     .styleContainer {width: 400px;}
-    #riddle {width: 450px; font-size: 1em; line-height: 1.4em; font-weight: initial; padding: 0 1.5em;}
+    #riddle {width: 360px; font-size: 1em; line-height: 1.4em; font-weight: initial; padding: 0 1.5em;}
     .buttons {width: 15em; font-size: 1.2em; line-height: 1.3em;}
+    .bilboContainer {margin-left: -3em; margin-right: 3em;}
+    .gollumContainer {margin-right: 0em; margin-left: 5em;}
+    #gandalf {width: 100%; height: 100%; padding: 0 1em;}
+
+    .header-image img {padding-right: 0em;}
 
     #high-scoreBox {font-size: 1.3em;}
 }   
 
-/* Increases font size and padding top of header 1 in top > 900px */
+/* Increases font size and padding top of header 1 in top > 768px */
 /* Riddle container responsive styles */
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 768px) {
     .top a {font-size: 1.5em;}
     .top h1 {font-size: 60px; padding-top: 1em;}
     .top h2 {font-size: 1.5em;}
     .styleContainer {width: 450px;}
     #riddle {width: 500px; padding: 0;}
     .buttons {width: 18em; font-size: 1.3em;}
+    .bilboContainer {margin-left: 0em; margin-right: 3em;}
+    .gollumContainer {margin-right: 0em; margin-left: 5em;}
+    #gandalf {width: 150%; height: 100%; padding: 0 1em;}
+
+    .header-image img {padding-right: 0em;}
 
     #high-scoreBox {font-size: 1.4em;}
 }
