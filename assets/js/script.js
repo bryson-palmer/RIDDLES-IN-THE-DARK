@@ -184,7 +184,7 @@ var myMethods = {
         endGameEl.style.display = "none";         // Then set the display setting to "none"
     } else {
         endGameEl.style.display = "flex";         // Else set the display setting to "flex"
-        headerImageEl.style.display = "block"; 
+        headerImageEl.style.display = "none"; 
         startGameEl.style.display = "none";       // Hide startGameEl
         characterEl.style.display = "none";     
         console.log( "*Show End*" );              // Log final counts

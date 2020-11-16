@@ -18,51 +18,66 @@ body > * {
 
 /* A container to hole the entire page */
 .main-container {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     text-align: center;
     padding: 1em;
+}
+
+#bgColor {
+    width: 100vw;
+    height: 130px;
+    background-color: rgb(102, 143, 92);  
+    margin-top: -1em;
+    margin-right: -3em;
+    margin-left: -1em;
 }
 
 /* Header container */
 .top {
     height: 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
 /* High score link */
 .top a {
-    color: green;
+    color:  rgb(13, 119, 13);
     text-decoration: none;
     text-transform: uppercase;
-    margin-top: 1.5em;
+    margin-top: 2em;
+    margin-left: 1.5em;
     z-index: 5;
 }
 
 /* High score link focus properties */
 .top a:focus {
-    outline-color: rgb(0, 255, 200);
+    outline-color: gold;
+    border-radius: 5px;
+
 }
 
 /* Riddles in the dark title */
 .top h1 {
     text-align: center;
-    font-size: 35px !important;
-    color: gold;
-    text-shadow: 3px 0px 0px tan ;
+    font-size: 45px !important;
+    color: rgb(159, 219, 80);
+    text-shadow: 3px 0px 0px rgb(167, 131, 55);
     padding-top: 1.5em;
+    padding-right: 0.5em;
     z-index: 1;
 }
 
 /* Timer */
-.top h2 {
-    color: green;
-    padding-top: 2em;
-    padding-left: 0.5em;
+#bgColor h2 {
+    color: white;
     display: flex;
-    z-index: 5;
+    position: fixed;
+    top: 3.7em;
+    left: 0.5em;
+    font-size: 1.3em;
+    z-index: 3;
 }
 
 /* Counter time remaining */
@@ -78,7 +93,6 @@ body > * {
 /* Banner image */
 .header-image img {
     z-index: -1;
-    padding-right: 0em;
 }
 
 /* Starting page */
@@ -101,26 +115,26 @@ body > * {
     width: 200px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1em;
-    color: gold;
+    color: goldenrod;
     text-align: center;
     padding: 0.3em 0.5em;
     margin: 1em 0;
     border-color: tan;
     border-radius: 0.5em;
-    background-color: green;
+    background-color: rgb(13, 119, 13);
     cursor: pointer;
 }
 
 /* Play button hover properties */
 #play-button:hover {
-    color: green;
+    color:  rgb(13, 119, 13);
     background-color: lightgoldenrodyellow;
 }
 
 /* Play button focus properties */
 #play-button:focus {
     outline: none;
-    border-color: rgb(0, 255, 200);
+    border: 2px solid gold;
 }
 
 .characterContainer {
@@ -128,7 +142,7 @@ body > * {
     display: none;
     justify-content: center;
     align-content: center;
-    margin-top: 7em;
+    margin-top: 5em;
     margin-bottom: 3em;
 }
 
@@ -194,19 +208,21 @@ body > * {
 
 /* Style for initials in the form input */
 #initials {
-    color: green;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(13, 119, 13);
+    font-family: serif;
     font-size: 1.4em;
     font-weight: bold;
     line-height: 1.5em;
     border-color: lightgoldenrodyellow;
     background-color: lightgoldenrodyellow;
+    margin-top: 3.5em;
+    margin-bottom: 1em;
 }
 
 /* Initials focus properties */
 #initials:focus {
     outline: none;
-    border-color: rgb(0, 255, 200); 
+    border: 3px solid gold; 
 }
 
 /* Submit button properties */
@@ -214,38 +230,38 @@ body > * {
     width: 200px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1em;
-    color: gold;
+    color: goldenrod;
     padding: 0.3em 0.5em;
     margin-top: 0.8em;
-    border-color: tan;
+    border-color: tan;  
     border-radius: 0.5em;
-    background-color: green;
+    background-color: rgb(13, 119, 13);;
 }
 
 /* Submit button hover properties */
 #submitBtn:hover {
-    color: green;
+    color: rgb(13, 119, 13);;
     background-color: lightgoldenrodyellow;
 }
 
 /* Submit button focus properties */
 #submitBtn:focus {
     outline: none;
-    border-color: rgb(0, 255, 200);
+    border: 3px solid gold;
 }
 
 #salutations {
     width: 80%;
     color: black;
     font-family: serif;
-    font-size: 1em;
+    font-size: 1.1em;
     margin-top: 2em;
     margin-bottom: 1.5em;
 }
 
 #hobbit-cover {
-    background-position: center;
-    background-size: cover; 
+    position: absolute;
+    bottom: 1em;
     margin-top: -1em;
     opacity: 0.8;
 }
@@ -283,25 +299,25 @@ body > * {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.1em;
     line-height: 1.2em;
-    color: gold;
+    color: goldenrod;
     padding: 0.3em 0.5em;
     margin: 0.1em 0;
     border-color: tan;
     border-radius: 0.5em;
-    background-color: green;
+    background-color: rgb(13, 119, 13);;
     cursor: pointer;
 }
 
 /* Answer button hover properties */
 .buttons:hover {
-    color: green;
+    color: rgb(13, 119, 13);;
     background-color: lightgoldenrodyellow;
 }
 
 /* Answer button focus properties */
 .buttons:focus {
     outline: none;
-    border-color: rgb(0, 255, 200);
+    border: 3px solid gold;
 }
 
 /* Styling for Gandalf container */
@@ -333,7 +349,7 @@ body > * {
     width: 200px;
     font-size: 1em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: gold;
+    color: goldenrod;
     text-transform: uppercase;
     display: flex;
     flex-direction: row;
@@ -343,27 +359,27 @@ body > * {
     padding: 0.3em 0.5em;
     border-color: tan;
     border-radius: 0.5em;
-    background-color: green;
+    background-color: rgb(13, 119, 13);;
     cursor: pointer;
 }
 
 /* Styling properties for link in Gandalf button */
 .gandalfButtons a {
-    color: gold;
+    color: goldenrod;
     text-decoration: none;
     text-transform: uppercase;
 }
 
 /* Answer button hover properties */
 .gandalfButtons:hover {
-    color: green;
+    color: rgb(13, 119, 13);;
     background-color: lightgoldenrodyellow;
 }
 
 /* Answer button focus properties */
 .gandalfButtons:focus {
     outline: none;
-    border-color: rgb(0, 255, 200);
+    border: 3px solid gold;
 }
 
 /*--------------------------------------------------------------------------------*/
@@ -374,12 +390,12 @@ body > * {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: green;
+    color: rgb(13, 119, 13);;
     font-family: serif;
     font-weight: bold;
     font-size: 3em;
     text-decoration: underline;
-    text-decoration-color: green;
+    text-decoration-color: rgb(13, 119, 13);;
     margin: 2em auto 0em auto;
 }
 
@@ -390,7 +406,7 @@ body > * {
     justify-content: center;
     font-family: serif;
     font-weight: bolder;
-    color: green;
+    color: rgb(13, 119, 13);;
     font-size: 1.5em;
     margin: 1em auto;
     padding: 1em;
@@ -414,6 +430,7 @@ li {
 
 #high-scoreBox {
     width: 100vw;
+    max-height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -428,7 +445,7 @@ li {
 .high-scoreBtn {
     width: 175px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: gold;
+    color: goldenrod;
     text-transform: uppercase;
     display: flex;
     flex-direction: row;
@@ -438,9 +455,9 @@ li {
     padding: 0.3em 0.5em;
     border-color: tan;
     border-radius: 0.5em;
-    background-color: green;
+    background-color: rgb(13, 119, 13);;
     position: relative;
-    bottom: -15em;
+    bottom: -10em;
     cursor: pointer;
     z-index: 3;
     
@@ -448,14 +465,14 @@ li {
 
 /* Answer button hover properties */
 .high-scoreBtn:hover {
-    color: green;
+    color: rgb(13, 119, 13);;
     background-color: lightgoldenrodyellow;
 }
 
 /* Answer button focus properties */
 .high-scoreBtn:focus {
     outline: none;
-    border-color: rgb(0, 255, 200);
+    border: 3px solid gold;
 }
 
 #lonely-mountain {
@@ -464,7 +481,7 @@ li {
     background-position: center;
     position: relative;
     bottom: 0em;
-    margin-top: -7em;
+    margin-top: -15em;
     z-index: -2;
 }
 
@@ -474,7 +491,7 @@ li {
 /* Riddle container responsive styles */
 @media only screen and (min-width: 375px) {
     .top a {font-size: 1em;}
-    .top h1 {font-size: 50px;}
+    .top h1 {font-size: 35px;}
     .top h2 {font-size: 1.2em;}
     .styleContainer {width: 400px;}
     #riddle {width: 360px; font-size: 1em; line-height: 1.4em; font-weight: initial; padding: 0 1.5em;}
@@ -492,7 +509,7 @@ li {
 /* Riddle container responsive styles */
 @media only screen and (min-width: 768px) {
     .top a {font-size: 1.5em;}
-    .top h1 {font-size: 60px; padding-top: 1em;}
+    .top h1 {font-size: 50px !important; padding-top: 1em;}
     .top h2 {font-size: 1.5em;}
     .styleContainer {width: 450px;}
     #riddle {width: 500px; padding: 0;}
@@ -510,7 +527,7 @@ li {
 /* Riddle container responsive styles */
 @media only screen and (min-width: 1200px) {
     .top a {font-size: 2em;}
-    .top h1 {font-size: 70px;}
+    .top h1 {font-size: 65px !important;}
     .top h2 {font-size: 2em;}
     .styleContainer {width: 500px;}
     #riddle {width: 550px;}
