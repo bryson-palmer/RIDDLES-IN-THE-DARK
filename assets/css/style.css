@@ -263,8 +263,9 @@ body > * {
 /* Riddle container */
 #riddle {
     width: 100vw;
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-family: serif;
+    font-weight: bolder;
     line-height: 1.5em;
     margin-top: 2.3em;
     margin-bottom: 0.5em;
@@ -438,7 +439,7 @@ li {
     border-radius: 0.5em;
     background-color: green;
     position: relative;
-    bottom: -17em;
+    bottom: -15em;
     cursor: pointer;
     z-index: 3;
     
