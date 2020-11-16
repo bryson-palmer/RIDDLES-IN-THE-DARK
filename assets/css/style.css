@@ -429,7 +429,7 @@ li {
 }
 
 #lonely-mountain {
-    background-image: url( "/assets/Images/the-lonely-mountain.png" );
+    background-image: url( "assets/Images/the-lonely-mountain.png" );
     background-repeat: no-repeat;
     opacity: 0.35;
     height: 73vh;
