@@ -173,7 +173,7 @@
 /* Style for initials in the form input */
 #initials {
     color: green;
-    font-family: fantasy;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.4em;
     font-weight: bold;
     line-height: 1.5em;
@@ -190,7 +190,7 @@
 /* Submit button properties */
 #submitBtn {
     width: 200px;
-    font-family: fantasy;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1em;
     color: gold;
     padding: 0em 1em;
@@ -257,7 +257,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: fantasy;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.1em;
     line-height: 1.2em;
     color: gold;
@@ -309,7 +309,7 @@
 .gandalfButtons{
     width: 200px;
     font-size: 1em;
-    font-family: fantasy;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: gold;
     text-transform: uppercase;
     display: flex;
@@ -400,7 +400,7 @@ li {
 
 .high-scoreBtn {
     width: 200px;
-    font-family: fantasy;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: gold;
     text-transform: uppercase;
     display: flex;
