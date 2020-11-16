@@ -38,6 +38,7 @@ body > * {
     text-decoration: none;
     text-transform: uppercase;
     margin-top: 1.5em;
+    z-index: 5;
 }
 
 /* High score link focus properties */
@@ -48,7 +49,7 @@ body > * {
 /* Riddles in the dark title */
 .top h1 {
     text-align: center;
-    font-size: 50px;
+    font-size: 35px !important;
     color: gold;
     text-shadow: 3px 0px 0px tan ;
     padding-top: 1.5em;
@@ -61,7 +62,7 @@ body > * {
     padding-top: 2em;
     padding-left: 0.5em;
     display: flex;
-
+    z-index: 5;
 }
 
 /* Counter time remaining */
@@ -71,7 +72,7 @@ body > * {
 
 /* Banner container */
 .header-image {
-    margin-top: 3.5em;
+    z-index: -3;
 }
 
 /* Banner image */
@@ -252,7 +253,7 @@ body > * {
 #riddleNumLable {
     color: grey;
     font-size: 1em;
-    margin: -1.5em 0;
+    margin: -2.5em 0;
 }
 
 #riddle-number {
@@ -267,7 +268,7 @@ body > * {
     font-family: serif;
     font-weight: bolder;
     line-height: 1.5em;
-    margin-top: 2.3em;
+    margin-top: 2.5em;
     margin-bottom: 0.5em;
     padding: 0 1em;
 }
