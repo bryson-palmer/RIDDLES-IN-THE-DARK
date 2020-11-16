@@ -24,6 +24,7 @@ body > * {
     padding: 1em;
 }
 
+/* Background color for the hearder */
 #bgColor {
     width: 100vw;
     height: 130px;
