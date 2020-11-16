@@ -26,7 +26,7 @@ body > * {
 
 /* Background color for the hearder */
 #bgColor {
-    width: 110vw;
+    width: 100vw;
     height: 130px;
     background-color: rgb(102, 143, 92);  
     margin-top: -1em;
