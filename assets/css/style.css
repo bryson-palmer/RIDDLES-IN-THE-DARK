@@ -30,8 +30,8 @@ body > * {
     height: 130px;
     background-color: rgb(102, 143, 92);  
     margin-top: -1em;
-    margin-right: -3em;
-    margin-left: -1em;
+    /* margin-right: 3em; */
+    margin-left: -0.5em;
 }
 
 /* Header container */
