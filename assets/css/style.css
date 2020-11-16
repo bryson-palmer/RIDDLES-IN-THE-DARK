@@ -252,12 +252,12 @@ body > * {
 }
 
 #salutations {
-    width: 80%;
+    width: 100vw;
     color: black;
     font-family: serif;
     font-size: 1.1em;
     margin-top: 2em;
-    margin-bottom: 1.5em;
+    /* margin-bottom: 10em; */
 }
 
 #hobbit-cover {
