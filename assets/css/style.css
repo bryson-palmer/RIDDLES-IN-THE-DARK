@@ -118,7 +118,7 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    font-family: fantasy;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.3em;
     font-weight: bolder;
     color: green;
@@ -135,7 +135,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    font-family: fantasy;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     
     font-weight: bolder;
     color: green;
@@ -215,7 +215,7 @@
 #salutations {
     width: 70%;
     color: black;
-    font-family: fantasy;
+    font-family: serif;
     font-size: 0.8em;
     margin-top: 2em;
     margin-bottom: 1.5em;
@@ -350,7 +350,7 @@
     justify-content: center;
     align-items: center;
     color: green;
-    font-family: fantasy;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
     font-size: 4em;
     text-decoration: underline;
@@ -363,7 +363,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    font-family: fantasy;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bolder;
     color: green;
     font-size: 2em;
