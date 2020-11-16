@@ -357,7 +357,7 @@
     font-size: 3em;
     text-decoration: underline;
     text-decoration-color: green;
-    margin: 3em auto 0em auto;
+    margin: 2em auto 0em auto;
 }
 
 #list-container {
@@ -372,6 +372,7 @@
     margin: 1em auto;
     padding: 1em;
     position: relative;
+    z-index: 3;
 }
 
 #initials-List {
@@ -379,11 +380,13 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
+    z-index: 3;
 }
 
 li {
     text-shadow: -3px 4px 4px grey;
     padding: 0.3em 0;
+    z-index: 3;
 }
 
 #high-scoreBox {
@@ -396,6 +399,7 @@ li {
     font-family: serif;
     line-height: 1em;
     margin: -1em auto;
+    z-index: 3;
 }
 
 .high-scoreBtn {
@@ -412,6 +416,8 @@ li {
     border-color: tan;
     border-radius: 0.5em;
     background-color: green;
+    position: relative;
+    bottom: -18em;
     cursor: pointer;
     z-index: 3;
     
@@ -430,14 +436,13 @@ li {
 }
 
 #lonely-mountain {
-    background-image: url( "assets/Images/the-lonely-mountain.png" );
-    background-repeat: no-repeat;
     opacity: 0.35;
-    height: 73vh;
+    height: 55vh;
     background-position: center;
     position: relative;
-    margin-top: -31em;
-    z-index: -1;
+    bottom: 0em;
+    margin-top: -7em;
+    z-index: -2;
 }
 
 /*--------------------------------------------------------------------------------*/
