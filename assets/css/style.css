@@ -246,7 +246,9 @@
 /* Riddle container */
 #riddle {
     width: 100vw;
+    font-size: 1.2em;
     font-family: serif;
+    line-height: 1.5em;
     margin: 1em 0;
     padding: 0 1em;
 }
