@@ -371,14 +371,6 @@
 }
 
 /*--------------------------------------------------------------------------------*/
-/* Start Footer page styling */
-
-#bottomColor {
-    height: 50px;
-    background-color:  rgb(102, 143, 92);    
-}
-
-/*--------------------------------------------------------------------------------*/
 /* Start High Score page styling */
 
 #title {
@@ -433,7 +425,8 @@ li {
     font-size: 1em;
     font-family: serif;
     line-height: 1em;
-    margin: 1em 1em;
+    margin: 1em 0em;
+    padding-left: 1em;
     z-index: 1;
 }
 
@@ -473,6 +466,7 @@ li {
     height: 55vh;
     background-position: center;
     margin-top: -20em;
+    margin-bottom: -5em;
     z-index: -1;
 }
 
