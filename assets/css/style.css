@@ -310,7 +310,7 @@
 
 /* Styling for Gandalf container */
 #gandalfContainer {
-    width: 400px;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
