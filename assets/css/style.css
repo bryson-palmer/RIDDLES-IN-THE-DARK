@@ -46,7 +46,7 @@
     padding-right: 0.5em;
 }
 
-/* Timer */
+/* Timer text*/
 #bgColor h2 {
     color: white;
     display: flex;
@@ -56,13 +56,14 @@
     font-size: 1.3em;
 }
 
-/* Counter time remaining */
+/* Timer element time remaining */
 .top #time-remaining {
     display: block;
 }
 
 /*--------------------------------------------------------------------------------*/
 /* Start Header Image page styling */
+/* Pipe Sword Ring Mountain */
 
 .header-image {
     margin-bottom: -6em;
@@ -80,7 +81,7 @@
     align-items: center;
 }
 
-/* Starting page */
+/* Generic container styling */
 .styleContainer {
     display: flex;
     flex-direction: column;
@@ -93,18 +94,18 @@
     padding: 0 2em;
 }
 
-/* Display properity of the intro element */
+/* Intro display porperty */
 #intro {
     display: flex;
     margin-bottom: -3em;
 }
 
-/* Setting game page initial display to none */
+/* Start game display property */
 #startGame {
     display: none;
 }
 
-/* Setting end game page initial display to none */
+/* End game display property */
 #endGame {
     display: none;
 }
@@ -140,8 +141,9 @@
 }
 
 /*--------------------------------------------------------------------------------*/
-/* Start Character page styling */
+/* Start game Character page styling */
 
+/* Character container */
 .characterContainer {
     display: none;
     justify-content: center;
@@ -149,6 +151,7 @@
     margin-top: 0em;
 }
 
+/* Bilbo image and container */
 .bilboContainer {
     width: 100vw;
     display: flex;
@@ -161,11 +164,13 @@
     color: green;
 }
 
+/* Bilbo display property and text styling */
 .bilbo {
     visibility: visible;
     margin-right: -2em;
 }
 
+/* Gollum image and container */
 .gollumContainer {
     width: 100vw;
     display: flex;
@@ -177,6 +182,7 @@
     color: green;
 }
 
+/* Gullum display property and text styling */
 .gollum {
     visibility: visible;
     width: 60%;
@@ -188,12 +194,14 @@
 /*--------------------------------------------------------------------------------*/
 /* Start Riddles page styling */
 
+/* Riddles number label */
 #riddleNumLable {
     color: grey;
     font-size: 1em;
     margin-top: 2.5em;
 }
 
+/* Riddle number */
 #riddle-number {
     color: grey;
     font-size: 1em;
@@ -246,7 +254,7 @@
 /*--------------------------------------------------------------------------------*/
 /* Start Initials submition page styling */
 
-/* Style for initials in the form input */
+/* Styles for the input of initials */
 #initials {
     color: rgb(13, 119, 13);
     font-family: serif;
@@ -290,6 +298,7 @@
     border: 3px solid gold;
 }
 
+/* Salutations styling */
 #salutations {
     width: 100vw;
     color: black;
@@ -299,6 +308,7 @@
     padding: 0 1em;
 }
 
+/* Hobbit cover image styling container */
 #hobbit-cover {
     margin-top: 1.5em;
     margin-bottom: 1.7em;
@@ -322,17 +332,18 @@
     margin-bottom: 2em;
 }
 
-/* Display setting for Gandalf image */
+/* Gandalf image display setting */
 #gandalf {
     display: none;
     padding-left: 0em;
 }
 
+ /* Play again button display setting */
 #playAgain {
     display: none;
 }
 
-/* Gandalf buttons style properties */
+/* Gandalf button style properties */
 .gandalfButtons{
     width: 200px;
     font-size: 1em;
@@ -351,20 +362,20 @@
     cursor: pointer;
 }
 
-/* Styling properties for link in Gandalf button */
+/* Gandalf play again button */
 .gandalfButtons a {
     color: goldenrod;
     text-decoration: none;
     text-transform: uppercase;
 }
 
-/* Answer button hover properties */
+/* Gandalf play again button hover properties */
 .gandalfButtons:hover {
     color: rgb(13, 119, 13);;
     background-color: lightgoldenrodyellow;
 }
 
-/* Answer button focus properties */
+/* Gandalf play again button focus properties */
 .gandalfButtons:focus {
     outline: none;
     border: 3px solid gold;
@@ -373,8 +384,8 @@
 /*--------------------------------------------------------------------------------*/
 /* Start High Score page styling */
 
+/* High scores title */
 #title {
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -388,6 +399,7 @@
     margin: 2em auto 0em auto;
 }
 
+/* Container to hold the list of high scores */
 #list-container {
     width: 100vw;
     display: flex;
@@ -403,7 +415,9 @@
     z-index: 1;
 }
 
+/* Unordered list container for initials */
 #initials-List {
+    border-color: black;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -411,12 +425,14 @@
     z-index: 1;
 }
 
+/* Initials list */
 li {
     text-shadow: -3px 4px 4px grey;
     padding: 0.3em 0;
     z-index: 1;
 }
 
+/* container holds the two buttons on high scores page */
 #high-scoreBox {
     display: flex;
     flex-direction: row;
@@ -430,6 +446,7 @@ li {
     z-index: 1;
 }
 
+/* High score button styling */
 .high-scoreBtn {
     width: 175px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -449,18 +466,19 @@ li {
     
 }
 
-/* Answer button hover properties */
+/* High score button hover properties */
 .high-scoreBtn:hover {
     color: rgb(13, 119, 13);;
     background-color: lightgoldenrodyellow;
 }
 
-/* Answer button focus properties */
+/* High score button focus properties */
 .high-scoreBtn:focus {
     outline: none;
     border: 3px solid gold;
 }
 
+/* Lonely Mountain image */
 #lonely-mountain {
     opacity: 0.35;
     height: 55vh;
@@ -473,7 +491,7 @@ li {
 /*--------------------------------------------------------------------------------*/
 /* Start Media Queries styling */
 
-/* > 375px */
+/* For displays > 375px */
 @media only screen and (min-width: 375px) {
     .top a {font-size: 1em;}
     .top h1 {font-size: 35px;}
@@ -489,7 +507,7 @@ li {
     #high-scoreBox {font-size: 1.3em;}
 }   
 
-/* > 768px */
+/* For displays > 768px */
 @media only screen and (min-width: 768px) {
     .top a {font-size: 1.5em;}
     .top h1 {font-size: 50px !important; padding-top: 1em;}
@@ -505,7 +523,7 @@ li {
     #high-scoreBox {font-size: 1.4em;}
 }
 
-/* > 1200px */
+/* For displays > 1200px */
 @media only screen and (min-width: 1200px) {
     .top a {font-size: 2em;}
     .top h1 {font-size: 65px !important;}

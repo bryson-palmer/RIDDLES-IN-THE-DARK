@@ -4,46 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Style sheet links -->
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Tab title -->
     <title>HIGHSCORES</title>
+    <!-- Favicon from icons8.com -->
     <link rel="icon" type="image/png" href="https://img.icons8.com/office/30/000000/one-ring.png" />
 </head>
+
 <body>
 
-    <!-- Container holds all sections -->
+    <!-- Container for the entire page -->
     <div class="main-container">
+        <!-- Background color for the header -->
         <div id="bgColor">
             <!-- Header with highscore link and timer -->
             <header class="top">
+                <!-- High sores link -->
                 <a href="index.html"><img src="https://img.icons8.com/office/30/000000/one-ring.png" alt="The one ring to rule them all" width="35px" height="35px"></a>
+                <!-- Title of the game -->
                 <h1>Riddles In The Dark</h1>
             </header>
+            <!-- Timer -->
             <div>
                 <h2>Time: <span id="time-remaining"></span></h2>
             </div>
-        </div>
+        </div> <!-- End of Header -->
 
-        <!-- Label container -->
+        <!-- High score title container -->
         <div id="title">
+            <!-- High score title text -->
             <p>High Scores</p>
         </div>
 
         <!-- Container to hold list of high scores -->
         <div id="list-container">
+            <!-- Unordered list container -->
             <ul id="initials-List"></ul>
         </div>
 
-         <!-- background picture -->
+         <!-- Lonely Mountain image from https://www.jing.fm/iclip/TTwoiR_the-hobbit-smaug-kids-t-shirt-smaug-and/ -->
          <img src="./assets/Images/the-lonely-mountain.png" alt="The lonely mountain" id="lonely-mountain" width="375px" height="">
         
-        <!-- Container to hold `playAgain` and `clearAll` -->
+        <!-- Container to hold playAgain and clearAll buttons -->
         <div id="high-scoreBox">
+            <!-- Play again button -->
             <button id="play-Again" class="high-scoreBtn">Play Again</button>
+            <!-- Clear all button -->
             <button id="clear-all" class="high-scoreBtn">CLEAR ALL</button>
         </div> 
     </div>
 
+    <!-- High scores script link -->
     <script src="assets/js/highscore.js"></script>
 
 </body>
