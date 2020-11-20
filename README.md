@@ -1,3 +1,4 @@
+## <a id="back-to-top" > </a>
 # RIDDLES-IN-THE-DARK
 ## Is the game of riddles btween Bilbo and Gollum from J.R.R.Tolkien's **THE HOBBIT** chapter five.
 __________________________
@@ -46,25 +47,25 @@ __________________________
 
 ## 📸 <a id="screenshot-of-intro"></a> Screenshot Intro
 
-![screenshot-of-intro]()
+![screenshot-of-intro](assets/Images/1Screenshot-Intro.png)
 
 ## 📸 <a id="screenshot-of-game"></a> Screenshot Game
 
-![screenshot-of-game]()
+![screenshot-of-game](assets/Images/2Screenshot-game.png)
 
 ## 📸 <a id="screenshot-of-gandalf"></a> Screenshot Gandalf
 
-![screenshot-of-gandalf]()
+![screenshot-of-gandalf](assets/Images/3Screenshot-gandalf.png)
 
 ## 📸 <a id="screenshot-of-endscreen"></a> Screenshot Endscreen
 
-![screenshot-of-endscreen]()
+![screenshot-of-endscreen](assets/Images/4Screenshot-endScreen.png)
 
 ## 📸 <a id="screenshot-of-highscores"></a> Screenshot High Scores
 
-![screenshot-of-highscores]()
+![screenshot-of-highscores](assets/Images/5Screenshot-highScores.png)
 
-## <a id="future-tickets"></a> 🔍 Screenshot High Scoress
+## <a id="future-tickets"></a> 🔍 Future Tickets
 * To have the game scale for a mobile/tablet horizontal view.
 
 * Create a an array list of villian character names to pull from at random if a user puts in an empty entry(i.e.,Smaug, Saruman, Witch-King of Angmar, and so on). 
@@ -87,7 +88,7 @@ Images used in project are clip art. Sites down bellow.
 * Hobbit cover first edition from <a href="https://www.tolkienroad.com/wp-content/uploads/2019/06/hobbit-cover-first-edition.jpg">here</a>
 
 ## <a id="other-information" /></a> 📡 Other Information
-* Installation: Go to the live link <a href="https://bryson-palmer.github.io/RIDDLES-IN-THE-DARK/">[Here] and press play! That's it.
+* Installation: Go to the live link <a href="https://bryson-palmer.github.io/RIDDLES-IN-THE-DARK/">[Here]</a> and press play! That's it.
 * Usage: A fun little game for *Hobbit* enthusiasts.
 * Credits: I would like to give a thanks to my teacher for helping me with my timer and local storage logic. I would like to thank Joshua Hollar for his time and help with this homework. His peer review and suggestions helped me get through a tough spot. I also want to shout out to anothe student Daniel soledad for checking the game out and feedback. Also, Google, W3Schools, stack overflow, and Web MD for their well organized information regarding the Fisher-Yates shuffle method. Also, how to use the sort method and code to set up a comparison.
 * License: No license at this time.
