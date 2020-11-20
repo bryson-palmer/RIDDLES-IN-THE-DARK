@@ -1,6 +1,6 @@
 ## <a id="back-to-top" > </a>
 # RIDDLES-IN-THE-DARK
-## Is the game of riddles btween Bilbo and Gollum from J.R.R.Tolkien's **THE HOBBIT** chapter five.
+## Is the game of riddles between Bilbo and Gollum from J.R.R.Tolkien's **THE HOBBIT** chapter five.
 __________________________
 ## Introduction
 My name is **Bryson Palmer** and I'm a student web developer. I'm currently in a *full stack* web developer bootcamp through the *University of Washington* under *Trilogy Education Services*. I'm looking to get into web development for my professional work. I plan on being a capable, creative, team oriented developer by the end of this program. I look forward to implementing this new skill in future employment.
@@ -90,7 +90,7 @@ Images used in project are clip art. Sites down bellow.
 ## <a id="other-information" /></a> 📡 Other Information
 * Installation: Go to the live link <a href="https://bryson-palmer.github.io/RIDDLES-IN-THE-DARK/">[Here]</a> and press play! That's it.
 * Usage: A fun little game for *Hobbit* enthusiasts.
-* Credits: I would like to give a thanks to my teacher for helping me with my timer and local storage logic. I would like to thank Joshua Hollar for his time and help with this homework. His peer review and suggestions helped me get through a tough spot. I also want to shout out to anothe student Daniel soledad for checking the game out and feedback. Also, Google, W3Schools, stack overflow, and Web MD for their well organized information regarding the Fisher-Yates shuffle method. Also, how to use the sort method and code to set up a comparison.
+* Credits: I would like to give a thanks to my teacher, Anthony Brown, for helping me with my timer and local storage logic. I would like to thank Joshua Hollar for his time and help with this homework. His peer review and suggestions helped me get through a tough spot. I also want to shout out to another student, Daniel Soledad, for checking the game out and his feedback. Also, Google, W3Schools, stack overflow, and Web MD for their well organized information regarding the Fisher-Yates shuffle method. Also, how to use the sort method and code to set up a comparison.
 * License: No license at this time.
 
 [Back to Top](#back-to-top) </br>
