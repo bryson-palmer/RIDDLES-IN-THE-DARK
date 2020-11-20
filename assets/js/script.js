@@ -28,7 +28,7 @@ var correctScore = 0;        // Counter for correct answers
 var incorrectScore = 0;      // Counter for incorrect answers
 var pointer = 0;             // Pointer used for moving through the array of objects
 var answerPointer;           // Pointer used in shuffling the answers of each riddle
-var randoAnswer = []; 
+var randoAnswer = [];        // Array (empty) to hold shuffled answers
 var clickButtonContent = ""; // Variable to hold the value of the user's current answer
 
 
@@ -196,71 +196,74 @@ var myMethods = {
 
   // Reveal Gandalf
   revealGandalf: function() {
-    characterEl.style.display = "none";
-    startGameEl.style.display = "none"; // Hide
-    endGameEl.style.display = "none";   // Hide 
-    gandalfEl.style.display = "flex";   // Reveal Gandalf 
-    playAgainEl.style.display = "flex"; // Reveal playAgain button
-    headerImageEl.style.display = "block";
+    characterEl.style.display = "none";     // Hide
+    startGameEl.style.display = "none";     // Hide
+    endGameEl.style.display = "none";       // Hide 
+    gandalfEl.style.display = "block";       // Reveal Gandalf 
+    playAgainEl.style.display = "flex";     // Reveal playAgain button
+    headerImageEl.style.display = "block";  // Reveal header image
   },
 
+  // Shuffle answers using the Fisher-Yates shuffle method
   shuffleAnswers: function() {
 
-    if ( pointer < riddles.length ){
+    if ( pointer < riddles.length ){        // IF global pointer is less than the length of riddles questions
+      // Store all the answers to a given riddle (pointer) in a new variable
       randoAnswer = [riddles[pointer].answer1, riddles[pointer].answer2, riddles[pointer].answer3, riddles[pointer].answer4];
 
-      for ( var i = randoAnswer.length-1; i > 0; i-- ) {
-        answerPointer = Math.floor(Math.random() * i );
-        var tempA = randoAnswer[i];
-        randoAnswer[i] = randoAnswer[answerPointer];
-        randoAnswer[answerPointer] = tempA;
-        riddles[pointer].answer1 = randoAnswer[0];
-        riddles[pointer].answer2 = randoAnswer[1];
-        riddles[pointer].answer3 = randoAnswer[2];
-        riddles[pointer].answer4 = randoAnswer[3];
-        console.log( randoAnswer );
-        return randoAnswer;
+      for ( var i = randoAnswer.length-1; i > 0; i-- ) {  // FOR the length of the riddles answers (4)
+        answerPointer = Math.floor(Math.random() * i );   // Store a random generated index number from the answer array from a given riddle in this global variable
+        var tempA = randoAnswer[i];                       // Store the answer with the random index [i] in a new temp variable
+        randoAnswer[i] = randoAnswer[answerPointer];      // Set the value of random answer with random index [i] to the value of rando answer with index [answerPointer]
+        randoAnswer[answerPointer] = tempA;               // Set the value of random answer with index [answerPointer] to the value of temp variable
+        riddles[pointer].answer1 = randoAnswer[0];        // Set the value of answer 1 to the new random answer with index [0]
+        riddles[pointer].answer2 = randoAnswer[1];        // Set the value of answer 2 to the new random answer with index [1]
+        riddles[pointer].answer3 = randoAnswer[2];        // Set the value of answer 3 to the new random answer with index [2]
+        riddles[pointer].answer4 = randoAnswer[3];        // Set the value of answer 4 to the new random answer with index [3]
+        console.log( randoAnswer );                       // Log random answer
+        return randoAnswer;                               // Return random answer to global variable
       }
     }
   },
 
+  // Shuffle riddles using the Fisher-Yates shuffle method
   shuffleRiddles: function() {
 
-    for ( var i = riddles.length-1; i > 0; i-- ) {
-      pointer = Math.floor(Math.random() * i );
-      var tempR = riddles[i];
-      riddles[i] = riddles[pointer];
-      riddles[pointer] = tempR;
+    for ( var i = riddles.length-1; i > 0; i-- ) {        // For the length of the riddles questions (10)
+      pointer = Math.floor(Math.random() * i );           // Store a random generated index number from the riddles array into the global pointer
+      var tempR = riddles[i];                             // Store the riddle with the random index [i] in a new  temp variable
+      riddles[i] = riddles[pointer];                      // Set the value of the random riddle with the random index [i] to the value of rando riddle with index [pointer]
+      riddles[pointer] = tempR;                           // Set the value of random riddle with index [pointer] to the value of temp variable
     }
   },
 
   // Display first riddle and answers 
-  displayRiddle1: function() {
-    myMethods.shuffleAnswers();
-    riddleNumEl.innerHTML = pointer + 1;
-    riddleEl.innerHTML = riddles[pointer].riddle;
-    answer1El.innerHTML = riddles[pointer].answer1; 
-    answer2El.innerHTML = riddles[pointer].answer2;
-    answer3El.innerHTML = riddles[pointer].answer3;
-    answer4El.innerHTML = riddles[pointer].answer4;
-    console.log( "Riddle 1 displayed" );
+  displayRiddle1: function() {                            
+    myMethods.shuffleAnswers();                           // Call shuffle answers method
+    riddleNumEl.innerHTML = pointer + 1;                  // Display the riddle count to the user
+    riddleEl.innerHTML = riddles[pointer].riddle;         // Display the first riddle
+    answer1El.innerHTML = riddles[pointer].answer1;       // Display answer 1
+    answer2El.innerHTML = riddles[pointer].answer2;       // Display answer 2
+    answer3El.innerHTML = riddles[pointer].answer3;       // Display answer 3
+    answer4El.innerHTML = riddles[pointer].answer4;       // Display answer 4
+    console.log( "Riddle 1 displayed" );                  // Log riddle 1 displayed
   }, 
 
   // Display next riddle                                          
   displayNextRiddle: function() {  
-    riddleNumEl.innerHTML = pointer + 1;
-    myMethods.shuffleAnswers();
+    riddleNumEl.innerHTML = pointer + 1;                          // Display the riddle count to the user
+    myMethods.shuffleAnswers();                                   // call shuffle answers method
     if ( pointer < riddles.length ) {                             // If < length, then display next riddle 
       riddleEl.innerHTML = riddles[pointer].riddle;               // Display next riddle
-      answer1El.innerHTML = riddles[pointer].answer1;             //
-      answer2El.innerHTML = riddles[pointer].answer2;             //
-      answer3El.innerHTML = riddles[pointer].answer3;             //
-      answer4El.innerHTML = riddles[pointer].answer4;             //
-      console.log( "Riddle " + ( pointer + 1 ) + " displayed.");  // log ponter of riddle
+      answer1El.innerHTML = riddles[pointer].answer1;             // Display answer 1
+      answer2El.innerHTML = riddles[pointer].answer2;             // Display answer 2
+      answer3El.innerHTML = riddles[pointer].answer3;             // Display answer 3
+      answer4El.innerHTML = riddles[pointer].answer4;             // Display answer 4
+      console.log( "Riddle " + ( pointer + 1 ) + " displayed.");  // Log riddle (pointer plus one) displayed
     } else {
       startGameEl.removeEventListener("click", gameFlow);         // Else remove the click listener
       myMethods.stopCountdown();                                  // Call the stop countdown method
-      myMethods.showEnd();                                        // Show end screen with initials input form
+      myMethods.showEnd();                                        // call the Show end method
       return;
     }
   },
@@ -271,19 +274,19 @@ var myMethods = {
     console.log( "The user's choice is (" + clickButtonContent + ") inside answerCheck()." ); // Log check
     
     // If user's choice does not equal the key answer and time is >= 0
-    if ( clickButtonContent !== riddles[pointer].answer && seconds_Left >= 0 ) {
+    if ( clickButtonContent !== riddles[pointer].answer && seconds_Left >= 0 ) {  // Compare user's choice to riddles correct answer with seconds on the clock
         console.log( "wrong Answer" );                                            // Log check wrong answer
         incorrectScore++;                                                         // Increment incorrect score
-        seconds_Left -= 20;                                                       // Subtract 20 sec penalty
-        gollumEl.style.visibility = "visible";
-        bilboEl.style.visibility = "hidden";
+        seconds_Left -= 20;                                                       // Subtract 20 sec penalty to timer
+        gollumEl.style.visibility = "visible";                                    // Reveal Gollum text
+        bilboEl.style.visibility = "hidden";                                      // Hide Bilbo text
         console.log( "incorrectScore: " + incorrectScore );                       // Log incorrect score
       } else {
         console.log( "Correct Answer" );                                          // Log check correct answer
-        correctScore++;
-        seconds_Left += 10;                                                       // Increment correct score
-        bilboEl.style.visibility = "visible";
-        gollumEl.style.visibility = "hidden";
+        correctScore++;                                                           // Increment correct score
+        seconds_Left += 10;                                                       // Add 10 sec to timer
+        bilboEl.style.visibility = "visible";                                     // Reveal Bilbo text
+        gollumEl.style.visibility = "hidden";                                     // Hide Gollum text
         console.log( "correctScore: " + correctScore );                           // Log correct score
     }
   }, 
@@ -330,7 +333,7 @@ startGameEl.addEventListener("click", gameFlow);  // When user clicks an answer 
 // Starting game play again
 // Reload page
 function playAgain() {
-  location.reload();
+  location.reload();                              // Reload the page
 }
 playAgainEl.addEventListener("click", playAgain); // When user clicks the play again button run play again
 
@@ -347,9 +350,9 @@ function submitInitials(event) {
         input_Array = [];   // Define as an empty array
     }
 
-  if ( initialsEl.value == "") {
+  if ( initialsEl.value == "") {                                    // IF the user enters nothing in the initials input
 
-    var user_Initials = "<SAURON>"
+    var user_Initials = "<SAURON>"                                  // Set user initials to Sauron
 
   } else
     var user_Initials = initialsEl.value.toUpperCase();              // Uppercasing user input value and storing in new var
