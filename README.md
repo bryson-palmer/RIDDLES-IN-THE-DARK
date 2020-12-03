@@ -41,7 +41,7 @@ __________________________
 ## <a id="links"></a> Links
 Link to **repository** on **Git Hub** - [https://github.com/Bryson-Palmer/RIDDLES-IN-THE-DARK.git](https://github.com/Bryson-Palmer/RIDDLES-IN-THE-DARK.git)
 
-Live **URL** link to the **Employee Password Generator** - [https://bryson-palmer.github.io/RIDDLES-IN-THE-DARK/](https://bryson-palmer.github.io/RIDDLES-IN-THE-DARK/)
+Live **URL** link to the **Riddles in the Dark** - [https://bryson-palmer.github.io/RIDDLES-IN-THE-DARK/](https://bryson-palmer.github.io/RIDDLES-IN-THE-DARK/)
 </br>
 __________________________
 
