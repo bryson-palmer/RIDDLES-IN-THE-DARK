@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,123 +9,117 @@
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- Tab title -->
-    <title>RIDDLES IN THE DARK</title>
+    <title>Riddles In the Dark</title>
     <!-- Favicon from icons8.com -->
     <link rel="icon" type="image/png" href="https://img.icons8.com/office/30/000000/one-ring.png" />
 </head>
 
 <body>
 
-    <!-- Container for the entire page -->
-    <div class="main-container">
-        <!-- Background color for the header -->
-        <div id="bgColor">
-            <!-- Header with highscore link and timer -->
-            <header class="top">
-                <!-- High sores link -->
-                <a href="highscore.html"><img src="https://img.icons8.com/office/30/000000/one-ring.png" alt="The one ring to rule them all" width="35px" height="35px"></a>
-                <!-- Title of the game -->
-                <h1>Riddles In The Dark</h1>
-                <!-- Timer -->
-                <div>
-                    <h2>Time: <span id="time-remaining"></span></h2>
-                </div>
-            </header>
-        </div> <!-- End of Header -->
+    <!-- Header with highscore link and timer -->
+    <header class="header">
+        <!-- High sores link -->
+        <p>
+            High
+            <a href="highscore.html"><img src="https://img.icons8.com/office/30/000000/one-ring.png" alt="The one ring to rule them all"></a>
+            Score
+        </p>
+        <!-- Title of the game -->
+        <h1>Riddles In The Dark</h1>
+        <!-- Timer -->
+        <h2>Time: <span id="timeRemaining"></span></h2>
+    </header>
 
-        <!-- Banner container -->
-        <div class="header-image">
-            <!-- Banner image from https://icon-library.com/icon/hobbit-icon-19.html -->
-            <img src="./assets/Images/hobbit_header.jpg" alt="Pipe sword ring mountain The Hobbit" width="375px" height="275px" >
-        </div>
+    <!-- Banner image from https://icon-library.com/icon/hobbit-icon-19.html -->
+    <img class="hobbitBanner" src="./assets/images/hobbitBanner.jpg" alt="Pipe sword ring mountain The Hobbit">
 
-        <!-- Main riddles and answers container -->
-        <main class="content" >
+    <!-- Main container -->
+    <main class="content">
 
-            <!-- Intro page -->
-            <div id="intro" class="styleContainer">
-                <p>"Praps ye sits here and chats with it a bitsy, my precious. It like riddles, praps it does, does it?" ~ <em>Gollum - The Hobbit</em></p>
+        <!-- Landing section -->
+        <section id="intro" class="styleContainer">
+            <p>"Praps ye sits here and chats with it a bitsy, my precious. It like riddles, praps it does, does it?" ~
+                <em>Gollum - The Hobbit</em>
+            </p>
+
+            <!-- Play button -->
+            <button aria-label="Play" id="playButton">PLAY</button>
+
+            <p>
+                See if you can match wits with a creature from the dark abyss. Answer correctly and your time will go up
+                10 seconds. Answer incorrectly and your time gets cut short 20 seconds. Beat the time and you will have
+                escaped certain doom. Otherwise, you might just become his next meal. After all, these events could just
+                change the fates of all of middle earth. Good luck!
+            </p>
+        </section>
+
+        <!-- Game section of riddles and answers -->
+        <section id="startGame" class="styleContainer">
+
+            <!-- Container to hold character images -->
+            <div class="characterContainer">
                 
-                <!-- Play button -->
-                <button id="play-button">PLAY</button>
-                    
-                <p>See if you can match wits with a creature from the dark abyss. Answer correctly and your time will go up 10 seconds. Answer incorrectly and your time gets cut short 20 seconds. Beat the time and you will have escaped certain doom. Otherwise, you might just become his next meal. After all, these events could just change the fates of all of middle earth. Good luck!</p>
-            </div>
-
-            <!-- Game page of riddles and answers -->
-            <div id="startGame" class="styleContainer">
-
-                <!-- Container to hold character images -->
-                <div class="characterContainer">
-                    <!-- Gollum container -->
-                    <div class="gollumContainer">
-                        <!-- Gollum image from https://www.jing.fm/iclip/TTwiiJ_gollum-hobbit-clipart/ -->
-                        <img src="./assets/Images/Gollum.png" alt="gollum" width="115px" height="160px">
-                        <!-- Gollum text -->
-                        <p class="gollum">Wrong answers, precious!</p>
-                    </div>
-        
-                    <!-- Bilbo container -->
-                    <div class="bilboContainer">
-                        <!-- Bilbo text -->
-                        <p class="bilbo">Correct!</p>
-                        <!-- Bilbo image from https://favpng.com/png_view/bilbo-baggins-brave-frontier-bilbo-baggins-the-hobbit-fan-art-clip-art-png/UhHWQrMz -->
-                        <img src="./assets/Images/Bilbo.png" alt="Bilbo Baggins" width="175px" height="150px">
-                    </div>
+                <!-- Gollum container -->
+                <div class="gollumContainer">
+                    <!-- Gollum image from https://www.jing.fm/iclip/TTwiiJ_gollum-hobbit-clipart/ -->
+                    <img src="./assets/images/Gollum.png" alt="gollum" width="115px" height="160px">
+                    <!-- Gollum text -->
+                    <p class="gollum">Wrong answers, precious!</p>
                 </div>
 
-                <!-- Riddle label and count -->
-                <h2 id="riddleNumLable">Riddle: <span id="riddle-number"></span></h2>
-
-                <!-- Riddle element -->
-                <h2 id="riddle">Riddle</h2>
-                
-                <!-- Answer buttons -->
-                <button id="answer1" class="buttons">1.
-                </button>
-
-                <button id="answer2" class="buttons">2.
-                </button>
-
-                <button id="answer3" class="buttons">3.
-                </button>
-
-                <button id="answer4" class="buttons">4.
-                </button>
-            </div> <!-- End of game play container-->
-
-            <!-- Reveal Gandalf container -->
-            <div id="gandalfContainer">
-                <!-- Gandalf image from https://clipartlook.com/img-237482.html -->
-                <img id="gandalf" src="./assets/Images/Gandalf.jpg" alt="Gandalf: You shall not pass!" width="375px" height="300px">
-                <!-- Play again button -->
-                <button id="playAgain" class="gandalfButtons">Play Again</button>
-            </div>
-
-            <!-- End game page container -->
-            <div id="endGame" >
-                <div>
-                    <!-- Form container -->
-                    <form class="styleContainer">
-                        <!-- Input for initials -->
-                        <input id="initials" type="text" placeholder="Enter your name" />
-                        <!-- submit initails button -->
-                        <button id="submitBtn">Submit</button>
-                        <!-- Gandald salutations -->
-                        <p id="salutations">"May the wind under your wings bear you where the sun sails and the moon walks."</p>
-                        <!-- Hobbit cover container -->
-                        <div id="hobbit-cover">
-                            <!-- Hobbit cover first editio from https://www.tolkienroad.com/wp-content/uploads/2019/06/hobbit-cover-first-edition.jpg -->
-                            <img src="./assets/Images/hobbit-cover-first-edition.jpg" alt="Hobbit cover first edition." width="350px" height="310px">
-                        </div>
-                    </form>
+                <!-- Bilbo container -->
+                <div class="bilboContainer">
+                    <!-- Bilbo text -->
+                    <p class="bilbo">Correct!</p>
+                    <!-- Bilbo image from https://favpng.com/png_view/bilbo-baggins-brave-frontier-bilbo-baggins-the-hobbit-fan-art-clip-art-png/UhHWQrMz -->
+                    <img src="./assets/images/Bilbo.png" alt="Bilbo Baggins" width="175px" height="150px">
                 </div>
             </div>
-        </main>
-    </div>
+
+            <!-- Riddle label and count -->
+            <h2 id="riddleNumLable">Riddle: <span id="riddleNumber"></span></h2>
+
+            <!-- Riddle element -->
+            <p id="riddle">Riddle</p>
+
+            <!-- Answer buttons -->
+            <button aria-label="answer1" id="answer1" class="buttons">1.</button>
+
+            <button aria-label="answer2" id="answer2" class="buttons">2.</button>
+
+            <button aria-label="answer3" id="answer3" class="buttons">3.</button>
+
+            <button aria-label="answer4" id="answer4" class="buttons">4.</button>
+        </section> <!-- End of game play container-->
+
+        <!-- Reveal Gandalf container -->
+        <section id="gandalfContainer">
+            <!-- Gandalf image from https://clipartlook.com/img-237482.html -->
+            <img id="gandalf" src="./assets/images/Gandalf.jpg" alt="Gandalf: You shall not pass!" width="375px" height="300px">
+            <!-- Play again button -->
+            <button aria-label="Play Again" id="playAgain" class="gandalfButtons">PLAY AGAIN</button>
+        </section>
+
+        <!-- End game form container -->
+        <form id="endGame" class="styleContainer">
+            <!-- Input for initials -->
+            <input aria-label="Enter your name" id="initials" type="text" placeholder="Enter your name" />
+            <!-- submit  button -->
+            <button aria-label="Submit" id="submitBtn">Submit</button>
+            <!-- Gandald salutations -->
+            <p id="salutations">"May the wind under your wings bear you where the sun sails and the moon walks."
+            </p>
+            <!-- Hobbit cover container -->
+            <div id="hobbitCover">
+                <!-- Hobbit cover first editio from https://www.tolkienroad.com/wp-content/uploads/2019/06/hobbit-cover-first-edition.jpg -->
+                <img src="./assets/images/hobbitBookCover.jpg" alt="Hobbit cover first edition." width="350px" height="310px">
+            </div>
+        </form>
+    </main>
 
     <!-- Script link -->
     <script src="assets/js/script.js"></script>
 
 </body>
-</html> 
+
+</html>

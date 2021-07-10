@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,56 +9,52 @@
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- Tab title -->
-    <title>HIGHSCORES</title>
+    <title>Riddles In The Dark - High Scores</title>
     <!-- Favicon from icons8.com -->
     <link rel="icon" type="image/png" href="https://img.icons8.com/office/30/000000/one-ring.png" />
 </head>
 
 <body>
 
-    <!-- Container for the entire page -->
-    <div class="main-container">
-        <!-- Background color for the header -->
-        <div id="bgColor">
-            <!-- Header with highscore link and timer -->
-            <header class="top">
-                <!-- High sores link -->
-                <a href="index.html"><img src="https://img.icons8.com/office/30/000000/one-ring.png" alt="The one ring to rule them all" width="35px" height="35px"></a>
-                <!-- Title of the game -->
-                <h1>Riddles In The Dark</h1>
-            </header>
-            <!-- Timer -->
-            <div>
-                <h2>Time: <span id="time-remaining"></span></h2>
-            </div>
-        </div> <!-- End of Header -->
+    <!-- Header with highscore link and timer -->
+    <header class="header">
+        <!-- High sores link -->
+        <p>
+            Back To
+            <a href="index.html"><img src="https://img.icons8.com/office/30/000000/one-ring.png" alt="The one ring to rule them all"></a>
+            Game
+        </p>
+        <!-- Title of the game -->
+        <h1>Riddles In The Dark</h1>
+        <!-- Timer -->
+        <h2>Time: <span id="timeRemaining"></span></h2>
+    </header>
 
-        <!-- High score title container -->
-        <div id="title">
-            <!-- High score title text -->
-            <p>High Scores</p>
+    <main id="highScoresMain">
+
+        <div class="highScoresContainer">
+            <!-- High score title container -->
+            <h1 id="highScoreTitle">High Scores</h1>
+
+            <!-- Container to hold list of high scores -->
+            <section id="listContainer">
+                <!-- Unordered list container -->
+                <ul id="initialsList"></ul>
+            </section>
         </div>
 
-        <!-- Container to hold list of high scores -->
-        <div id="list-container">
-            <!-- Unordered list container -->
-            <ul id="initials-List"></ul>
-        </div>
-
-         <!-- Lonely Mountain image from https://www.jing.fm/iclip/TTwoiR_the-hobbit-smaug-kids-t-shirt-smaug-and/ -->
-         <img src="./assets/Images/the-lonely-mountain.png" alt="The lonely mountain" id="lonely-mountain" width="375px" height="">
-        
         <!-- Container to hold playAgain and clearAll buttons -->
-        <div id="high-scoreBox">
+        <footer id="highScoreBox">
             <!-- Play again button -->
-            <button id="play-Again" class="high-scoreBtn">Play Again</button>
+            <button aria-label="Play Again" id="playGameAgain" class="highScoreBtn">PLAY AGAIN</button>
             <!-- Clear all button -->
-            <button id="clear-all" class="high-scoreBtn">CLEAR ALL</button>
-        </div> 
-    </div>
+            <button aria-label="Clear All Scores" id="clearAll" class="highScoreBtn">CLEAR ALL</button>
+        </footer>
+    </main>
 
     <!-- High scores script link -->
     <script src="assets/js/highscore.js"></script>
 
 </body>
+
 </html>

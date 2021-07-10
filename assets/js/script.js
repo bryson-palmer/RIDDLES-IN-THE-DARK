@@ -1,45 +1,43 @@
 
 // Declaring and pointing to elements in the index html
-var timeRemainEl = document.querySelector( "#time-remaining" ); 
-var introEl = document.querySelector( "#intro" ); 
-var headerImageEl = document.querySelector( ".header-image" );
-var characterEl = document.querySelector( ".characterContainer" );
-var bilboEl = document.querySelector( ".bilbo" );
-var gollumEl = document.querySelector( ".gollum" );
-var playBtnEl = document.querySelector( "#play-button" ); 
-var startGameEl = document.querySelector( "#startGame" ); 
-var hiddenEl = document.querySelector( ".hidden" );
-var buttonsEl = document.querySelector( ".buttons" );
-var riddleNumEl = document.querySelector( "#riddle-number" );
-var riddleEl = document.querySelector( "#riddle" ); 
-var answer1El = document.querySelector( "#answer1" ); 
-var answer2El = document.querySelector( "#answer2" ); 
-var answer3El = document.querySelector( "#answer3" ); 
-var answer4El = document.querySelector( "#answer4" );
-var gandalfEl = document.querySelector( "#gandalf" ); 
-var playAgainEl = document.querySelector( "#playAgain" );
-var endGameEl = document.querySelector( "#endGame" ); 
-var initialsEl = document.querySelector( "#initials" ); 
-var submitBtnEl = document.querySelector( "#submitBtn" ); 
+let timeRemainEl = document.querySelector( "#timeRemaining" ); 
+const introEl = document.querySelector( "#intro" ); 
+const headerImageEl = document.querySelector( ".hobbitBanner" );
+const characterEl = document.querySelector( ".characterContainer" );
+const bilboEl = document.querySelector( ".bilbo" );
+const gollumEl = document.querySelector( ".gollum" );
+const playBtnEl = document.querySelector( "#playButton" ); 
+const startGameEl = document.querySelector( "#startGame" ); 
+let riddleNumEl = document.querySelector( "#riddleNumber" );
+let riddleEl = document.querySelector( "#riddle" ); 
+let answer1El = document.querySelector( "#answer1" ); 
+let answer2El = document.querySelector( "#answer2" ); 
+let answer3El = document.querySelector( "#answer3" ); 
+let answer4El = document.querySelector( "#answer4" );
+const gandalfEl = document.querySelector( "#gandalf" ); 
+const playAgainEl = document.querySelector( "#playAgain" );
+const endGameEl = document.querySelector( "#endGame" ); 
+const initialsEl = document.querySelector( "#initials" ); 
+const submitBtnEl = document.querySelector( "#submitBtn" ); 
 
 
 // Global variables
-var correctScore = 0;        // Counter for correct answers
-var incorrectScore = 0;      // Counter for incorrect answers
-var pointer = 0;             // Pointer used for moving through the array of objects
-var answerPointer;           // Pointer used in shuffling the answers of each riddle
-var randoAnswer = [];        // Array (empty) to hold shuffled answers
-var clickButtonContent = ""; // Variable to hold the value of the user's current answer
+let correctScore = 0;        // Counter for correct answers
+let incorrectScore = 0;      // Counter for incorrect answers
+let pointer = 0;             // Pointer used for moving through the array of objects
+let answerPointer;           // Pointer used in shuffling the answers of each riddle
+let randomAnswer = [];        // Array (empty) to hold shuffled answers
+let usersClick = ""; // Variable to hold the value of the user's current answer
 
 
-var timeScore;                          // A global interval counter
-var seconds_Left = 75;                  // A global time counter set to max time
-timeRemainEl.innerHTML = seconds_Left;  // Printing time to html
+let timeScore;                         // A global interval counter
+let secondsLeft = 75;                  // A global time counter set to max time
+timeRemainEl.innerHTML = secondsLeft;  // Printing time to html
 riddleNumEl.innerHTML = pointer;
 
 
 // an Array holding objects of riddles, answers, and correct answer
-var riddles = [
+const riddles = [
     {
       riddle: "What has roots as nobody sees, \nIs taller than trees, \nUp, up it goes, \nAnd yet never grows?",
       answer1: "A tree",
@@ -124,26 +122,26 @@ var riddles = [
 
 
 // Object methods to be used in the game
-var myMethods = {
+const myMethods = {
   
   // Countdown functionality
   countDown: function() {
     
     timeScore = setInterval(function() {    // Storing the value setInterval returns in timeScore
-    timeRemainEl.innerHTML = seconds_Left;  // Display time
+    timeRemainEl.innerHTML = secondsLeft;  // Display time
       
-      if ( seconds_Left <= 0 ) {                             // If seconds reach 0 or less
+      if ( secondsLeft <= 0 ) {                             // If seconds reach 0 or less
         startGameEl.removeEventListener("click", gameFlow);  // Remove click for start game button
         myMethods.stopCountdown();                           // Stop timer 
         timeRemainEl.innerHTML = 0;                          // Assign and display 0 for time
         myMethods.revealGandalf();                           // Reveal Gandalf method
         console.log( "*Reveal Gandalf*" );                   // Log final counts
-        console.log( "Time: " + seconds_Left);
+        console.log( "Time: " + secondsLeft);
         console.log( "FINAL Correct Score: " + correctScore );
         console.log( "FINAL Incorrect Score: " + incorrectScore );
         return;
       }  
-    seconds_Left--; // Decrements the time by one second
+    secondsLeft--; // Decrements the time by one second
     }, 1000);
   }, 
 
@@ -151,7 +149,7 @@ var myMethods = {
   stopCountdown: function() {
     
     clearInterval( timeScore );              // Clear timeScore interval
-    timeRemainEl.innerHTML = seconds_Left;   // Display where the timer stopped
+    timeRemainEl.innerHTML = secondsLeft;   // Display where the timer stopped
   },
   
   // Hide start page (intro)
@@ -188,7 +186,7 @@ var myMethods = {
         startGameEl.style.display = "none";       // Hide startGameEl
         characterEl.style.display = "none";     
         console.log( "*Show End*" );              // Log final counts
-        console.log( "Time: " + seconds_Left);
+        console.log( "Time: " + secondsLeft);
         console.log( "FINAL Correct Score: " + correctScore );
         console.log( "FINAL Incorrect Score: " + incorrectScore );
     } 
@@ -209,19 +207,19 @@ var myMethods = {
 
     if ( pointer < riddles.length ){        // IF global pointer is less than the length of riddles questions
       // Store all the answers to a given riddle (pointer) in a new variable
-      randoAnswer = [riddles[pointer].answer1, riddles[pointer].answer2, riddles[pointer].answer3, riddles[pointer].answer4];
+      randomAnswer = [riddles[pointer].answer1, riddles[pointer].answer2, riddles[pointer].answer3, riddles[pointer].answer4];
 
-      for ( var i = randoAnswer.length-1; i > 0; i-- ) {  // FOR the length of the riddles answers (4)
+      for ( var i = randomAnswer.length-1; i > 0; i-- ) {  // FOR the length of the riddles answers (4)
         answerPointer = Math.floor(Math.random() * i );   // Store a random generated index number from the answer array from a given riddle in this global variable
-        var tempA = randoAnswer[i];                       // Store the answer with the random index [i] in a new temp variable
-        randoAnswer[i] = randoAnswer[answerPointer];      // Set the value of random answer with random index [i] to the value of rando answer with index [answerPointer]
-        randoAnswer[answerPointer] = tempA;               // Set the value of random answer with index [answerPointer] to the value of temp variable
-        riddles[pointer].answer1 = randoAnswer[0];        // Set the value of answer 1 to the new random answer with index [0]
-        riddles[pointer].answer2 = randoAnswer[1];        // Set the value of answer 2 to the new random answer with index [1]
-        riddles[pointer].answer3 = randoAnswer[2];        // Set the value of answer 3 to the new random answer with index [2]
-        riddles[pointer].answer4 = randoAnswer[3];        // Set the value of answer 4 to the new random answer with index [3]
-        console.log( randoAnswer );                       // Log random answer
-        return randoAnswer;                               // Return random answer to global variable
+        let tempAnswer = randomAnswer[i];                       // Store the answer with the random index [i] in a new temp variable
+        randomAnswer[i] = randomAnswer[answerPointer];      // Set the value of random answer with random index [i] to the value of rando answer with index [answerPointer]
+        randomAnswer[answerPointer] = tempAnswer;               // Set the value of random answer with index [answerPointer] to the value of temp variable
+        riddles[pointer].answer1 = randomAnswer[0];        // Set the value of answer 1 to the new random answer with index [0]
+        riddles[pointer].answer2 = randomAnswer[1];        // Set the value of answer 2 to the new random answer with index [1]
+        riddles[pointer].answer3 = randomAnswer[2];        // Set the value of answer 3 to the new random answer with index [2]
+        riddles[pointer].answer4 = randomAnswer[3];        // Set the value of answer 4 to the new random answer with index [3]
+        console.log( randomAnswer );                       // Log random answer
+        return randomAnswer;                               // Return random answer to global variable
       }
     }
   },
@@ -270,21 +268,21 @@ var myMethods = {
 
   
   // Check answer
-  answerCheck: function(clickButtonContent) {                          // Pass user's choice into function
-    console.log( "The user's choice is (" + clickButtonContent + ") inside answerCheck()." ); // Log check
+  answerCheck: function(usersClick) {                          // Pass user's choice into function
+    console.log( "The user's choice is (" + usersClick + ") inside answerCheck()." ); // Log check
     
     // If user's choice does not equal the key answer and time is >= 0
-    if ( clickButtonContent !== riddles[pointer].answer && seconds_Left >= 0 ) {  // Compare user's choice to riddles correct answer with seconds on the clock
+    if ( usersClick !== riddles[pointer].answer && secondsLeft >= 0 ) {  // Compare user's choice to riddles correct answer with seconds on the clock
         console.log( "wrong Answer" );                                            // Log check wrong answer
         incorrectScore++;                                                         // Increment incorrect score
-        seconds_Left -= 20;                                                       // Subtract 20 sec penalty to timer
+        secondsLeft -= 20;                                                       // Subtract 20 sec penalty to timer
         gollumEl.style.visibility = "visible";                                    // Reveal Gollum text
         bilboEl.style.visibility = "hidden";                                      // Hide Bilbo text
         console.log( "incorrectScore: " + incorrectScore );                       // Log incorrect score
       } else {
         console.log( "Correct Answer" );                                          // Log check correct answer
         correctScore++;                                                           // Increment correct score
-        seconds_Left += 10;                                                       // Add 10 sec to timer
+        secondsLeft += 10;                                                       // Add 10 sec to timer
         bilboEl.style.visibility = "visible";                                     // Reveal Bilbo text
         gollumEl.style.visibility = "hidden";                                     // Hide Gollum text
         console.log( "correctScore: " + correctScore );                           // Log correct score
@@ -320,9 +318,9 @@ playBtnEl.addEventListener("click", beginGame); // When the play button is click
 // Function controls behavior of game
 function gameFlow(event) {
   
-  clickButtonContent = event.target.textContent;  // GET user answer with event.target
+  usersClick = event.target.textContent;  // GET user answer with event.target
   
-    myMethods.answerCheck(clickButtonContent);    // Call check answer and pass user's choice
+    myMethods.answerCheck(usersClick);    // Call check answer and pass user's choice
     myMethods.clearInnerHTML();                   // Clear inner html elements
     pointer++;                                    // Increment the pointer value by 1
     myMethods.displayNextRiddle();                // Call display next riddle
@@ -342,30 +340,30 @@ playAgainEl.addEventListener("click", playAgain); // When user clicks the play a
 function submitInitials(event) {
   event.preventDefault();         // Prevent submit button default
 
-  // Getting all values stored in user_Input object from storage, 
-  // Parsing, and assigning to input_Array
-  input_Array = JSON.parse(localStorage.getItem( "user_Input" ));
+  // Getting all values stored in userInput object from storage, 
+  // Parsing, and assigning to highScoresArray
+  highScoresArray = JSON.parse(localStorage.getItem( "userInput" ));
 
-    if ( !input_Array ) {   // If array is null/empty
-        input_Array = [];   // Define as an empty array
+    if ( !highScoresArray ) {   // If array is null/empty
+        highScoresArray = [];   // Define as an empty array
     }
 
   if ( initialsEl.value == "") {                                    // IF the user enters nothing in the initials input
 
-    var user_Initials = "<SAURON>"                                  // Set user initials to Sauron
+    var userName = "<SAURON>"                                  // Set user initials to Sauron
 
   } else
-    var user_Initials = initialsEl.value.toUpperCase();              // Uppercasing user input value and storing in new var
-    var user_Input = {                                               // Declare new object of user_Input
-      user_Initials: user_Initials,                                  // Holding Keys and vlaues
-      seconds_Left: seconds_Left                                     // Initials and time (secondsLeft)
+    var userName = initialsEl.value.toUpperCase();              // Uppercasing user input value and storing in new var
+    var userInput = {                                               // Declare new object of userInput
+      userName: userName,                                  // Holding Keys and vlaues
+      secondsLeft: secondsLeft                                     // Initials and time (secondsLeft)
   };      
   
-  console.log( "User initials or name: " + user_Initials );          // Log check initials
+  console.log( "User initials or name: " + userName );          // Log check initials
 
-  input_Array.push(user_Input);                                      // Push user input into input_Array
+  highScoresArray.push(userInput);                                      // Push user input into highScoresArray
 
-  localStorage.setItem( "user_Input", JSON.stringify(input_Array));  // Setting user_Input values to storage, stringify array
+  localStorage.setItem( "userInput", JSON.stringify(highScoresArray));  // Setting userInput values to storage, stringify array
 
   initialsEl.innerHTML = "";                                         // Clear inner html of element initialsEl
   

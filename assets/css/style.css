@@ -1,63 +1,51 @@
 /* A container to hold the entire page */
-.main-container {
-    max-height: 100vh;
+body {
+    min-height: 100vh;
     text-align: center;
 }
 
 /*--------------------------------------------------------------------------------*/
 /* Start Header styling */
 
-/* Background color for the hearder */
-#bgColor {
-    height: 130px;
-    background-color: rgb(102, 143, 92);  
-}
-
 /* Header container */
-.top {
-    height: 50px;
+.header {
+    height: 15vh;
+    background-color: rgb(102, 143, 92);  
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
 /* High score link */
-.top a {
-    color:  rgb(13, 119, 13);
-    text-decoration: none;
-    text-transform: uppercase;
-    margin-top: 2em;
-    margin-left: 1.5em;
+.header p {
+    color: rgb(235, 221, 112);
+    font-size: 1.3rem;
 }
 
-/* High score link focus properties */
-.top a:focus {
-    outline-color: gold;
-    border-radius: 5px;
+/* High score link hover properties */
+.header a:hover {
+    filter: drop-shadow(2px 4px 8px gold);
 }
 
 /* Riddles in the dark title */
-.top h1 {
-    text-align: center;
-    font-size: 45px !important;
+.header h1 {
+    font-size: 45px;
     color: rgb(159, 219, 80);
     text-shadow: 3px 0px 0px rgb(167, 131, 55);
-    padding-top: 1.5em;
-    padding-right: 1em;
 }
 
 /* Timer text*/
-#bgColor h2 {
-    color: white;
+.header h2 {
+    color: rgb(53, 49, 49);
     display: flex;
-    position: absolute;
-    top: 5.2em;
-    right: 0.5em;
     font-size: 1.3em;
+    padding: 0.8rem;
+    background-color: rgb(235, 221, 112);
+    border-radius: 15px;
 }
 
 /* Timer element time remaining */
-.top #time-remaining {
+.header #timeRemaining {
     display: block;
 }
 
@@ -65,7 +53,9 @@
 /* Start Header Image page styling */
 /* Pipe Sword Ring Mountain */
 
-.header-image {
+.hobbitBanner {
+    max-width: 50%;
+    margin: 0 auto;
     margin-bottom: -6em;
 }
 
@@ -74,7 +64,6 @@
 
 /* Main container */
 .content  {
-    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -118,7 +107,7 @@
 /* Start Intro page styling */
 
 /* Play button */
-#play-button {
+#playButton {
     width: 200px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1em;
@@ -133,13 +122,13 @@
 }
 
 /* Play button hover properties */
-#play-button:hover {
+#playButton:hover {
     color:  rgb(13, 119, 13);
     background-color: lightgoldenrodyellow;
 }
 
 /* Play button focus properties */
-#play-button:focus {
+#playButton:focus {
     outline: none;
     border: 2px solid gold;
 }
@@ -206,7 +195,7 @@
 }
 
 /* Riddle number */
-#riddle-number {
+#riddleNumber {
     color: grey;
     font-size: 1em;
 }
@@ -313,7 +302,7 @@
 }
 
 /* Hobbit cover image styling container */
-#hobbit-cover {
+#hobbitCover {
     margin-top: 1.5em;
     margin-bottom: 1.7em;
     opacity: 0.8;
@@ -388,108 +377,86 @@
 /*--------------------------------------------------------------------------------*/
 /* Start High Score page styling */
 
+#highScoresMain {
+    background-image: url("/assets/images/lonelyMountain.png");
+    background-color: rgb(255, 255, 255);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 75vh;
+    max-width: 96vw;
+    margin: 1em auto;
+}
+
+.highScoresContainer {
+    max-width: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0.5em;
+    border: 3px solid rgb(13, 119, 13);
+    margin: 2em auto 0em auto;
+}
+
 /* High scores title */
-#title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: rgb(13, 119, 13);;
+#highScoreTitle {
+    color: rgb(13, 119, 13);
     font-family: serif;
     font-weight: bold;
     font-size: 3em;
     text-decoration: underline;
-    text-decoration-color: rgb(13, 119, 13);;
-    margin: 2em auto 0em auto;
+    margin-top: 1em;
 }
 
 /* Container to hold the list of high scores */
-#list-container {
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+#listContainer {
     font-family: serif;
     font-weight: bolder;
     color: rgb(13, 119, 13);;
     font-size: 1.5em;
-    margin: 1em auto;
-    padding: 1em;
-    position: relative;
-    z-index: 1;
-}
-
-/* Unordered list container for initials */
-#initials-List {
-    border-color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-    z-index: 1;
+    margin: 1em 0 2em 0;
 }
 
 /* Initials list */
 li {
     text-shadow: -3px 4px 4px grey;
     padding: 0.3em 0;
-    z-index: 1;
 }
 
 /* container holds the two buttons on high scores page */
-#high-scoreBox {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+#highScoreBox {
     font-size: 1em;
     font-family: serif;
     line-height: 1em;
     margin: 1em 0em;
     padding-left: 1em;
-    z-index: 1;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
 }
 
 /* High score button styling */
-.high-scoreBtn {
+.highScoreBtn {
     width: 175px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: goldenrod;
-    text-transform: uppercase;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-right: 1em;
+    margin: 0 1em;
     padding: 0.3em 0.5em;
     border-color: tan;
     border-radius: 0.5em;
     background-color: rgb(13, 119, 13);
     cursor: pointer;
-    z-index: 1;
-    
 }
 
 /* High score button hover properties */
-.high-scoreBtn:hover {
+.highScoreBtn:hover {
     color: rgb(13, 119, 13);;
     background-color: lightgoldenrodyellow;
 }
 
 /* High score button focus properties */
-.high-scoreBtn:focus {
+.highScoreBtn:focus {
     outline: none;
     border: 3px solid gold;
-}
-
-/* Lonely Mountain image */
-#lonely-mountain {
-    opacity: 0.35;
-    height: 55vh;
-    background-position: center;
-    margin-top: -20em;
-    margin-bottom: -5em;
-    z-index: -1;
 }
 
 /*--------------------------------------------------------------------------------*/
@@ -497,42 +464,39 @@ li {
 
 /* For displays > 375px */
 @media only screen and (min-width: 375px) {
-    .top a {font-size: 1em;}
-    .top h1 {font-size: 35px;}
-    .top h2 {font-size: 1.2em;}
+    /* .header a {font-size: 1em;} */
+    /* .header h1 {font-size: 35px;} */
+    /* .header h2 {font-size: 1.2em;} */
     .styleContainer {width: 375px;}
     #riddle {width: 360px; font-size: 1em; line-height: 1.4em; font-weight: initial; padding: 0 1.5em;}
     .buttons {width: 15em; font-size: 1.2em; line-height: 1.3em;}
     .characterContainer { max-width: 100vw;}
     .bilboContainer {margin-left: -4em; padding-right: 1em;}
     .gollumContainer {margin-right: 0em; padding-left: 1em;}
-
-    #high-scoreBox {font-size: 1.3em;}
+    #highScoreBox {font-size: 1.3em;}
 }   
 
 /* For displays > 768px */
 @media only screen and (min-width: 768px) {
-    .top a {font-size: 1.5em;}
-    .top h1 {font-size: 50px !important; padding-top: 1em;}
-    .top h2 {font-size: 1.5em;}
+    /* .header a {font-size: 1.5em;} */
+    /* .header h1 {font-size: 50px !important; padding-top: 1em;} */
+    /* .header h2 {font-size: 1.5em;} */
     .styleContainer {width: 500px;}
     #riddle {width: 500px; padding: 0;}
     .buttons {width: 18em; font-size: 1.3em;}
     .characterContainer { width: 500px;}
     .bilboContainer {margin-left: 0em; margin-right: 3em;}
     .gollumContainer {margin-right: 0em; margin-left: 5em;}
-
-    #high-scoreBox {font-size: 1.4em;}
+    #highScoreBox {font-size: 1.4em;}
 }
 
 /* For displays > 1200px */
 @media only screen and (min-width: 1200px) {
-    .top a {font-size: 2em;}
-    .top h1 {font-size: 65px !important;}
-    .top h2 {font-size: 2em;}
+    /* .header a {font-size: 2em;} */
+    /* .header h1 {font-size: 65px !important;} */
+    /* .header h2 {font-size: 2em;} */
     .styleContainer {width: 550px;}
     #riddle {width: 550px;}
     .buttons {width: 20em; font-size: 1.3em;}
-
-    #high-scoreBox {font-size: 1.5em;}
+    #highScoreBox {font-size: 1.5em;}
 }

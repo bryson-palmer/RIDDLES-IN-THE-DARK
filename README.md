@@ -47,23 +47,23 @@ __________________________
 
 ## 📸 <a id="screenshot-of-intro"></a> Screenshot Intro
 
-![screenshot-of-intro](assets/Images/1Screenshot-Intro.png)
+![screenshot-of-intro](assets/images/1Screenshot-Intro.png)
 
 ## 📸 <a id="screenshot-of-game"></a> Screenshot Game
 
-![screenshot-of-game](assets/Images/2Screenshot-game.png)
+![screenshot-of-game](assets/images/2Screenshot-game.png)
 
 ## 📸 <a id="screenshot-of-gandalf"></a> Screenshot Gandalf
 
-![screenshot-of-gandalf](assets/Images/3Screenshot-gandalf.png)
+![screenshot-of-gandalf](assets/images/3Screenshot-gandalf.png)
 
 ## 📸 <a id="screenshot-of-endscreen"></a> Screenshot Endscreen
 
-![screenshot-of-endscreen](assets/Images/4Screenshot-endScreen.png)
+![screenshot-of-endscreen](assets/images/4Screenshot-endScreen.png)
 
 ## 📸 <a id="screenshot-of-highscores"></a> Screenshot High Scores
 
-![screenshot-of-highscores](assets/Images/5Screenshot-highScores.png)
+![screenshot-of-highscores](assets/images/5Screenshot-highScores.png)
 
 ## <a id="future-tickets"></a> 🔍 Future Tickets
 * To have the game scale for a mobile/tablet horizontal view.
@@ -71,7 +71,7 @@ __________________________
 * Create a an array list of villian character names to pull from at random if a user puts in an empty entry(i.e.,Smaug, Saruman, Witch-King of Angmar, and so on). 
 
 ## <a id="attributions"></a> 📸 Attributions
-Images used in project are clip art. Sites down bellow.
+images used in project are clip art. Sites down bellow.
 
 * Gollum art from <a href="https://www.jing.fm/iclip/TTwiiJ_gollum-hobbit-clipart/">here</a>
         
@@ -87,7 +87,7 @@ Images used in project are clip art. Sites down bellow.
         
 * Hobbit cover first edition from <a href="https://www.tolkienroad.com/wp-content/uploads/2019/06/hobbit-cover-first-edition.jpg">here</a>
 
-## <a id="other-information" /></a> 📡 Other Information
+## <a id="other-information"></a> 📡 Other Information
 * Installation: Go to the live link <a href="https://bryson-palmer.github.io/RIDDLES-IN-THE-DARK/">[Here]</a> and press play! That's it.
 * Usage: A fun little game for *Hobbit* enthusiasts.
 * Credits: I would like to give a thanks to my teacher, Anthony Brown, for helping me with my timer and local storage logic. I would like to thank Joshua Hollar for his time and help with this homework. His peer review and suggestions helped me get through a tough spot. I also want to shout out to another student, Daniel Soledad, for checking the game out and his feedback. Also, Google, W3Schools, stack overflow, and Web MD for their well organized information regarding the Fisher-Yates shuffle method. Also, how to use the sort method and code to set up a comparison.
