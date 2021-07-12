@@ -1,4 +1,3 @@
-
 // Declaring and pointing to elements in the index html
 let timeRemainEl = document.querySelector( "#timeRemaining" ); 
 const introEl = document.querySelector( "#intro" ); 
