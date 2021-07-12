@@ -9,6 +9,7 @@ const playBtnEl = document.querySelector( "#playButton" );
 const startGameEl = document.querySelector( "#startGame" ); 
 let riddleNumEl = document.querySelector( "#riddleNumber" );
 let riddleEl = document.querySelector( "#riddle" ); 
+const answerContainerEl = document.querySelector( "#answerContainer" );
 let answer1El = document.querySelector( "#answer1" ); 
 let answer2El = document.querySelector( "#answer2" ); 
 let answer3El = document.querySelector( "#answer3" ); 
@@ -25,8 +26,8 @@ let correctScore = 0;        // Counter for correct answers
 let incorrectScore = 0;      // Counter for incorrect answers
 let pointer = 0;             // Pointer used for moving through the array of objects
 let answerPointer;           // Pointer used in shuffling the answers of each riddle
-let randomAnswer = [];        // Array (empty) to hold shuffled answers
-let usersClick = ""; // Variable to hold the value of the user's current answer
+let randomAnswer = [];       // Array (empty) to hold shuffled answers
+let usersClick = "";         // Variable to hold the value of the user's current answer
 
 
 let timeScore;                         // A global interval counter
@@ -121,19 +122,19 @@ const riddles = [
 
 
 // Object methods to be used in the game
-const myMethods = {
+const game = {
   
   // Countdown functionality
   countDown: function() {
     
     timeScore = setInterval(function() {    // Storing the value setInterval returns in timeScore
-    timeRemainEl.innerHTML = secondsLeft;  // Display time
+    timeRemainEl.innerHTML = secondsLeft;   // Display time
       
-      if ( secondsLeft <= 0 ) {                             // If seconds reach 0 or less
+      if ( secondsLeft <= 0 ) {                              // If seconds reach 0 or less
         startGameEl.removeEventListener("click", gameFlow);  // Remove click for start game button
-        myMethods.stopCountdown();                           // Stop timer 
+        game.stopCountdown();                                // Stop timer 
         timeRemainEl.innerHTML = 0;                          // Assign and display 0 for time
-        myMethods.revealGandalf();                           // Reveal Gandalf method
+        game.revealGandalf();                                // Reveal Gandalf method
         console.log( "*Reveal Gandalf*" );                   // Log final counts
         console.log( "Time: " + secondsLeft);
         console.log( "FINAL Correct Score: " + correctScore );
@@ -148,43 +149,43 @@ const myMethods = {
   stopCountdown: function() {
     
     clearInterval( timeScore );              // Clear timeScore interval
-    timeRemainEl.innerHTML = secondsLeft;   // Display where the timer stopped
+    timeRemainEl.innerHTML = secondsLeft;    // Display where the timer stopped
   },
   
-  // Hide start page (intro)
+  // Hide start section (intro)
   hideIntro: function() {
-    var displaySetting = introEl.style.display; // Variable holding the style property of introEl
-    if ( !displaySetting == "none"); {          // If display setting is not "none"
-      introEl.style.display = "none";           // Then set the display setting to "none"
-      headerImageEl.style.display = "none";     // Hide image header
+    const displaySetting = introEl.style.display; // Variable holding the style property of introEl
+    if ( !displaySetting == "none"); {            // If display setting is not "none"
+      introEl.style.display = "none";             // Then set the display setting to "none"
+      headerImageEl.style.display = "none";       // Hide image header
     }  
   },
 
-  // Show game page
+  // Show game section
   showGame: function() {
-    var displaySetting = startGameEl.style.display; // Variable holding the style property of startGameEl
-    if ( !displaySetting == "none" ) {              // If display setting is not "none"
-        startGameEl.style.display = "none";         // Then set the display setting to "none"
+    const displaySetting = startGameEl.style.display; // Variable holding the style property of startGameEl
+    if ( !displaySetting == "none" ) {                // If display setting is not "none"
+        startGameEl.style.display = "none";           // Then set the display setting to "none"
         characterEl.style.display = "none";
       } else 
-        startGameEl.style.display = "flex";         // Else set the display setting to "flex" 
+        startGameEl.style.display = "flex";           // Else set the display setting to "flex" 
         characterEl.style.display = "flex";
         bilboEl.style.visibility = "hidden";
         gollumEl.style.visibility = "hidden";
-        console.log("Show Game");                   // Log check
+        console.log("Show Game");                     // Log check
   },
 
-  // Show end game page
+  // Show end game section
   showEnd: function() {
-    var displaySetting = endGameEl.style.display; // Variable holding the style property of endGameEl
-    if ( !displaySetting == "none" ) {            // If display setting is not "none"
-        endGameEl.style.display = "none";         // Then set the display setting to "none"
+    const displaySetting = endGameEl.style.display; // Variable holding the style property of endGameEl
+    if ( !displaySetting == "none" ) {              // If display setting is not "none"
+        endGameEl.style.display = "none";           // Then set the display setting to "none"
     } else {
-        endGameEl.style.display = "flex";         // Else set the display setting to "flex"
+        endGameEl.style.display = "flex";           // Else set the display setting to "flex"
         headerImageEl.style.display = "none"; 
-        startGameEl.style.display = "none";       // Hide startGameEl
+        startGameEl.style.display = "none";         // Hide startGameEl
         characterEl.style.display = "none";     
-        console.log( "*Show End*" );              // Log final counts
+        console.log( "*Show End*" );                // Log final counts
         console.log( "Time: " + secondsLeft);
         console.log( "FINAL Correct Score: " + correctScore );
         console.log( "FINAL Incorrect Score: " + incorrectScore );
@@ -196,7 +197,7 @@ const myMethods = {
     characterEl.style.display = "none";     // Hide
     startGameEl.style.display = "none";     // Hide
     endGameEl.style.display = "none";       // Hide 
-    gandalfEl.style.display = "block";       // Reveal Gandalf 
+    gandalfEl.style.display = "block";      // Reveal Gandalf 
     playAgainEl.style.display = "flex";     // Reveal playAgain button
     headerImageEl.style.display = "block";  // Reveal header image
   },
@@ -208,11 +209,11 @@ const myMethods = {
       // Store all the answers to a given riddle (pointer) in a new variable
       randomAnswer = [riddles[pointer].answer1, riddles[pointer].answer2, riddles[pointer].answer3, riddles[pointer].answer4];
 
-      for ( var i = randomAnswer.length-1; i > 0; i-- ) {  // FOR the length of the riddles answers (4)
-        answerPointer = Math.floor(Math.random() * i );   // Store a random generated index number from the answer array from a given riddle in this global variable
-        let tempAnswer = randomAnswer[i];                       // Store the answer with the random index [i] in a new temp variable
-        randomAnswer[i] = randomAnswer[answerPointer];      // Set the value of random answer with random index [i] to the value of rando answer with index [answerPointer]
-        randomAnswer[answerPointer] = tempAnswer;               // Set the value of random answer with index [answerPointer] to the value of temp variable
+      for ( let i = randomAnswer.length-1; i > 0; i-- ) {  // FOR the length of the riddles answers (4)
+        answerPointer = Math.floor(Math.random() * i );    // Store a random generated index number from the answer array from a given riddle in this global variable
+        let tempAnswer = randomAnswer[i];                  // Store the answer with the random index [i] in a new temp variable
+        randomAnswer[i] = randomAnswer[answerPointer];     // Set the value of random answer with random index [i] to the value of rando answer with index [answerPointer]
+        randomAnswer[answerPointer] = tempAnswer;          // Set the value of random answer with index [answerPointer] to the value of temp variable
         riddles[pointer].answer1 = randomAnswer[0];        // Set the value of answer 1 to the new random answer with index [0]
         riddles[pointer].answer2 = randomAnswer[1];        // Set the value of answer 2 to the new random answer with index [1]
         riddles[pointer].answer3 = randomAnswer[2];        // Set the value of answer 3 to the new random answer with index [2]
@@ -226,9 +227,9 @@ const myMethods = {
   // Shuffle riddles using the Fisher-Yates shuffle method
   shuffleRiddles: function() {
 
-    for ( var i = riddles.length-1; i > 0; i-- ) {        // For the length of the riddles questions (10)
+    for ( let i = riddles.length-1; i > 0; i-- ) {        // For the length of the riddles questions (10)
       pointer = Math.floor(Math.random() * i );           // Store a random generated index number from the riddles array into the global pointer
-      var tempR = riddles[i];                             // Store the riddle with the random index [i] in a new  temp variable
+      let tempR = riddles[i];                             // Store the riddle with the random index [i] in a new  temp variable
       riddles[i] = riddles[pointer];                      // Set the value of the random riddle with the random index [i] to the value of rando riddle with index [pointer]
       riddles[pointer] = tempR;                           // Set the value of random riddle with index [pointer] to the value of temp variable
     }
@@ -236,7 +237,7 @@ const myMethods = {
 
   // Display first riddle and answers 
   displayRiddle1: function() {                            
-    myMethods.shuffleAnswers();                           // Call shuffle answers method
+    game.shuffleAnswers();                                // Call shuffle answers method
     riddleNumEl.innerHTML = pointer + 1;                  // Display the riddle count to the user
     riddleEl.innerHTML = riddles[pointer].riddle;         // Display the first riddle
     answer1El.innerHTML = riddles[pointer].answer1;       // Display answer 1
@@ -249,7 +250,7 @@ const myMethods = {
   // Display next riddle                                          
   displayNextRiddle: function() {  
     riddleNumEl.innerHTML = pointer + 1;                          // Display the riddle count to the user
-    myMethods.shuffleAnswers();                                   // call shuffle answers method
+    game.shuffleAnswers();                                        // call shuffle answers method
     if ( pointer < riddles.length ) {                             // If < length, then display next riddle 
       riddleEl.innerHTML = riddles[pointer].riddle;               // Display next riddle
       answer1El.innerHTML = riddles[pointer].answer1;             // Display answer 1
@@ -258,9 +259,9 @@ const myMethods = {
       answer4El.innerHTML = riddles[pointer].answer4;             // Display answer 4
       console.log( "Riddle " + ( pointer + 1 ) + " displayed.");  // Log riddle (pointer plus one) displayed
     } else {
-      startGameEl.removeEventListener("click", gameFlow);         // Else remove the click listener
-      myMethods.stopCountdown();                                  // Call the stop countdown method
-      myMethods.showEnd();                                        // call the Show end method
+      answerContainerEl.removeEventListener("click", gameFlow);   // Else remove the click listener
+      game.stopCountdown();                                  // Call the stop countdown method
+      game.showEnd();                                        // call the Show end method
       return;
     }
   },
@@ -272,19 +273,19 @@ const myMethods = {
     
     // If user's choice does not equal the key answer and time is >= 0
     if ( usersClick !== riddles[pointer].answer && secondsLeft >= 0 ) {  // Compare user's choice to riddles correct answer with seconds on the clock
-        console.log( "wrong Answer" );                                            // Log check wrong answer
-        incorrectScore++;                                                         // Increment incorrect score
-        secondsLeft -= 20;                                                       // Subtract 20 sec penalty to timer
-        gollumEl.style.visibility = "visible";                                    // Reveal Gollum text
-        bilboEl.style.visibility = "hidden";                                      // Hide Bilbo text
-        console.log( "incorrectScore: " + incorrectScore );                       // Log incorrect score
+        console.log( "wrong Answer" );                                   // Log check wrong answer
+        incorrectScore++;                                                // Increment incorrect score
+        secondsLeft -= 20;                                               // Subtract 20 sec penalty to timer
+        gollumEl.style.visibility = "visible";                           // Reveal Gollum text
+        bilboEl.style.visibility = "hidden";                             // Hide Bilbo text
+        console.log( "incorrectScore: " + incorrectScore );              // Log incorrect score
       } else {
-        console.log( "Correct Answer" );                                          // Log check correct answer
-        correctScore++;                                                           // Increment correct score
-        secondsLeft += 10;                                                       // Add 10 sec to timer
-        bilboEl.style.visibility = "visible";                                     // Reveal Bilbo text
-        gollumEl.style.visibility = "hidden";                                     // Hide Gollum text
-        console.log( "correctScore: " + correctScore );                           // Log correct score
+        console.log( "Correct Answer" );                                 // Log check correct answer
+        correctScore++;                                                  // Increment correct score
+        secondsLeft += 10;                                               // Add 10 sec to timer
+        bilboEl.style.visibility = "visible";                            // Reveal Bilbo text
+        gollumEl.style.visibility = "hidden";                            // Hide Gollum text
+        console.log( "correctScore: " + correctScore );                  // Log correct score
     }
   }, 
 
@@ -298,17 +299,17 @@ const myMethods = {
     answer4El.innerHTML = "";
   }
 
-} // End of functions object _________________________________________________________
+} // End of game methods object _________________________________________________________
 
 
 // Function begins the game
 function beginGame() {
   
-  myMethods.shuffleRiddles(); // Shuffle riddlese array
-  myMethods.countDown();      // Starts the count down
-  myMethods.hideIntro();      // Hides the start/info page
-  myMethods.showGame();       // Displays the start game HTML elements
-  myMethods.displayRiddle1(); // Displays the first riddle and answers
+  game.shuffleRiddles(); // Shuffle riddlese array
+  game.countDown();      // Starts the count down
+  game.hideIntro();      // Hides the start/info page
+  game.showGame();       // Displays the start game HTML elements
+  game.displayRiddle1(); // Displays the first riddle and answers
 }
 playBtnEl.addEventListener("click", beginGame); // When the play button is clicked run begin game
 // playBtnEl.ontouchstart = beginGame;
@@ -319,12 +320,12 @@ function gameFlow(event) {
   
   usersClick = event.target.textContent;  // GET user answer with event.target
   
-    myMethods.answerCheck(usersClick);    // Call check answer and pass user's choice
-    myMethods.clearInnerHTML();                   // Clear inner html elements
-    pointer++;                                    // Increment the pointer value by 1
-    myMethods.displayNextRiddle();                // Call display next riddle
+    game.answerCheck(usersClick);         // Call check answer and pass user's choice
+    game.clearInnerHTML();                // Clear inner html elements
+    pointer++;                            // Increment the pointer value by 1
+    game.displayNextRiddle();             // Call display next riddle
 }
-startGameEl.addEventListener("click", gameFlow);  // When user clicks an answer run game flow
+answerContainerEl.addEventListener("click", gameFlow);  // When user clicks an answer run game flow
 
 
 // Starting game play again
@@ -347,15 +348,15 @@ function submitInitials(event) {
         highScoresArray = [];   // Define as an empty array
     }
 
-  if ( initialsEl.value == "") {                                    // IF the user enters nothing in the initials input
+  if ( initialsEl.value == "") {                                 // IF the user enters nothing in the initials input
 
-    var userName = "<SAURON>"                                  // Set user initials to Sauron
+    const userName = "<SAURON>"                                  // Set user initials to Sauron
 
   } else
-    var userName = initialsEl.value.toUpperCase();              // Uppercasing user input value and storing in new var
-    var userInput = {                                               // Declare new object of userInput
-      userName: userName,                                  // Holding Keys and vlaues
-      secondsLeft: secondsLeft                                     // Initials and time (secondsLeft)
+    let userName = initialsEl.value.toUpperCase();              // Uppercasing user input value and storing in new var
+    let userInput = {                                           // Declare new object of userInput
+      userName: userName,                                       // Holding Keys and vlaues
+      secondsLeft: secondsLeft                                  // Initials and time (secondsLeft)
   };      
   
   console.log( "User initials or name: " + userName );          // Log check initials
@@ -364,11 +365,11 @@ function submitInitials(event) {
 
   localStorage.setItem( "userInput", JSON.stringify(highScoresArray));  // Setting userInput values to storage, stringify array
 
-  initialsEl.innerHTML = "";                                         // Clear inner html of element initialsEl
+  initialsEl.innerHTML = "";                                            // Clear inner html of element initialsEl
   
-  location.assign( "highscore.html" );                               // Assigning a new html page highscore.html
+  location.assign( "highscore.html" );                                  // Assigning a new html page highscore.html
   
-  submitBtnEl.removeEventListener("click", submitInitials);          // Remove the listener for the click
+  submitBtnEl.removeEventListener("click", submitInitials);             // Remove the listener for the click
   
 }
 submitBtnEl.addEventListener("click", submitInitials);  // When user clicks the submit button for their initials run
