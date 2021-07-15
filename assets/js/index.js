@@ -3,8 +3,8 @@ let timeRemainEl = document.querySelector( "#timeRemaining" );
 const introEl = document.querySelector( "#intro" ); 
 const headerImageEl = document.querySelector( ".hobbitBanner" );
 const characterEl = document.querySelector( ".characterContainer" );
-const bilboEl = document.querySelector( ".bilbo" );
-const gollumEl = document.querySelector( ".gollum" );
+const bilboTextEl = document.querySelector( ".bilboText" );
+const gollumTextEl = document.querySelector( ".gollumText" );
 const playBtnEl = document.querySelector( "#playButton" ); 
 const startGameEl = document.querySelector( "#startGame" ); 
 let riddleNumEl = document.querySelector( "#riddleNumber" );
@@ -170,8 +170,8 @@ const game = {
       } else 
         startGameEl.style.display = "flex";           // Else set the display setting to "flex" 
         characterEl.style.display = "flex";
-        bilboEl.style.visibility = "hidden";
-        gollumEl.style.visibility = "hidden";
+        bilboTextEl.style.visibility = "hidden";
+        gollumTextEl.style.visibility = "hidden";
         console.log("Show Game");                     // Log check
   },
 
@@ -276,15 +276,15 @@ const game = {
         console.log( "wrong Answer" );                                   // Log check wrong answer
         incorrectScore++;                                                // Increment incorrect score
         secondsLeft -= 20;                                               // Subtract 20 sec penalty to timer
-        gollumEl.style.visibility = "visible";                           // Reveal Gollum text
-        bilboEl.style.visibility = "hidden";                             // Hide Bilbo text
+        gollumTextEl.style.visibility = "visible";                           // Reveal Gollum text
+        bilboTextEl.style.visibility = "hidden";                             // Hide Bilbo text
         console.log( "incorrectScore: " + incorrectScore );              // Log incorrect score
       } else {
         console.log( "Correct Answer" );                                 // Log check correct answer
         correctScore++;                                                  // Increment correct score
         secondsLeft += 10;                                               // Add 10 sec to timer
-        bilboEl.style.visibility = "visible";                            // Reveal Bilbo text
-        gollumEl.style.visibility = "hidden";                            // Hide Gollum text
+        bilboTextEl.style.visibility = "visible";                            // Reveal Bilbo text
+        gollumTextEl.style.visibility = "hidden";                            // Hide Gollum text
         console.log( "correctScore: " + correctScore );                  // Log correct score
     }
   }, 
@@ -339,6 +339,7 @@ playAgainEl.addEventListener("click", playAgain); // When user clicks the play a
 // Submit initials form
 function submitInitials(event) {
   event.preventDefault();         // Prevent submit button default
+  let userName;
 
   // Getting all values stored in userInput object from storage, 
   // Parsing, and assigning to highScoresArray
@@ -350,10 +351,10 @@ function submitInitials(event) {
 
   if ( initialsEl.value == "") {                                 // IF the user enters nothing in the initials input
 
-    const userName = "<SAURON>"                                  // Set user initials to Sauron
+    userName = "<SAURON>"                                  // Set user initials to Sauron
 
   } else
-    let userName = initialsEl.value.toUpperCase();              // Uppercasing user input value and storing in new var
+    userName = initialsEl.value.toUpperCase();              // Uppercasing user input value and storing in new var
     let userInput = {                                           // Declare new object of userInput
       userName: userName,                                       // Holding Keys and vlaues
       secondsLeft: secondsLeft                                  // Initials and time (secondsLeft)

@@ -18,17 +18,20 @@
 
     <!-- Header with highscore link and timer -->
     <header class="header">
-        <!-- High sores link -->
-        <p>
-            High
-            <a href="highscore.html"><img src="https://img.icons8.com/office/30/000000/one-ring.png" alt="The one ring to rule them all"></a>
-            Score
-        </p>
         <!-- Title of the game -->
         <h1>Riddles In The Dark</h1>
+    </header>
+
+    <nav class="navBar">
+        <!-- High scores link -->
+        <div class="ringLink">
+            <a href="highscore.html"><img src="https://img.icons8.com/office/30/000000/one-ring.png" alt="The one ring to rule them all"></a>
+            <p>High Score</p>
+        </div>
+
         <!-- Timer -->
         <h2>Time: <span id="timeRemaining"></span></h2>
-    </header>
+    </nav>
 
     <!-- Banner image from https://icon-library.com/icon/hobbit-icon-19.html -->
     <img class="hobbitBanner" src="./assets/images/hobbitBanner.jpg" alt="Pipe sword ring mountain The Hobbit">
@@ -37,16 +40,14 @@
     <main class="content">
 
         <!-- Landing section -->
-        <section id="intro" class="styleContainer">
-            <p>
-                "Praps ye sits here and chats with it a bitsy, my precious. It like riddles, praps it does, does it?" ~
-                <em>Gollum - The Hobbit</em>
-            </p>
+        <section id="intro" class="sectionContainer">
+            <p>"Praps ye sits here and chats with it a bitsy, my precious. It like riddles, praps it does, does it?" </p>
+            <p>~<em> Gollum</em></p>
 
             <!-- Play button -->
             <button aria-label="Play" id="playButton">PLAY</button>
 
-            <p>
+            <p class="rules">
                 See if you can match wits with a creature from the dark abyss. Answer correctly and your time will go up
                 10 seconds. Answer incorrectly and your time gets cut short 20 seconds. Beat the time and you will have
                 escaped certain doom. Otherwise, you might just become his next meal. After all, these events could just
@@ -55,7 +56,7 @@
         </section>
 
         <!-- Game section of riddles and answers -->
-        <section id="startGame" class="styleContainer">
+        <section id="startGame" class="sectionContainer">
 
             <!-- Container to hold character images -->
             <div class="characterContainer">
@@ -63,36 +64,40 @@
                 <!-- Gollum container -->
                 <div class="gollumContainer">
                     <!-- Gollum image from https://www.jing.fm/iclip/TTwiiJ_gollum-hobbit-clipart/ -->
-                    <img src="./assets/images/Gollum.png" alt="gollum" width="115px" height="160px">
+                    <img class="gollum" src="./assets/images/Gollum.png" alt="gollum">
                     <!-- Gollum text -->
-                    <p class="gollum">Wrong answers, precious!</p>
+                    <p class="gollumText">Wrong answers, precious!</p>
                 </div>
 
                 <!-- Bilbo container -->
                 <div class="bilboContainer">
                     <!-- Bilbo text -->
-                    <p class="bilbo">Correct!</p>
+                    <p class="bilboText">Correct!</p>
                     <!-- Bilbo image from https://favpng.com/png_view/bilbo-baggins-brave-frontier-bilbo-baggins-the-hobbit-fan-art-clip-art-png/UhHWQrMz -->
-                    <img src="./assets/images/Bilbo.png" alt="Bilbo Baggins" width="175px" height="150px">
+                    <img class="bilbo" src="./assets/images/Bilbo.png" alt="Bilbo Baggins">
                 </div>
             </div>
 
-            <!-- Riddle label and count -->
-            <h2 id="riddleNumLable">Riddle: <span id="riddleNumber"></span></h2>
+            <!-- Riddle container -->
+            <div class="riddleContainer">
+                <!-- Riddle label and count -->
+                <h2 id="riddleNumLable">Riddle: <span id="riddleNumber"></span></h2>
 
-            <!-- Riddle element -->
-            <p id="riddle">Riddle</p>
+                <!-- Riddle element -->
+                <p id="riddle">Riddle</p>
+            
 
-            <!-- Answers container -->
-            <div id="answerContainer">
-                <!-- Answer buttons -->
-                <button aria-label="answer1" id="answer1" class="buttons">1.</button>
+                <!-- Answers container -->
+                <div id="answerContainer">
+                    <!-- Answer buttons -->
+                    <button aria-label="answer1" id="answer1" class="buttons">1.</button>
 
-                <button aria-label="answer2" id="answer2" class="buttons">2.</button>
+                    <button aria-label="answer2" id="answer2" class="buttons">2.</button>
 
-                <button aria-label="answer3" id="answer3" class="buttons">3.</button>
+                    <button aria-label="answer3" id="answer3" class="buttons">3.</button>
 
-                <button aria-label="answer4" id="answer4" class="buttons">4.</button>
+                    <button aria-label="answer4" id="answer4" class="buttons">4.</button>
+                </div> 
             </div>
             
         </section> <!-- End of game play container-->
@@ -100,24 +105,22 @@
         <!-- Reveal Gandalf container -->
         <section id="gandalfContainer">
             <!-- Gandalf image from https://clipartlook.com/img-237482.html -->
-            <img id="gandalf" src="./assets/images/Gandalf.jpg" alt="Gandalf: You shall not pass!" width="375px" height="300px">
+            <img id="gandalf" src="./assets/images/Gandalf.jpg" alt="Gandalf: You shall not pass!">
             <!-- Play again button -->
             <button aria-label="Play Again" id="playAgain" class="gandalfButtons">PLAY AGAIN</button>
         </section>
 
         <!-- End game form container -->
-        <form id="endGame" class="styleContainer">
+        <form id="endGame" class="sectionContainer">
             <!-- Input for initials -->
             <input aria-label="Enter your name" id="initials" type="text" placeholder="Enter your name" />
             <!-- submit  button -->
             <button aria-label="Submit" id="submitBtn">Submit</button>
             <!-- Gandald salutations -->
             <p id="salutations">"May the wind under your wings bear you where the sun sails and the moon walks."</p>
-            <!-- Hobbit cover container -->
-            <div id="hobbitCover">
-                <!-- Hobbit cover first editio from https://www.tolkienroad.com/wp-content/uploads/2019/06/hobbit-cover-first-edition.jpg -->
-                <img src="./assets/images/hobbitBookCover.jpg" alt="Hobbit cover first edition." width="350px" height="310px">
-            </div>
+            <!-- Hobbit cover first editio from https://www.tolkienroad.com/wp-content/uploads/2019/06/hobbit-cover-first-edition.jpg -->
+            <img id="hobbitCover" src="./assets/images/hobbitBookCover.jpg" alt="Hobbit cover first edition.">
+            
         </form>
     </main>
 
