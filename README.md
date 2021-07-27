@@ -47,23 +47,23 @@ __________________________
 
 ## 📸 <a id="screenshot-of-intro"></a> Screenshot Intro
 
-![screenshot-of-intro](assets/images/1Screenshot-Intro.png)
+![screenshot-of-intro](assets/Images/1Screenshot-Intro.png)
 
 ## 📸 <a id="screenshot-of-game"></a> Screenshot Game
 
-![screenshot-of-game](assets/images/2Screenshot-game.png)
+![screenshot-of-game](assets/Images/2Screenshot-game.png)
 
 ## 📸 <a id="screenshot-of-gandalf"></a> Screenshot Gandalf
 
-![screenshot-of-gandalf](assets/images/3Screenshot-gandalf.png)
+![screenshot-of-gandalf](assets/Images/3Screenshot-gandalf.png)
 
 ## 📸 <a id="screenshot-of-endscreen"></a> Screenshot Endscreen
 
-![screenshot-of-endscreen](assets/images/4Screenshot-endScreen.png)
+![screenshot-of-endscreen](assets/Images/4Screenshot-endScreen.png)
 
 ## 📸 <a id="screenshot-of-highscores"></a> Screenshot High Scores
 
-![screenshot-of-highscores](assets/images/5Screenshot-highScores.png)
+![screenshot-of-highscores](assets/Images/5Screenshot-highScores.png)
 
 ## <a id="future-tickets"></a> 🔍 Future Tickets
 * To have the game scale for a mobile/tablet horizontal view.
@@ -71,7 +71,7 @@ __________________________
 * Create a an array list of villian character names to pull from at random if a user puts in an empty entry(i.e.,Smaug, Saruman, Witch-King of Angmar, and so on). 
 
 ## <a id="attributions"></a> 📸 Attributions
-images used in project are clip art. Sites down bellow.
+Images used in project are clip art. Sites down bellow.
 
 * Gollum art from <a href="https://www.jing.fm/iclip/TTwiiJ_gollum-hobbit-clipart/">here</a>
         
